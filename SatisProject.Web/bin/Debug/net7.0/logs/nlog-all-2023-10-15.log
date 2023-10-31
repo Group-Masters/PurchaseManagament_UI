@@ -1,0 +1,66 @@
+2023-10-15 13:01:00.5398||INFO|Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager|User profile is available. Using 'C:\Users\USER\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2023-10-15 13:01:00.6648||INFO|Microsoft.Hosting.Lifetime|Now listening on: http://localhost:5046 
+2023-10-15 13:01:00.6648||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2023-10-15 13:01:00.6648||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2023-10-15 13:01:00.6648||INFO|Microsoft.Hosting.Lifetime|Content root path: D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web 
+2023-10-15 13:01:01.2794||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/ - - 
+2023-10-15 13:01:01.2980||WARN|Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware|Failed to determine the https port for redirect. 
+2023-10-15 13:01:01.3140||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'SatisProject.Web.Controllers.HomeController.Index (SatisProject.Web)' 
+2023-10-15 13:01:01.3312||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SatisProject.Web.Controllers.HomeController (SatisProject.Web). 
+2023-10-15 13:01:01.3312||INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index. 
+2023-10-15 13:01:01.4429||INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 106.292ms. 
+2023-10-15 13:01:01.4429||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action SatisProject.Web.Controllers.HomeController.Index (SatisProject.Web) in 113.5824ms 
+2023-10-15 13:01:01.4429||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'SatisProject.Web.Controllers.HomeController.Index (SatisProject.Web)' 
+2023-10-15 13:01:01.4568||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/ - - - 200 - text/html;+charset=utf-8 178.6728ms 
+2023-10-15 13:01:01.5055||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/RentACar.Web.styles.css - - 
+2023-10-15 13:01:01.5055||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/RentACar.Web.styles.css - - - 404 0 - 4.0473ms 
+2023-10-15 13:01:01.5304||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/_framework/aspnetcore-browser-refresh.js - - 
+2023-10-15 13:01:01.5348||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 4.3401ms 
+2023-10-15 13:01:01.5348||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/_vs/browserLink - - 
+2023-10-15 13:01:01.5835||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.7524ms 
+2023-10-15 13:01:02.5176||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/Account/Login - - 
+2023-10-15 13:01:02.5176||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'SatisProject.Web.Controllers.AccountController.Login (SatisProject.Web)' 
+2023-10-15 13:01:02.5176||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "Login", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller SatisProject.Web.Controllers.AccountController (SatisProject.Web). 
+2023-10-15 13:01:02.5176||INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Login. 
+2023-10-15 13:01:02.5828||INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Login executed in 60.7268ms. 
+2023-10-15 13:01:02.5828||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action SatisProject.Web.Controllers.AccountController.Login (SatisProject.Web) in 61.7251ms 
+2023-10-15 13:01:02.5828||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'SatisProject.Web.Controllers.AccountController.Login (SatisProject.Web)' 
+2023-10-15 13:01:02.5828||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/Account/Login - - - 200 - text/html;+charset=utf-8 67.7002ms 
+2023-10-15 13:01:02.6209||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/RentACar.Web.styles.css - - 
+2023-10-15 13:01:02.6209||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/RentACar.Web.styles.css - - - 404 0 - 1.4825ms 
+2023-10-15 13:01:02.6209||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/_framework/aspnetcore-browser-refresh.js - - 
+2023-10-15 13:01:02.6209||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.6057ms 
+2023-10-15 13:01:02.6362||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/_vs/browserLink - - 
+2023-10-15 13:01:02.6544||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 18.1506ms 
+2023-10-15 13:01:03.3416||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 POST http://localhost:5046/Account/GirisYap application/x-www-form-urlencoded 43 
+2023-10-15 13:01:03.3416||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'SatisProject.Web.Controllers.AccountController.GirisYap (SatisProject.Web)' 
+2023-10-15 13:01:03.3487||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {action = "GirisYap", controller = "Account", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GirisYap(SatisProject.Web.Models.LoginModel) on controller SatisProject.Web.Controllers.AccountController (SatisProject.Web). 
+2023-10-15 13:01:04.8408||INFO|Microsoft.AspNetCore.Mvc.RedirectToActionResult|Executing RedirectResult, redirecting to /Admin. 
+2023-10-15 13:01:04.8408||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action SatisProject.Web.Controllers.AccountController.GirisYap (SatisProject.Web) in 1491.9218ms 
+2023-10-15 13:01:04.8408||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'SatisProject.Web.Controllers.AccountController.GirisYap (SatisProject.Web)' 
+2023-10-15 13:01:04.8408||INFO|Microsoft.AspNetCore.Session.DistributedSession|Session started; Key:67fdb5a7-5090-8bf6-e561-58b1e3b3eeac, Id:7538f0ad-913b-cef8-006a-9daea7bc7350 
+2023-10-15 13:01:04.8408||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 POST http://localhost:5046/Account/GirisYap application/x-www-form-urlencoded 43 - 302 0 - 1502.0767ms 
+2023-10-15 13:01:04.8513||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/Admin - - 
+2023-10-15 13:01:04.8513||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'SatisProject.Web.Areas.Admin.Controllers.HomeController.Index (SatisProject.Web)' 
+2023-10-15 13:01:04.8513||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {area = "Admin", action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller SatisProject.Web.Areas.Admin.Controllers.HomeController (SatisProject.Web). 
+2023-10-15 13:01:04.8513||INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view Index. 
+2023-10-15 13:01:04.8784||INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view Index executed in 23.7203ms. 
+2023-10-15 13:01:04.8784||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action SatisProject.Web.Areas.Admin.Controllers.HomeController.Index (SatisProject.Web) in 26.9694ms 
+2023-10-15 13:01:04.8784||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'SatisProject.Web.Areas.Admin.Controllers.HomeController.Index (SatisProject.Web)' 
+2023-10-15 13:01:04.8784||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/Admin - - - 200 - text/html;+charset=utf-8 31.8048ms 
+2023-10-15 13:01:04.9487||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/_framework/aspnetcore-browser-refresh.js - - 
+2023-10-15 13:01:04.9487||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.5722ms 
+2023-10-15 13:01:04.9603||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/_vs/browserLink - - 
+2023-10-15 13:01:04.9603||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 4.9455ms 
+2023-10-15 13:01:08.9208||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/Satis/Home/SatinAlmaTalepOnay - - 
+2023-10-15 13:01:08.9208||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executing endpoint 'SatisProject.Web.Areas.Satis.Controllers.HomeController.SatinAlmaTalepOnay (SatisProject.Web)' 
+2023-10-15 13:01:08.9208||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Route matched with {area = "Satis", action = "SatinAlmaTalepOnay", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult SatinAlmaTalepOnay() on controller SatisProject.Web.Areas.Satis.Controllers.HomeController (SatisProject.Web). 
+2023-10-15 13:01:08.9243||INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executing ViewResult, running view SatinAlmaTalepOnay. 
+2023-10-15 13:01:08.9243||INFO|Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor|Executed ViewResult - view SatinAlmaTalepOnay executed in 6.7228ms. 
+2023-10-15 13:01:08.9243||INFO|Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker|Executed action SatisProject.Web.Areas.Satis.Controllers.HomeController.SatinAlmaTalepOnay (SatisProject.Web) in 7.6877ms 
+2023-10-15 13:01:08.9243||INFO|Microsoft.AspNetCore.Routing.EndpointMiddleware|Executed endpoint 'SatisProject.Web.Areas.Satis.Controllers.HomeController.SatinAlmaTalepOnay (SatisProject.Web)' 
+2023-10-15 13:01:08.9243||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/Satis/Home/SatinAlmaTalepOnay - - - 200 - text/html;+charset=utf-8 12.5910ms 
+2023-10-15 13:01:08.9712||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/_framework/aspnetcore-browser-refresh.js - - 
+2023-10-15 13:01:08.9712||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request starting HTTP/1.1 GET http://localhost:5046/_vs/browserLink - - 
+2023-10-15 13:01:08.9712||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/_framework/aspnetcore-browser-refresh.js - - - 200 12002 application/javascript;+charset=utf-8 0.7317ms 
+2023-10-15 13:01:08.9712||INFO|Microsoft.AspNetCore.Hosting.Diagnostics|Request finished HTTP/1.1 GET http://localhost:5046/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 12.7750ms 

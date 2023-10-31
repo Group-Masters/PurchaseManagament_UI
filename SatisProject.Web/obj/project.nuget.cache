@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "1FUCOpZqre0ZylxvEsVHb+ve11oL7Cm21BdYK/JWCErrjV/uHZXldAR+LK33avf/zFoSTcaqVCfINmVb7BrTGA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mustafa Yılman\\Desktop\\UI\\PurchaseManagament_UI\\SatisProject.Web\\SatisProject.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mustafa Yılman\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Mustafa Yılman\\.nuget\\packages\\restsharp\\110.2.0\\restsharp.110.2.0.nupkg.sha512",
+    "C:\\Users\\Mustafa Yılman\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\Mustafa Yılman\\.nuget\\packages\\system.text.json\\7.0.2\\system.text.json.7.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

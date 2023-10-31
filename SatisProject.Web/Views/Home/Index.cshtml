@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "XYZ Holding";
+}
+
+
+@*<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="d-flex justify-content-center">
+        <div class="text-center">
+            <h1 class="mx-auto my-0 text-uppercase text-white">Stok Ve Satış</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">XYZ Holding'in Satış ve Stok Yönetim Sistemidir.</h2>
+            <a class="btn btn-light" asp-area="" asp-controller="Account" asp-action="Login">Giriş Ekranı</a>
+        </div>
+    </div>
+</div>*@
+
+<style>
+    img {
+        position: absolute !important;
+        border-radius: 100% !important;
+        user-select:none;
+    }
+    .position-div{
+        position: relative !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 350px;
+    }
+</style>
+<a asp-area="" asp-controller="Account" asp-action="Login" class="position-div">
+    <img src="~/img/v.gif" width="350" height="350" />
+
+</a>
+

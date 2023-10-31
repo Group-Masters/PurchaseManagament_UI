@@ -1,0 +1,525 @@
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+D:\Masaüstü\Yeni klasör\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Masaüstü\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+D:\Masaüstü\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+D:\Masaüstü\yenistok\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+C:\Users\Mustafa Yılman\Desktop\6.10.2023\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+C:\Users\Mustafa Yılman\Desktop\pazartesi\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+C:\Users\Mustafa Yılman\Desktop\salı\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+D:\Masaüstü\Carsambaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+C:\Users\Mustafa Yılman\Desktop\Persembeİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+D:\Masaüstü\Cumaİs\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+C:\Users\Mustafa Yılman\Desktop\SatisProjeSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+D:\Masaüstü\ALL\ProjeDosya\SatisProjectSonHal\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+D:\Masaüstü\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+C:\Users\Mustafa Yılman\Desktop\TamlplateDuzen\SatisProject\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\appsettings.json
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.staticwebassets.runtime.json
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.exe
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.deps.json
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.runtimeconfig.json
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\bin\Debug\net7.0\RestSharp.dll
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.AssemblyReference.cache
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfoInputs.cache
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.AssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CoreCompileInputs.cache
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cache
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.RazorAssemblyInfo.cs
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.SatisProject.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.build.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.SatisProject.Web.props
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_AdminLayout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\scopedcss\bundle\SatisProject.Web.styles.css
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\scopedcss\projectbundle\SatisProject.Web.bundle.scp.css
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.csproj.CopyComplete
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\refint\SatisProject.Web.dll
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.pdb
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\SatisProject.Web.genruntimeconfig.cache
+C:\Users\Mustafa Yılman\Desktop\UI\PurchaseManagament_UI\SatisProject.Web\obj\Debug\net7.0\ref\SatisProject.Web.dll

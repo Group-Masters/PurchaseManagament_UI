@@ -1,0 +1,40 @@
+﻿@using SatisProject.Web.Code;
+
+<input type="hidden"
+       class="form-control d-none"
+       id="kullaniciId"
+       value="@Repo.Session.Id" />
+
+<nav class="navbar text-light mb-3 bg-white shadow" style="border-radius: 15px !important;">
+    <div class="container-fluid">
+        <h2><a class="navbar-brand fs-4" style="color:#858796;">Talepler</a></h2>
+        <form class="d-flex" role="search">
+            @{
+                string rolString = Repo.Session.Rol;
+                bool admin = rolString.Split(',').Any(r => r.Trim() == "1");
+                bool genelMudur = rolString.Split(',').Any(r => r.Trim() == "8");
+                bool baskan = rolString.Split(',').Any(r => r.Trim() == "9");
+
+                if (admin || genelMudur || baskan)
+                {
+                    <div class="form-group">
+                        <select class="form-select col-md-12 " id="birimler">
+                            <option value="@Repo.Session.BirimId" selected></option>
+                        </select>
+                    </div>
+                }
+            }
+        </form>
+        <div class="form-group d-none">
+            <select class="form-select" id="birimler">
+                <option value="@Repo.Session.BirimId" selected></option>
+            </select>
+        </div>
+        
+    </div>
+</nav>
+
+<div id="divTalep" style="overflow-x: auto;">
+</div>
+
+<script src="~/js/satis/talep.js" asp-append-version="true"></script>

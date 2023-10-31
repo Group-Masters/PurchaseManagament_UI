@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SatisProject.Web.props" />
+</Project>
