@@ -119,35 +119,43 @@ function Delete(action, success, ask = true) {
     }
 }
 
-function Put(action, data, success) {
-    $.ajax({
-        type: "PUT",
-        url: `${BASE_API_URI}/${action}`,
-        //beforeSend: function (xhr) {
-        //    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-        //},
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(data),
-        success: function (response) {
-            if (response.success) {
-                success(response.data);
+function Put(action, data, success, ask = true) {
+    var confirmed = true;
+    if (ask) {
+        confirmed = confirm("Kaydı güncellemek istediğinizden emin misiniz?");
+    }
+    if (confirmed) {
+        $.ajax({
+            type: "PUT",
+            url: `${BASE_API_URI}/${action}`,
+            //beforeSend: function (xhr) {
+            //    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+            //},
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data),
+            success: function (response) {
+                if (response.success) {
+                    success(response.data);
+                }
+                else {
+                    alert(response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                var errorMessage = JSON.parse(xhr.responseText);
+                if (errorMessage && errorMessage.errors) {
+                    var errorString = errorMessage.errors.join(", ");
+                    alert(errorString);
+                } else {
+                    alert("An unknown error occurred.");
+                }
             }
-            else {
-                alert(response.message);
-            }
-        },
-        error: function (xhr, status, error) {
-            var errorMessage = JSON.parse(xhr.responseText);
-            if (errorMessage && errorMessage.errors) {
-                var errorString = errorMessage.errors.join(", ");
-                alert(errorString);
-            } else {
-                alert("An unknown error occurred.");
-            }
-        }
-    });
+        });
+    }
 }
+
+
 
 var girisSirketId = $("#girisSirketId").val();
 function TumSirketleriGetir() {

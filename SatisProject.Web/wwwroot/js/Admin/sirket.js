@@ -1,5 +1,5 @@
 ﻿function SirketleriGetir() {
-    Get("Company/GetAllCompany", (data) => {
+    Get("Company/GetAll", (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
             `<thead class="text-light bg-primary"><tr><th>Id</th><th>Sirket Adı</th><th>Şirket Adresi</th><th></th></tr></thead>`;
 
@@ -38,14 +38,14 @@ function Kaydet() {
         Name: $("#inputSirketAd").val(),
         Adress: $("#inputAdress").val()
     };
-    Post("Company/CreateCompany", sirket, (data) => {
+    Post("Company/Create", sirket, (data) => {
         SirketleriGetir();
         $("#staticBackdrop").modal("hide");
     });
 }
 
 function Sil(id) {
-    Delete(`Company/DeleteCompany/${id}`, (data) => {
+    Delete(`Company/Delete/${id}`, (data) => {
         SirketleriGetir();
     });
 }
@@ -66,7 +66,7 @@ function Guncelle() {
 
     }
 
-    Put("Company/UpdateCompany", guncelle, (data) => {
+    Put("Company/Update", guncelle, (data) => {
         SirketleriGetir();
 
         $("#staticBackdrop1").modal("hide");
