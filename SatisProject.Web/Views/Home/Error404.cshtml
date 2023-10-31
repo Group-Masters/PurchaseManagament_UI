@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Error 404";
+}
+
+<style>
+    .position-div {
+/*         position: absolute !important;
+        top: 10%;
+        left: 25%; */
+        position: relative !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        background-color: #BABABA4A;
+        opacity:0.6;
+        border-radius:30px;
+    }
+</style>
+
+<div class="col-md-12 col-lg-12 position-div" style="user-select:none;">
+    <div class="text-center">
+        <img src="~/Img/error404.gif" />
+        <h3 style="font-size:150px;color:white;font-weight:bold;">404</h3>
+        <h4 style="font-size:50px;color:white;font-weight:bold;">UPS! Bir şeyler Ters Gitti...</h4>
+        <a class="btn btn-light m-3" style="opacity:1;" asp-area="" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+    </div>
+</div>

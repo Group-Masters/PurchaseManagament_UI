@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Giriş Yap";
+}
+
+<style>
+    .position-div {
+        position: relative !important;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin-top:150px;
+    }
+    section {
+        font-size:12px;
+    }
+</style>
+
+@using (Html.BeginForm("GirisYap", "Account"))
+{
+    <section class=" position-div">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-12">
+                    <div class="card" style="border-radius: 1rem;">
+                        <div class="row g-0">
+                            <img src="~/img/v.gif" alt="login form" class="col-md-7 col-lg-6 d-none d-md-block bg-black" style="border-radius: 1rem 0 0 1rem;user-select:none;" />
+                            <div class="col-md-5 col-lg-6 d-flex align-items-center">
+                                <div class="card-body text-black col-md-5 col-lg-6">
+
+                                    <form class="col-md-5 col-lg-6 d-flex align-items-center">
+
+                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                            @if (!string.IsNullOrEmpty(ViewBag.LoginError))
+                                            {
+                                                <div class="alert alert-danger col-xl-12" role="alert">
+                                                    @ViewBag.LoginError
+                                                </div>
+
+                                            }
+                                            <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                        </div>
+
+                                        <h6 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Hoşgeldiniz! Hesabınıza Giriş Yapın</h6>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example17">Mail Adresinizi Giriniz :</label>
+                                            <input type="email" id="form2Example17" class="form-control form-control-lg" name="Eposta" />
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example27">Şifrenizi Giriniz :</label>
+                                            <input type="password" id="form2Example27" class="form-control form-control-lg" name="Sifre" />
+                                        </div>
+
+                                        <div class="pt-1 mb-4">
+                                            <button class="btn btn-primary btn-lg btn-block" type="submit">Giriş Yap</button>
+                                        </div>
+                                        <a href="#!" class="small text-muted">Terms of use.</a>
+                                        <a href="#!" class="small text-muted">Privacy policy</a>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

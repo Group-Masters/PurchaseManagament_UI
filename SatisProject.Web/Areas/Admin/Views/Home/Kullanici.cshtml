@@ -1,0 +1,146 @@
+﻿
+<nav class="navbar text-light mb-3 bg-white shadow" style="border-radius: 15px !important;">
+    <div class="container-fluid">
+        <h2><a class="navbar-brand fs-4" style="color:#858796;"> Satış ve Stok Kullanıcıları</a></h2>
+        <form class="d-flex" role="search">
+            <button type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    onclick="YeniKullanici()"
+                    data-bs-target="#staticBackdrop">
+                Yeni Kullanici Ekle
+            </button>
+        </form>
+    </div>
+</nav>
+
+
+<div id="divKullaniciDeneme" style="overflow-x: auto;">
+</div>
+
+<div class="modal fade"
+     id="staticBackdrop"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kullanici Bilgileri</h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="birimAd">Birim Seçiniz :</label>
+                        <select class="form-select" id="birimAd">
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="sirketAd">Şirket Seçiniz :</label>
+                        <select class="form-select" id="sirketAd">
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Kullanıcı Durumunu Seçiniz :</label>
+                        <select class="form-select" id="aktifMi" required>
+                            <option selected value="true">Aktif</option>
+                            <option value="false">Pasif</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="ad" class="form-label">Ad Giriniz  :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="ad"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="soyad" class="form-label">Soyad Giriniz  :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="soyad"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mailAdress" class="form-label">Mail Adres  Giriniz :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="mailAdress"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="parola" class="form-label">Parola Giriniz :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="parola"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telNo" class="form-label">Telefon Numarası Giriniz :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="telNo"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="tcNo" class="form-label">Tc Kimlik Numarası Giriniz :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="tcNo"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Adres Bilgilerini Giriniz :</label>
+                        <textarea class="form-control" id="acikAdres"></textarea>
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Vazgeç
+                    </button>
+                    <button class="btn btn-primary" type="submit" onclick="KullaniciKaydet()">Kaydet</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    (() => {
+        "use strict";
+
+        const forms = document.querySelectorAll(".needs-validation");
+        const kullanici = document.querySelectorAll("#kullaniciEkleForm");
+        Array.from(forms).forEach((kullanici) => {
+            kullanici.addEventListener(
+                "submit",
+                (event) => {
+                    if (!kullanici.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    kullanici.classList.add("was-validated");
+                },
+                false
+            );
+        });
+    })();
+</script>
+<script src="~/js/admin/kullanici.js" asp-append-version="true"></script>
