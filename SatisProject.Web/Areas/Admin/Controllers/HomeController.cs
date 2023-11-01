@@ -44,6 +44,8 @@ namespace SatisProject.Web.Areas.Admin.Controllers
             return View();
         }
 
+        
+        // Currency Page --> Para birim sayfa
         public IActionResult ParaBirim()
         {
             return View();
