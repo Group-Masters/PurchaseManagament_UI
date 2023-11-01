@@ -1,5 +1,5 @@
 ﻿function Getir() {
-    Get("Urun/TumUrunler", (data) => {
+    Get("Product/GetAllProduct", (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
             `<thead class="text-light bg-primary"><tr><th>Id</th><th>Urun Adı</th><th>Fiyatı</th><th></th></tr></thead>`;
 

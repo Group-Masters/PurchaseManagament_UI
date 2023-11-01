@@ -38,5 +38,10 @@ namespace SatisProject.Web.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public IActionResult BirimSirket()
+        {
+            return View();
+        }
     }
 }

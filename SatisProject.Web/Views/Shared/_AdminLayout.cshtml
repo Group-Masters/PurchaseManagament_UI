@@ -188,8 +188,8 @@
                         if (onay || admin)
                         { *@
                         <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="SatinAlmaTalepOnay">Talep Onay</a>
-@*                             }
-                         } *@
+                        @*                             }
+                        } *@
                     </div>
                 </div>
             </li>
@@ -278,83 +278,90 @@
             @*                 }
             } *@
 
-@*             @{
-                if (admin || baskan)
-                { *@
-                    <li class="nav-item">
-                        <a class="nav-link collapsed"
-                           href="#"
-                           data-toggle="collapse"
-                           data-target="#collapseRol"
-                           aria-expanded="true"
-                           aria-controls="collapsePages">
-                            <i class="bi bi-person-gear"></i>
-                            <span>Rol</span>
-                        </a>
-                        <div id="collapseRol"
-                             class="collapse"
-                             aria-labelledby="headingPages"
-                             data-parent="#accordionSidebar">
-                            <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
-                                <h6 class="collapse-header">Rol İşlemleri</h6>
-@*                                 @{
-                                    if (admin)
-                                    { *@
-                                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Rol">Rol Oluştur</a>
-@*                                      }
-                                 } *@
+            @*             @{
+            if (admin || baskan)
+            { *@
+            <li class="nav-item">
+                <a class="nav-link collapsed"
+                   href="#"
+                   data-toggle="collapse"
+                   data-target="#collapseRol"
+                   aria-expanded="true"
+                   aria-controls="collapsePages">
+                    <i class="bi bi-person-gear"></i>
+                    <span>Rol</span>
+                </a>
+                <div id="collapseRol"
+                     class="collapse"
+                     aria-labelledby="headingPages"
+                     data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
+                        <h6 class="collapse-header">Rol İşlemleri</h6>
+                        @*                                 @{
+                        if (admin)
+                        { *@
+                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Rol">Rol Oluştur</a>
+                        @*                                      }
+                        } *@
 
-                                <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="KullaniciRol">Rol Ver & Al</a>
+                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="KullaniciRol">Rol Ver & Al</a>
 
-                            </div>
-                        </div>
-                    </li>
-@*                 }
+                    </div>
+                </div>
+            </li>
+            @*                 }
             } *@
 
-@*             @{
-                if (admin || baskan)
-                { *@
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Kullanici">
-                            <i class="bi bi-person-circle"></i>
-                            <span>Kullanıcılar</span>
-                        </a>
-                    </li>
-@*                 }
+            @*             @{
+            if (admin || baskan)
+            { *@
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Kullanici">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Kullanıcılar</span>
+                </a>
+            </li>
+            @*                 }
             } *@
 
 
             <!-- Nav Item - Tables -->
-@*             @{
-                if (admin || muhasebe || baskan)
-                { *@
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" asp-area="Muhasebe" asp-controller="Home" asp-action="Faturalandirma">
-                            <i class="bi bi-coin"></i>
-                            <span>Muhasebe</span>
-                        </a>
-                    </li>
-@*                 }
+            @*             @{
+            if (admin || muhasebe || baskan)
+            { *@
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Muhasebe" asp-controller="Home" asp-action="Faturalandirma">
+                    <i class="bi bi-coin"></i>
+                    <span>Muhasebe</span>
+                </a>
+            </li>
+            @*                 }
             } *@
 
-@*             @{
-                if (admin)
-                { *@
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Sirket">
-                            <i class="bi bi-building"></i>
-                            <span>Sirketler</span>
-                        </a>
-                    </li>
+            @*             @{
+            if (admin)
+            { *@
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Sirket">
+                    <i class="bi bi-building"></i>
+                    <span>Sirketler</span>
+                </a>
+            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Birim">
-                            <i class="bi bi-stack"></i>
-                            <span>Birimler</span>
-                        </a>
-                    </li>
-@*                 }
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Birim">
+                    <i class="bi bi-stack"></i>
+                    <span>Birimler</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="BirimSirket">
+                    <i class="bi bi-stack"></i>
+                    <span>Şirket Birimleri</span>
+                </a>
+            </li>
+            @*                 }
             } *@
 
             <!-- Divider -->

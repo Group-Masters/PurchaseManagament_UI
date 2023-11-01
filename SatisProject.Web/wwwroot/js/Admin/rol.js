@@ -10,7 +10,7 @@
             html += `<td>${arr[i].id}</td><td>${arr[i].name}</td>`;
             html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='RolSil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='RolDuzenle(
                 "${arr[i].id}","${arr[i].name}")'></i>
-                <i class="bi bi-database-fill-slash text-warning px-2 py-2 mx-3 border border-warning" onclick='RoleIsDeleted(${arr[i].id})'></i>
+                <i class="bi bi-database-fill-slash text-warning px-2 py-2 mx-3 border border-warning" onclick='VeriTabaniSil(${arr[i].id})'></i>
                 </td>`;
             html += `</tr>`
         }
@@ -62,11 +62,12 @@ function Guncelle() {
     });
 }
 
-function RoleIsDeleted(id) {
+function VeriTabaniSil(id) {
 
     Put(`Role/Delete/${id}`, (data) => {
         RolleriGetir();
     });
+    RolleriGetir();
 }
 
 function RolSil(id) {

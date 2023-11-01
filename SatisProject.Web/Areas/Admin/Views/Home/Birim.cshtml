@@ -35,4 +35,27 @@
     </div>
 </div>
 
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Birim Bilgileri</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <input type="text" id="idGuncelle" class="form-control d-none">
+
+                <label for="inputBirimAd" class="form-label">Birim Adı</label>
+                <input type="text" id="adGuncelle" class="form-control">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+                <button type="button" class="btn btn-primary" onclick="Guncelle()">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="~/js/admin/birim.js" asp-append-version="true"></script>

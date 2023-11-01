@@ -1,5 +1,5 @@
 ﻿function BirimleriGetir() {
-    Get("Birim/TumBirimler", (data) => {
+    Get("Department/GetAll", (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
             `<thead class="text-light bg-primary"><tr><th>Id</th><th>Birim Adı</th><th></th></tr></thead>`;
 
@@ -7,10 +7,11 @@
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td>`;
-            html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
-                "${arr[i].id}","${arr[i].ad}"
-            )'></i></td>`;
+            html += `<td>${arr[i].id}</td><td>${arr[i].name}</td>`;
+            html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i>
+                <i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle("${arr[i].id}","${arr[i].name}")'></i>
+                <i class="bi bi-database-fill-slash text-warning px-2 py-2 mx-3 border border-warning" onclick='VeriTabaniSil(${arr[i].id})'></i>
+                </td>`;
             html += `</tr>`
         }
         html += `</table></div>`;
@@ -28,35 +29,54 @@
     });
 }
 
-let selectedId = 0;
-
 function Yeni() {
-    selectedId = 0;
     $("#inputBirimAd").val("");
     $("#modal").modal("show");
 }
 function Kaydet() {
     var birim = {
-        Id: selectedId,
-        Ad: $("#inputBirimAd").val()
+        Name: $("#inputBirimAd").val()
     };
-    Post("Birim/Kaydet", birim, (data) => {
+    Post("Department/Create", birim, (data) => {
         BirimleriGetir();
         $("#modal").modal("hide");
     });
 }
 
+function Duzenle(id, ad) {
+    $("#idGuncelle").val(id);
+    $("#adGuncelle").val(ad);
+    $("#modal1").modal("show");
+}
+
+function Guncelle() {
+    var guncelle = {
+        Id: $("#idGuncelle").val(),
+        Name: $("#adGuncelle").val(),
+    }
+
+    Put("Department/Update", guncelle, (data) => {
+        BirimleriGetir();
+
+        $("#modal1").modal("hide");
+    });
+}
+
+function VeriTabaniSil(id) {
+    Put(`Department/Delete/${id}`, (data) => {
+        BirimleriGetir();
+    });
+    BirimleriGetir();
+}
+
+
 function Sil(id) {
-    Delete(`Birim/Sil?id=${id}`, (data) => {
+    Delete(`Department/DeletePermanent${id}`, (data) => {
         BirimleriGetir();
     });
 }
 
-function Duzenle(id, ad) {
-    selectedId = id;
-    $("#inputBirimAd").val(ad);
-    $("#modal").modal("show");
-}
+
 
 $(document).ready(function () {
     BirimleriGetir();
