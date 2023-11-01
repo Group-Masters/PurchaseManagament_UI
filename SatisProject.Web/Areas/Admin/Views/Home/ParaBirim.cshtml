@@ -1,0 +1,120 @@
+﻿<nav class="navbar text-light mb-3 bg-white shadow" style="border-radius: 15px !important;">
+    <div class="container-fluid">
+        <h2><a class="navbar-brand fs-4" style="color:#858796;">Para Birimler</a></h2>
+        <form class="d-flex" role="search">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" onclick="Yeni()">
+                Yeni Para Birimi Ekle
+            </button>
+        </form>
+    </div>
+</nav>
+
+<div id="divParaBirimleri" style="overflow-x: auto;">
+</div>
+
+
+<div class="modal fade"
+     id="staticBackdrop"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Para Bilgileri</h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+
+                    <div class="col-md-12">
+                        <label for="ad" class="form-label">Para Birimi Giriniz  :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="inputBirimAd"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="ad" class="form-label">TL Oran Giriniz  :</label>
+                        <input type="number"
+                               class="form-control"
+                               id="inputOran"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Vazgeç
+                    </button>
+                    <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"
+     id="staticBackdrop1"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Para Bilgileri</h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+
+                    <input type="text"
+                           class="form-control d-none"
+                           id="idGuncelle" />
+
+                    <div class="col-md-12">
+                        <label for="ad" class="form-label">Para Birimi Giriniz  :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="adGuncelle"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="ad" class="form-label">TL Oran Giriniz  :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="oranGuncelle"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Vazgeç
+                    </button>
+                    <button class="btn btn-primary" type="submit" onclick="Guncelle()">Güncelle</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/admin/paraBirim.js" asp-append-version="true"></script>

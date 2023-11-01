@@ -43,5 +43,10 @@ namespace SatisProject.Web.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public IActionResult ParaBirim()
+        {
+            return View();
+        }
     }
 }
