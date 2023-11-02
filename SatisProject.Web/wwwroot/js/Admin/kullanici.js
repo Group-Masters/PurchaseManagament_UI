@@ -123,46 +123,42 @@ function KullaniciGetirDeneme() {
 
         for (var i = 0; i < arr.length; i++) {
             html += `
-    <tr class="searchTable">
-      <td>
-        <div class="d-flex align-items-center">
-          <h4 class="p-1">${arr[i].id}</h4>
-          <img
-              
-              src="${arr[i].gender === 1 ? 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/7-512.png' : 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/4-256.png'}"
-              alt=""
-              style="width: 45px; height: 45px"
-              class="rounded-circle"
-              />
-          <div class="ms-3">
-            <p class="fw-bold mb-1">${arr[i].name} ${arr[i].surname} ${arr[i].gender} <i type="button" class="bi bi-geo-alt-fill" title="${arr[i].address}"> </i></p>
-            <p class="text-muted mb-0">${arr[i].email}</p>
-          </div>
-        </div>
-      </td>
-      <td>
-        <p class="text-muted mb-0">${arr[i].departmentName}</p>
-      </td>
-      <td>
-        <p class="fw-normal mb-1">${arr[i].idNumber}</p>
-        <p class="text-muted mb-0">${arr[i].phone}</p>
-      </td>
-      <td>${arr[i].rolAd}</td>
-      <td>
-        <span class="badge p-2 text-white badge-success rounded-pill d-inline" style="color: ${arr[i].isActive ? 'green' : 'red'};">
-                                                                              ${arr[i].isActive ? 'Aktif' : 'Pasif'}
-        </span>
-      </td>
-      <td>
-        <button type="button" class="btn btn-link btn-sm btn-rounded">
-          <i class="bi bi-pencil-square text-primary px-2 py-2 mx-2 mt-4 border border-primary" onclick='KullaniciDuzenle(
-                        ${arr[i].id},"${arr[i].campany}","${arr[i].department}","${arr[i].address}","${arr[i].name}","${arr[i].surname}","${arr[i].phone}","${arr[i].idNumber}","${arr[i].email}","${arr[i].isActive}","${arr[i].sirketId}","${arr[i].gender}"
-                   )'></i>
-        </button>
-      </td>
-    </tr>
-  `;
-
+        <tr class="searchTable">
+            <td>
+                <div class="d-flex align-items-center">
+                    <h4 class="p-1">${arr[i].id}</h4>
+                    <img src="${arr[i].gender === 0 ? 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/7-512.png' : 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/4-256.png'}"
+                        alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">${arr[i].name} ${arr[i].surname} <i type="button" class="bi bi-geo-alt-fill" title="${arr[i].address}"> </i></p>
+                        <p class="text-muted mb-0">${arr[i].email}</p>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <p class="text-muted mb-0">${arr[i].departmentName}</p>
+            </td>
+            <td>
+                <p class="fw-normal mb-1">${arr[i].idNumber}</p>
+                <p class="text-muted mb-0">${arr[i].phone}</p>
+            </td>
+            <td>
+                <ul>`;
+            for (var j = 0; j < arr[i].roles.length; j++) {
+                html += `<li>${arr[i].roles[j]}</li>`;
+            }
+            html += `</ul>
+            </td>
+            <td>
+                <span class="badge p-2 text-white badge-success rounded-pill d-inline" style="color: ${arr[i].isActive ? 'green' : 'red'};">${arr[i].isActive ? 'Aktif' : 'Pasif'}</span>
+            </td>
+            <td>
+                <button type="button" class="btn btn-link btn-sm btn-rounded">
+                    <i class="bi bi-pencil-square text-primary px-2 py-2 mx-2 mt-4 border border-primary" onclick='KullaniciDuzenle(${arr[i].id},"${arr[i].campany}","${arr[i].department}","${arr[i].address}","${arr[i].name}","${arr[i].surname}","${arr[i].phone}","${arr[i].idNumber}","${arr[i].email}","${arr[i].isActive}","${arr[i].sirketId}","${arr[i].gender}")'></i>
+                </button>
+            </td>
+        </tr>
+    `;
         }
 
         html += `</tbody></table>`;
@@ -200,6 +196,7 @@ function YeniKullanici() {
 }
 
 function KullaniciKaydet() {
+    const gender = $("#cinsiyet").val() === "true" ? '0' : '1';
     var kullanici = {
         DepartmentId: $("#birimAd").val(),
         Address: $("#acikAdres").val(),
@@ -211,23 +208,9 @@ function KullaniciKaydet() {
         CompanyId: $("#sirketAd").val(),
         Email: $("#mailAdress").val(),
         BirthYear: $("#dogumTarih").val(),
-        Gender:$("#cinsiyet").val(),
+        Gender: $("#cinsiyet").val() === "true" ? '0' : '1',
         Username: $("#kullaniciAdi").val()
-
-        //DepartmentId: "1",
-        //Address: "Çorum / Merkez",
-        //Name: "Mustafa",
-        //Surname: "Yılman",
-        //Password: "123",
-        //Phone: "05466713127",
-        //IdNumber: "11510009940",
-        //CompanyId: "1",
-        //Email: "mustafa@gmail.com",
-        //BirthYear: "2002",
-        //Gender: "1",
-        //Username: "mustafaylmn"
     };
-
     Post("Employee/Create", kullanici, (data) => {
         KullaniciGetirDeneme();
         $("#staticBackdrop").modal("hide");

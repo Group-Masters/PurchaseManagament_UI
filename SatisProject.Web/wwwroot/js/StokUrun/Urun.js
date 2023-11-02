@@ -1,35 +1,35 @@
-﻿function Getir() {
-    Get("Product/GetAllProduct", (data) => {
-        var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
-            `<thead class="text-light bg-primary"><tr><th>Id</th><th>Urun Adı</th><th>Fiyatı</th><th></th></tr></thead>`;
+﻿//function Getir() {
+//    Get("Product/GetAll", (data) => {
+//        var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
+//            `<thead class="text-light bg-primary"><tr><th>Id</th><th>Urun Adı</th><th>Fiyatı</th><th></th></tr></thead>`;
 
-        var arr = data;
+//        var arr = data;
 
-        for (var i = 0; i < arr.length; i++) {
-            html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td><td>${arr[i].fiyat}₺</td>`;
-            html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
-                "${arr[i].id}","${arr[i].ad}","${arr[i].fiyat}"
-            )'></i></td>`;
-            html += `</tr>`
-        }
-        html += `</table></div>`;
+//        for (var i = 0; i < arr.length; i++) {
+//            html += `<tr id="arama">`;
+//            html += `<td>${arr[i].id}</td><td>${arr[i].ad}</td><td>${arr[i].fiyat}₺</td>`;
+//            html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
+//                "${arr[i].id}","${arr[i].ad}","${arr[i].fiyat}"
+//            )'></i></td>`;
+//            html += `</tr>`
+//        }
+//        html += `</table></div>`;
 
-        $("#divUrunler").html(html);
+//        $("#divUrunler").html(html);
 
-        $(function () {
-            $("#ara").keyup(function () {
-                var deger = $(this).val().toLowerCase();
-                $("#liste #arama").filter(function () {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(deger) > -1);
-                });
-            });
-        });
-    });
-}
+//        $(function () {
+//            $("#ara").keyup(function () {
+//                var deger = $(this).val().toLowerCase();
+//                $("#liste #arama").filter(function () {
+//                    $(this).toggle($(this).text().toLowerCase().indexOf(deger) > -1);
+//                });
+//            });
+//        });
+//    });
+//}
 
-function GetirDeneme() {
-    Get("Urun/TumUrunler", (data) => {
+function Getir() {
+    Get("Product/GetAll", (data) => {
         var html = `<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 ">`;
 
         var arr = data;
@@ -45,17 +45,21 @@ function GetirDeneme() {
             </h5>
             <h5 class="card-title fs-6">
                 <i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
-                "${arr[i].id}","${arr[i].ad}","${arr[i].fiyat}"
+                "${arr[i].id}","${arr[i].name}","${arr[i].description}"
             )'></i>
             </h5>
         </div>
         <div class="d-flex justify-content-between">
             <h5 class="card-title fs-6">Ürün Adı:</h5>
-            <h5 class="card-title fs-6">${arr[i].ad}</h5>
+            <h5 class="card-title fs-6">${arr[i].name}</h5>
         </div>
         <div class="d-flex justify-content-between">
-            <h5 class="card-title fs-6">Ürün Fiyatı:</h5>
-        <h5 class="card-title fs-6">${arr[i].fiyat} ₺ </h5>
+            <h5 class="card-title fs-6">Ürün Açıklaması:</h5>
+        <h5 class="card-title fs-6">${arr[i].description} </h5>
+        </div>
+         <div class="d-flex justify-content-between">
+            <h5 class="card-title fs-6">Ürün Birimi:</h5>
+        <h5 class="card-title fs-6">${arr[i].measuringName} </h5>
         </div>
       </div>
     </div>
@@ -64,7 +68,7 @@ function GetirDeneme() {
         }
         html += `</div>`;
 
-        $("#divUrunlerDeneme").html(html);
+        $("#divUrunler").html(html);
 
         $(function () {
             $("#ara").keyup(function () {
@@ -83,16 +87,17 @@ let selectedId = 0;
 function Yeni() {
     selectedId = 0;
     $("#inputAd").val("");
-    $("#inputFiyat").val("");
+    $("#inputAciklama").val("");
+    $("#inputBirimAd").val("");
     $("#modal").modal("show");
 }
 function Kaydet() {
-    var rol = {
-        Id: selectedId,
-        Ad: $("#inputAd").val(),
-        Fiyat: $("#inputFiyat").val()
+    var kaydet = {
+        Name: $("#inputAd").val(),
+        Description: $("#inputAciklama").val(),
+        MeasuringUnitId: $("#inputBirimAd").val()
     };
-    Post("Urun/Kaydet", rol, (data) => {
+    Post("Product/Create", kaydet, (data) => {
         Getir();
         $("#modal").modal("hide");
     });
@@ -112,7 +117,17 @@ function Duzenle(id, ad,fiyat) {
     $("#modal").modal("show");
 }
 
+function TumUrunBirimleriniGetir() {
+    Get("MeasuringUnit/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#inputBirimAd");
+        $.each(getdata, function (index, urun) {
+            dropdown.append($("<option>").val(urun.id).text(urun.name));
+        });
+    });
+}
+
 $(document).ready(function () {
     Getir();
-    GetirDeneme();
+    TumUrunBirimleriniGetir();
 });

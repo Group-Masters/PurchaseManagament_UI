@@ -45,9 +45,10 @@ function Kaydet() {
 }
 
 function Sil(id) {
-    Delete(`Currency/DeletePermanent/${id}`, (data) => {
+    Put(`Currency/Delete/${id}`, (data) => {
         ParaBirimleriGetir();
     });
+    ParaBirimleriGetir();
 }
 
 function Duzenle(id, name, rate) {
