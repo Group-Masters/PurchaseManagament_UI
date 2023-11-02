@@ -4,28 +4,28 @@
     {
         public static class Session
         {
-            public static string? BirimId
+            public static string? CompanyId
             {
                 get
                 {
-                    string birimId = (new HttpContextAccessor()).HttpContext.Session.GetString("BirimId");
-                    return birimId;
+                    string companyId = (new HttpContextAccessor()).HttpContext.Session.GetString("CompanyId");
+                    return companyId;
                 }
                 set
                 {
-                    (new HttpContextAccessor()).HttpContext.Session.SetString("BirimId", value ?? "");
+                    (new HttpContextAccessor()).HttpContext.Session.SetString("CompanyId", value ?? "");
                 }
             }
-            public static string? SirketId
+            public static string? DepartmentId
             {
                 get
                 {
-                    string sirketId = (new HttpContextAccessor()).HttpContext.Session.GetString("SirketId");
-                    return sirketId;
+                    string departmentId = (new HttpContextAccessor()).HttpContext.Session.GetString("DepartmentId");
+                    return departmentId;
                 }
                 set
                 {
-                    (new HttpContextAccessor()).HttpContext.Session.SetString("SirketId", value ?? "");
+                    (new HttpContextAccessor()).HttpContext.Session.SetString("DepartmentId", value ?? "");
                 }
             }
             public static string? Id
@@ -64,16 +64,16 @@
                     (new HttpContextAccessor()).HttpContext.Session.SetString("Token", value ?? "");
                 }
             }
-            public static string? Rol
+            public static string? RolId
             {
                 get
                 {
-                    string rol = (new HttpContextAccessor()).HttpContext.Session.GetString("Rol");
-                    return rol;
+                    string rolId = (new HttpContextAccessor()).HttpContext.Session.GetString("RolId");
+                    return rolId;
                 }
                 set
                 {
-                    (new HttpContextAccessor()).HttpContext.Session.SetString("Rol", value ?? "");
+                    (new HttpContextAccessor()).HttpContext.Session.SetString("RolId", value ?? "");
                 }
             }
         }

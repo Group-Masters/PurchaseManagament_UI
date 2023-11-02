@@ -76,8 +76,6 @@ function RolSil(id) {
     });
 }
 
-
-
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
     /*TumSirketleriGetir();*/

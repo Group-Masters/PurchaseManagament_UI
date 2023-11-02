@@ -11,10 +11,10 @@ namespace SatisProject.Web.Code.Filters
         {
             if (!string.IsNullOrEmpty(Rol))
             {
-                if (!string.IsNullOrEmpty(Repo.Session.Rol))
+                if (!string.IsNullOrEmpty(Repo.Session.RolId))
                 {
                     var requiredRoles = Rol.Split(',').Select(r => r.Trim()).ToList();
-                    var userRoles = Repo.Session.Rol.Split(',').Select(r => r.Trim()).ToList();
+                    var userRoles = Repo.Session.RolId.Split(',').Select(r => r.Trim()).ToList();
 
                     bool isAuthorized = requiredRoles.Any(role => userRoles.Contains(role));
 

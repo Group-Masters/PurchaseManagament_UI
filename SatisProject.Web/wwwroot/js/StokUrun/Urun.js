@@ -45,7 +45,12 @@ function Getir() {
             </h5>
             <h5 class="card-title fs-6">
                 <i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
-                "${arr[i].id}","${arr[i].name}","${arr[i].description}"
+                "${arr[i].id}","${arr[i].name}","${arr[i].description}","${arr[i].measuringUnitId}"
+            )'></i>
+            </h5>
+            <h5 class="card-title fs-6">
+                <i class="bi bi-database-fill-slash text-warning px-2 py-2 mx-3 border border-primary" onclick='VeriTabaniSil(
+                "${arr[i].id}","${arr[i].name}","${arr[i].description}","${arr[i].measuringUnitId}"
             )'></i>
             </h5>
         </div>
@@ -81,11 +86,7 @@ function Getir() {
     });
 }
 
-
-let selectedId = 0;
-
 function Yeni() {
-    selectedId = 0;
     $("#inputAd").val("");
     $("#inputAciklama").val("");
     $("#inputBirimAd").val("");
@@ -103,26 +104,47 @@ function Kaydet() {
     });
 }
 
+function Duzenle(id, name, description, measuringUnitId) {
+    $("#idG").val(id);
+    $("#adG").val(name);
+    $("#aciklamaG").val(description);
+    $("#inputBirimAdG").val(measuringUnitId);
+    $("#modal1").modal("show");
+}
 
-function Sil(id) {
-    Delete(`Urun/Sil?id=${id}`, (data) => {
+function Guncelle() {
+    var guncelle = {
+        Id: $("#idG").val(),
+        Name: $("#adG").val(),
+        Description: $("#aciklamaG").val(),
+        MeasuringUnitId: $("#inputBirimAdG").val()
+    };
+    Put("Product/Update", guncelle, (data) => {
         Getir();
+        $("#modal1").modal("hide");
     });
 }
 
-function Duzenle(id, ad,fiyat) {
-    selectedId = id;
-    $("#inputAd").val(ad);
-    $("#inputFiyat").val(fiyat);
-    $("#modal").modal("show");
+function VeriTabaniSil(id) {
+    Put(`Product/Delete/${id}`, (data) => {
+        Getir();
+    });
+    Getir();
 }
 
+function Sil(id) {
+    Delete(`Product/DeletePermanent/${id}`, (data) => {
+        Getir();
+    });
+}
 function TumUrunBirimleriniGetir() {
     Get("MeasuringUnit/GetAll", (data) => {
         var getdata = data;
         var dropdown = $("#inputBirimAd");
+        var dropdownG = $("#inputBirimAdG");
         $.each(getdata, function (index, urun) {
             dropdown.append($("<option>").val(urun.id).text(urun.name));
+            dropdownG.append($("<option>").val(urun.id).text(urun.name));
         });
     });
 }

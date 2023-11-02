@@ -6,7 +6,7 @@ namespace SatisProject.Web.Code.Rest
 {
     public abstract class BaseRestClient
     {
-        public static string BASE_URL = "http://localhost:5179/api"; 
+        public static string BASE_URL = "https://localhost:7064"; 
         protected RestClient client;
 
         public BaseRestClient()

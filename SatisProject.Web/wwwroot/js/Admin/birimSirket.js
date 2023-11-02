@@ -7,7 +7,7 @@
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].companyId}</td><td>${arr[i].departmentId}</td>`;
+            html += `<td>${arr[i].id}</td><td>${arr[i].companyName}</td><td>${arr[i].departmentName}</td>`;
             html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i>
                 </td>`;
             html += `</tr>`

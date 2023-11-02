@@ -10,16 +10,17 @@
         <h2><a class="navbar-brand fs-4" style="color:#858796;">Talepler</a></h2>
         <form class="d-flex" role="search">
             @{
-                string rolString = Repo.Session.Rol;
+                string rolString = Repo.Session.RolId;
                 bool admin = rolString.Split(',').Any(r => r.Trim() == "1");
                 bool genelMudur = rolString.Split(',').Any(r => r.Trim() == "8");
                 bool baskan = rolString.Split(',').Any(r => r.Trim() == "9");
 
+                // @Repo.Session.BirimId aşşağıya value olarak verilecek
                 if (admin || genelMudur || baskan)
                 {
                     <div class="form-group">
                         <select class="form-select col-md-12 " id="birimler">
-                            <option value="@Repo.Session.BirimId" selected></option>
+                            <option value="" selected></option>
                         </select>
                     </div>
                 }
@@ -27,7 +28,7 @@
         </form>
         <div class="form-group d-none">
             <select class="form-select" id="birimler">
-                <option value="@Repo.Session.BirimId" selected></option>
+                <option value="@Repo.Session.DepartmentId" selected></option>
             </select>
         </div>
         

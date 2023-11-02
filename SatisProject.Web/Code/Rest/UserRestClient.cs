@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharp.Serializers.Json;
+using SatisProject.Web.Models;
 using System.Text.Json;
 
 namespace SatisProject.Web.Code.Rest
@@ -10,11 +11,11 @@ namespace SatisProject.Web.Code.Rest
         public dynamic Login(string ePosta, string sifre)
         {
 
-            RestRequest req = new RestRequest("/Auth/Login", Method.Post);
-            req.AddJsonBody(new
+            RestRequest req = new RestRequest("/Employee/Login", Method.Post);
+            req.AddJsonBody(new LoginVM 
             {
-                Eposta = ePosta,
-                Sifre = sifre
+                UsernameOrEmail = ePosta,
+                Password = sifre
             });
 
             RestResponse resp = client.Post(req);

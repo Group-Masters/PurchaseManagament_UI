@@ -42,5 +42,35 @@
     </div>
 </div>
 
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Urun Bilgileri</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <input type="text" id="idG" class="form-control">
+
+                <label for="inputRolAd" class="form-label">Ürün Adı</label>
+                <input type="text" id="adG" class="form-control">
+
+                <label for="inputRolAd" class="form-label">Ürün Açıklaması</label>
+                <input type="text" id="aciklamaG" class="form-control">
+
+                <label class="form-label" for="inputBirimAd">Birim Seçiniz :</label>
+                <select class="form-select" id="inputBirimAdG">
+                </select>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+                <button type="button" class="btn btn-primary" onclick="Guncelle()">Guncelle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="~/js/stokUrun/urun.js" asp-append-version="true"></script>
 

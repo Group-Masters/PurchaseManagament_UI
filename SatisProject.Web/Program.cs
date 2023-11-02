@@ -1,5 +1,7 @@
 
 
+using SatisProject.Web.Code.RestServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +17,8 @@ builder.Services.AddSession(options =>
 
 // Actif HttpContext'e eriþebilmek için bunu ekliyoruz
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IRestService, RestService>();
+
 
 var app = builder.Build();
 
