@@ -50,5 +50,19 @@ namespace SatisProject.Web.Areas.Admin.Controllers
         {
             return View();
         }
+
+
+        // Supplier --> Tedarikçi 
+        public IActionResult Tedarikciler()
+        {
+            return View();
+        }
+
+        // Measuring Unit --> Ader Birim Tipi 
+        public IActionResult AdetBirim()
+        {
+            return View();
+        }
+
     }
 }
