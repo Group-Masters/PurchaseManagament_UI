@@ -57,5 +57,12 @@ namespace SatisProject.Web.Areas.Admin.Controllers
         {
             return View();
         }
+
+        // Measuring Unit --> Ader Birim Tipi 
+        public IActionResult AdetBirim()
+        {
+            return View();
+        }
+
     }
 }
