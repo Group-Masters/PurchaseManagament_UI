@@ -50,5 +50,12 @@ namespace SatisProject.Web.Areas.Admin.Controllers
         {
             return View();
         }
+
+
+        // Supplier --> Tedarikçi 
+        public IActionResult Tedarikciler()
+        {
+            return View();
+        }
     }
 }
