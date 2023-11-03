@@ -15,12 +15,11 @@
                 bool genelMudur = rolString.Split(',').Any(r => r.Trim() == "8");
                 bool baskan = rolString.Split(',').Any(r => r.Trim() == "9");
 
-                // @Repo.Session.BirimId aşşağıya value olarak verilecek
                 if (admin || genelMudur || baskan)
                 {
                     <div class="form-group">
                         <select class="form-select col-md-12 " id="birimler">
-                            <option value="" selected></option>
+                            <option value="@Repo.Session.DepartmentId" selected></option>
                         </select>
                     </div>
                 }

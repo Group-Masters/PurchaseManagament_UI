@@ -2,7 +2,12 @@
 <input type="hidden"
        class="form-control d-none"
        id="girisBirimId"
-       value="@* @Repo.Session.BirimId *@" />
+       value="@Repo.Session.DepartmentId" />
+
+    <input type="hidden"
+           class="form-control d-none"
+           id="kullaniciId"
+           value="@Repo.Session.Id" />
 
 
 <nav class="navbar text-light mb-3 bg-white shadow" style="border-radius: 15px !important;">
@@ -19,10 +24,6 @@
 
 <div id="divTalepKullanici" style="overflow: auto; max-height: 400px;">
 </div>
-
-
-
-
 
 <div class="modal fade"
      id="staticBackdrop"
@@ -42,13 +43,6 @@
             </div>
             <div class="modal-body">
                 <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
-
-                    <div class="col-md-12">
-                        <input type="hidden"
-                               class="form-control"
-                               id="kullaniciId"
-                               value="@Repo.Session.Id" />
-                    </div>
                     <div class="form-group col-md-6">
                         <label class="form-label" for="urunAd">Ürün Seçiniz :</label>
                         <select class="form-select" id="urunAd">
@@ -62,6 +56,14 @@
                                required />
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
+                    <div class="col-md-12">
+                        <label for="adet" class="form-label">Detayları Giriniz  :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="aciklama"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
 
                     <button type="button"
                             class="btn btn-secondary"
@@ -69,6 +71,65 @@
                         Vazgeç
                     </button>
                     <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade"
+     id="staticBackdrop1"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Talep Bilgileri</h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+                    <div class="form-group col-md-6">
+                        <input type="text"
+                               class="form-control d-none"
+                               id="idG"
+                                />
+                        <label class="form-label" for="urunAd">Ürün Seçiniz :</label>
+                        <select class="form-select" id="urunAdG">
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="adet" class="form-label">Adet Giriniz  :</label>
+                        <input type="number"
+                               class="form-control"
+                               id="adetG"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="adet" class="form-label">Detayları Giriniz  :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="aciklamaG"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Vazgeç
+                    </button>
+                    <button class="btn btn-primary" type="submit" onclick="Guncelle()">Kaydet</button>
                 </div>
             </div>
             <div class="modal-footer"></div>

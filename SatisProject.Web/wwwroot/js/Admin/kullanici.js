@@ -104,7 +104,7 @@
 function KullaniciGetirDeneme() {
     var html = ``;
     var girisSirketId = $("#girisSirketId").val();
-    Get(`Employee/GetAll`, (data) => {
+    Get(`Employee/GetByCompany/${girisSirketId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
 
@@ -144,17 +144,21 @@ function KullaniciGetirDeneme() {
             </td>
             <td>
                 <ul>`;
-            for (var j = 0; j < arr[i].roles.length; j++) {
-                html += `<li>${arr[i].roles[j]}</li>`;
+            if (arr[i].roles.length <= 0) {
+                html += '<li class="text-danger" style="list-style: none;">Role Sahip Değil</li>';
+            } else {
+                for (var j = 0; j < arr[i].roles.length; j++) {
+                    html += `<li class="text-primary" style="list-style: none;" >${arr[i].roles[j]}</li>`;
+                }
             }
             html += `</ul>
             </td>
             <td>
-                <span class="badge p-2 text-white badge-success rounded-pill d-inline" style="color: ${arr[i].isActive ? 'green' : 'red'};">${arr[i].isActive ? 'Aktif' : 'Pasif'}</span>
+                <span class="badge p-2 text-white badge-success rounded-pill d-inline" style="background-color: ${arr[i].isActive ? 'green' : 'red'};">${arr[i].isActive ? 'Aktif' : 'Pasif'}</span>
             </td>
             <td>
                 <button type="button" class="btn btn-link btn-sm btn-rounded">
-                    <i class="bi bi-pencil-square text-primary px-2 py-2 mx-2 mt-4 border border-primary" onclick='KullaniciDuzenle(${arr[i].id},"${arr[i].campany}","${arr[i].department}","${arr[i].address}","${arr[i].name}","${arr[i].surname}","${arr[i].phone}","${arr[i].idNumber}","${arr[i].email}","${arr[i].isActive}","${arr[i].sirketId}","${arr[i].gender}")'></i>
+                    <i class="bi bi-pencil-square text-primary px-2 py-2 mx-2 mt-4 border border-primary" onclick='KullaniciDuzenle(${arr[i].id},"${arr[i].username}","${arr[i].address}","${arr[i].phone}","${arr[i].email}","${arr[i].isActive}")'></i>
                 </button>
             </td>
         </tr>
@@ -165,7 +169,7 @@ function KullaniciGetirDeneme() {
 
         $("#divKullaniciDeneme").html(html);
 
-        
+
 
         $("#ara").on("keyup", function () {
             var value = $(this).val().toLowerCase();
@@ -196,7 +200,6 @@ function YeniKullanici() {
 }
 
 function KullaniciKaydet() {
-    const gender = $("#cinsiyet").val() === "true" ? '0' : '1';
     var kullanici = {
         DepartmentId: $("#birimAd").val(),
         Address: $("#acikAdres").val(),
@@ -217,20 +220,29 @@ function KullaniciKaydet() {
     });
 }
 
-function KullaniciDuzenle(id, birimId,sirketId, address, name, surname, password, phone, idNumber, isActive, email, gender) {
+function KullaniciDuzenle(id, username, address, phone, email, isActive) {
     $("#idG").val(id);
-    $("#birimIdG").val(birimId);
-    $("#sirketIdg").val(sirketId);
+    $("#kullaniciAdiG").val(username);
     $("#acikAdresG").val(address);
-    $("#adG").val(name);
-    $("#soyadG").val(surname);
-    $("#parolaG").val(password);
     $("#telNoG").val(phone);
-    $("#tcNoG").val(idNumber);
     $("#mailAdressG").val(email);
     $("#aktifG").val(isActive);
-    $("#cinsiyetG").val(gender);
-    $("#staticBackdrop").modal("show");
+    $("#staticBackdrop1").modal("show");
+}
+
+function Guncelle() {
+    var kullanici = {
+        EmployeeId: $("#idG").val(),
+        Username: $("#kullaniciAdiG").val(),
+        Address: $("#acikAdresG").val(),
+        Phone: $("#telNoG").val(),
+        Email: $("#mailAdressG").val(),
+        IsActive: $("#aktifG").val() === "true" ? true : false
+    };
+    Put("Employee/Update", kullanici, (data) => {
+        KullaniciGetirDeneme();
+        $("#staticBackdrop1").modal("hide");
+    });
 }
 
 //function TumBirimleriGetir() {
@@ -274,9 +286,9 @@ $(document).ready(function () {
                     });
                 }
                 else {
-                    alert("ldepartman yok");
+                    alert("Departman yok");
                 }
-               
+
             });
         }
     });
@@ -291,14 +303,14 @@ $(document).ready(function () {
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
     //TumBirimleriGetir();
-    //TumSirketleriGetir();
-/*    KullaniciGetir();*/
+    TumSirketleriGetir();
+    /*    KullaniciGetir();*/
     KullaniciGetirDeneme();
-/*    SirketleriGetir();*/
+    /*    SirketleriGetir();*/
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
-/*        KullaniciGetir();*/
+        /*        KullaniciGetir();*/
         KullaniciGetirDeneme();
     });
 });

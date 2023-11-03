@@ -28,9 +28,9 @@ function Get(action, item) {
     $.ajax({
         type: "GET",
         url: `${BASE_API_URI}/${action}`,
-        //beforeSend: function (xhr) {
-        //    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-        //},
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+        },
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (response) {
@@ -72,9 +72,9 @@ function Post(action, data, success, ask = true) {
         $.ajax({
             type: "POST",
             url: `${BASE_API_URI}/${action}`,
-            //beforeSend: function (xhr) {
-            //    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-            //},
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+            },
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(data),
@@ -168,9 +168,9 @@ function Delete(action, success, ask = true) {
         $.ajax({
             type: "DELETE",
             url: `${BASE_API_URI}/${action}`,
-            //beforeSend: function (xhr) {
-            //    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-            //},
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+            },
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (response) {
@@ -197,9 +197,9 @@ function Put(action, data, success, ask = true) {
         $.ajax({
             type: "PUT",
             url: `${BASE_API_URI}/${action}`,
-            //beforeSend: function (xhr) {
-            //    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-            //},
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+            },
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(data),

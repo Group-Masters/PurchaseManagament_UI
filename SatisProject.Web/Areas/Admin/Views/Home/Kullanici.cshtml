@@ -36,7 +36,7 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                
+
                 <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
                     <div class="form-group col-md-6">
                         <label class="form-label" for="sirketAd">Şirket Seçiniz :</label>
@@ -131,6 +131,81 @@
                         Vazgeç
                     </button>
                     <button class="btn btn-primary" type="submit" onclick="KullaniciKaydet()">Kaydet</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"
+     id="staticBackdrop1"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kullanici Bilgileri</h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+
+                    <input type="text"
+                           class="form-control"
+                           id="idG"
+                           required />
+
+                    <div class="col-md-6">
+                        <label for="tcNo" class="form-label">Kullanıcı Adı Giriniz :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="kullaniciAdiG"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mailAdress" class="form-label">Mail Adres  Giriniz :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="mailAdressG"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="telNo" class="form-label">Telefon Numarası Giriniz :</label>
+                        <input type="text"
+                               class="form-control"
+                               id="telNoG"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Kullanıcı Durumunu Seçiniz :</label>
+                        <select class="form-select" id="aktifG" required>
+                            <option selected value="true">Aktif</option>
+                            <option value="false">Pasif</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Adres Bilgilerini Giriniz :</label>
+                        <textarea class="form-control" id="acikAdresG"></textarea>
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Vazgeç
+                    </button>
+                    <button class="btn btn-primary" type="submit" onclick="Guncelle()">Kaydet</button>
                 </div>
             </div>
             <div class="modal-footer"></div>

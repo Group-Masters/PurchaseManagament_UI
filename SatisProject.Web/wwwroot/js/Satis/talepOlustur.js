@@ -1,6 +1,6 @@
 ﻿function TalepleriKullaniciyaGoreGetir() {
     var girisKullanicisi = $("#kullaniciId").val();
-    Get(`SatinAlmaTalep/SatinAlmaTamBilgilerByKullaniciId?id=${girisKullanicisi}`, (data) => {
+    Get(`Request/GetByEmployeeId/${girisKullanicisi}`, (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
             `<thead class="text-light bg-primary"><tr><th>Id</th><th>Ürün Adı</th><th>Adet</th><th>Talep Tarihi</th><th>Talep Eden Kullanıcı</th><th>Onay Durumu</th><th></th></tr></thead>`;
 
@@ -8,12 +8,12 @@
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].urunAd}</td><td>${arr[i].adet}</td><td>${arr[i].olusturmaTarih}</td><td>${arr[i].kullaniciAd} ${arr[i].soyad}</td><td> <span style="color: ${arr[i].onayDurum === null ? 'gray' : arr[i].onayDurum ? 'green' : 'red'};">
-                         ${arr[i].onayDurum === null ? 'Beklemede' : arr[i].onayDurum ? 'Onaylandı' : 'Reddedildi'}
+            html += `<td>${arr[i].id}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td><ul><li>${arr[i].createdDate}</li><li>${arr[i].details}</li></ul></td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td><td> <span style="color: ${arr[i].state === 0 ? 'black' : arr[i].state === 1 ? 'red' : 'green'};">
+                         ${arr[i].state === 0 ? 'Beklemede' : arr[i].state === 1 ? 'Reddedildi' : 'Onaylandı'}
                      </span></td>`;
 
-            if (arr[i].onayDurum === null) {
-                html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle("${arr[i].id}","${arr[i].urunId}","${arr[i].adet}","${arr[i].kullaniciId}")'></i></td>`;
+            if (arr[i].state === 0) {
+                html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle("${arr[i].id}","${arr[i].productId}","${arr[i].quantity}","${arr[i].details}")'></i></td>`;
             }
 
             html += `</tr>`;
@@ -33,50 +33,78 @@
     });
 }
 
-let selectedId = 0;
 
 function Yeni() {
-    selectedRolId = 0;
     $("#urunAd").val("");
+    $("#aciklama").val("");
     $("#adet").val("");
     $("#staticBackdrop").modal("show");
 }
 function Kaydet() {
     var talep = {
-        Id: selectedId,
-        UrunId: $("#urunAd").val(),
-        KullaniciId: $("#kullaniciId").val(),
-        Adet: $("#adet").val(),
-        OnayDurum: null
+        ProductId: $("#urunAd").val(),
+        Details: $("#aciklama").val(),
+        Quantity: $("#adet").val()
     };
-    Post("SatinAlmaTalep/Kaydet", talep, (data) => {
+    Post("Request/Create", talep, (data) => {
 
         TalepleriKullaniciyaGoreGetir();
         $("#staticBackdrop").modal("hide");
     });
 }
 
-function Sil(id) {
-    Delete(`SatinAlmaTalep / Sil ? id = ${id} `, (data) => {
+
+
+function Duzenle(id, productId, quantity, details) {
+    $("#idG").val(id);
+    $("#urunAdG").val(productId);
+    $("#adetG").val(quantity);
+    $("#aciklamaG").val(details);
+    $("#staticBackdrop1").modal("show");
+}
+
+function Guncelle() {
+    var talep = {
+        Id: $("#idG").val(),
+        ProductId: $("#urunAdG").val(),
+        Details: $("#aciklamaG").val(),
+        Quantity: $("#adetG").val()
+    };
+    Put("Request/Update", talep, (data) => {
+
         TalepleriKullaniciyaGoreGetir();
+        $("#staticBackdrop1").modal("hide");
     });
 }
 
-function Duzenle(id, urunId, adet, kullaniciId) {
-    selectedId = id;
-    $("#urunAd").val(urunId);
-    $("#adet").val(adet);
-    $("#kullaniciId").val(kullaniciId);
-    $("#staticBackdrop").modal("show");
+function Sil(id) {
+    Put(`Request/Delete/${id} `, (data) => {
+       /* TalepleriKullaniciyaGoreGetir();*/
+    });
+    
+    location.reload();
 }
 
+//function TumUrunleriGetir() {
+//    Get("Product/GetAll", (data) => {
+//        var urundata = data;
+//        var dropdown = $("#urunAd");
+//        var dropdownG = $("#urunAdG");
+//        $.each(urundata, function (index, urun) {
+//            dropdown.append($("<option>").val(urun.id, urun.measuringUnitId ).text(urun.name, urun.measuringName));
+//            dropdownG.append($("<option>").val(urun.id, urun.measuringUnitId ).text(urun.name, urun.measuringName));
+//        });
+//    });
+//}
 
 function TumUrunleriGetir() {
-    Get("Urun/TumUrunler", (data) => {
+    Get("Product/GetAll", (data) => {
         var urundata = data;
         var dropdown = $("#urunAd");
+        var dropdownG = $("#urunAdG");
         $.each(urundata, function (index, urun) {
-            dropdown.append($("<option>").val(urun.id).text(urun.ad));
+            dropdown.append($("<option>").val(urun.id).text(`${urun.name} - ${urun.measuringName}`));
+            dropdownG.append($("<option>").val(urun.id).text(`${urun.name} - ${urun.measuringName}`));
         });
     });
 }
