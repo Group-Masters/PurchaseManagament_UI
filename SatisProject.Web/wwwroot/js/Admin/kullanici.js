@@ -293,11 +293,12 @@ $(document).ready(function () {
         }
     });
 
-    $("#aracEkleForm").submit(function (event) {
-        event.preventDefault();
-        var selectedMarkaId = $("#ddlMarka").val();
-        var selectedModelId = $("#ddlModel").val();
-    });
+    //Patlarsa bundan patlı aç
+    //$("#aracEkleForm").submit(function (event) {
+    //    event.preventDefault();
+    //    var selectedMarkaId = $("#ddlMarka").val();
+    //    var selectedModelId = $("#ddlModel").val();
+    //});
 });
 
 $(document).ready(function () {

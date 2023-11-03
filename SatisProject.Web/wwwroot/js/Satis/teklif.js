@@ -1,7 +1,7 @@
 ﻿function OnaylanmisTalepleriGetir() {
     var girisSirketId = $("#girisSirketId").val();
     var html = ``;
-    Get(`SatinAlmaTalep/OnaylanmisTalepler/${girisSirketId}`, (data) => {
+    Get(`Request/GetApprovedtByCompany/${girisSirketId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
@@ -17,7 +17,7 @@
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].id} ${arr[i].kullaniciAd} ${arr[i].soyad}
+            ${arr[i].id} ${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}
           </button>
         </h2>
         <div
@@ -47,11 +47,15 @@
               <tbody>
                 <tr>
                   <th scope="row">Adet Bilgisi :</th>
-                  <td>${arr[i].adet}</td>
+                  <td>${arr[i].quantity}</td>
                 </tr>
                 <tr>
                   <th scope="row">Ürün Adı :</th>
-                  <td>${arr[i].urunAd}</td>
+                  <td>${arr[i].productName} / ${arr[i].measuringUnitName}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Onaylayan Birim Müdürü Ad-Soyad :</th>
+                  <td>${arr[i].approvingEmployeeName} ${arr[i].approvingEmployeeSurname}</td>
                 </tr>
               </tbody>
             </table>
@@ -74,36 +78,33 @@
 }
 
 
-
-let selectedId = 0;
 function Kaydet() {
     var teklif = {
-        Id: selectedId,
-        Aciklama: $("#aciklama").val(),
-        FiyatTeklif: $("#fiyat").val(),
-        OnayDurum:null,
-        SATalepId: $("#gizliId").val(),
-        TedarikciAd: $("#tad").val()
+        Details: $("#aciklama").val(),
+        OfferedPrice: $("#fiyat").val(),
+        CurrencyId: $("#paraBirim").val(),
+        RequestId: $("#gizliId").val(),
+        SupplierId: $("#tad").val()
     };
-    Post("TedarikciTeklif/Kaydet", teklif, (data) => {
+    Post("Offer/Create", teklif, (data) => {
         $("#staticBackdrop").modal("hide");
     });
 }
 
 
 function IdVer(id) {
-    selectedId = 0;
     $("#gizliId").val(id);
     $("#tad").val("");
     $("#fiyat").val("");
     $("#aciklama").val("");
+    $("#paraBirim").val("");
     $("#staticBackdrop").modal("show");
     
 }
 
 function TalepTeklifleriniGetir(gizliId) {
     $("#staticBackdrop1").modal("show");
-    Get(`TedarikciTeklif/TalebeGoreTeklif/${gizliId}`, (data) => {
+    Get(`Offer/GetByRequestId/${gizliId}`, (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover">` +
             `<thead class="text-light bg-black"><tr><th>Id</th><th>Tedarikci Adı</th><th>Fiyat Teklifi</th><th>Açıklama</th><th>Onay Durumu</th><th></th><th></th><th></th><th></th></tr></thead>`;
 
@@ -111,8 +112,8 @@ function TalepTeklifleriniGetir(gizliId) {
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].tedarikciAd}</td><td>${arr[i].fiyatTeklif} ₺</td>
-            <td>${arr[i].aciklama == null ? 'Açıklama Yok' : arr[i].aciklama}</td>
+            html += `<td>${arr[i].id}</td><td>${arr[i].supplierName}</td><td>${arr[i].offeredPrice} - ${arr[i].currencyName}</td>
+            <td>${arr[i].details == null ? 'Açıklama Yok' : arr[i].details}</td>
             <td> <span style="color: ${arr[i].onayDurum === null ? 'gray' : arr[i].onayDurum ? 'green' : 'red'};">
                          ${arr[i].onayDurum === null ? 'Beklemede' : arr[i].onayDurum ? 'Onaya Gönderildi' : 'Reddedildi'}
             </span></td>`;
@@ -197,10 +198,33 @@ function UstBirim(id, aciklama, fiyatTeklif, tedarikciAd, saTalepId,gizliId) {
     });
 }
 
+function TumParaBirimleriGetir() {
+    Get("Currency/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#paraBirim");
+        $.each(getdata, function (index, para) {
+            dropdown.append($("<option>").val(para.id).text(para.name));
+        });
+    });
+}
+
+function TumTedarikcileriGetir() {
+    Get("Supplier/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#tad");
+        $.each(getdata, function (index, sirket) {
+            dropdown.append($("<option>").val(sirket.id).text(sirket.name));
+        });
+    });
+}
+
+
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
     TumSirketleriGetir();
     OnaylanmisTalepleriGetir();
+    TumParaBirimleriGetir();
+    TumTedarikcileriGetir();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir

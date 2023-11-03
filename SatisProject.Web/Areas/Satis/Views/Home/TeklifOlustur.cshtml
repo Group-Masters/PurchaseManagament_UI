@@ -14,7 +14,9 @@
     <input type="text"
            class="form-control"
            id="girisSirketId"
-           value="@{@Repo.Session.CompanyId}"/>
+           value="@{
+        @Repo.Session.CompanyId
+}" />
 </div>
 
 <div class="modal fade"
@@ -34,40 +36,42 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                    <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
-                        <div class="col-md-12 d-none">
-                            <input type="text"
-                                   class="form-control"
-                                   id="gizliId"/>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="ad" class="form-label">Tedarikci Adını Giriniz  :</label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="tad"
-                                   required />
-                            <div class="invalid-feedback">Bu alan boş geçilemez.</div>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="soyad" class="form-label">Fiyat Teklifini Giriniz  :</label>
+                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+                    <div class="col-md-12 d-none">
+                        <input type="text"
+                               class="form-control"
+                               id="gizliId" />
+                    </div>
+                    <div class="col-md-12">
+                        <label for="ad" class="form-label">Tedarikci Adını Giriniz  :</label>
+                        <select class="form-select" id="tad" required>
+                        </select>
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="fiyat" class="form-label">Fiyat Teklifini Giriniz  :</label>
+                        <div class="d-flex">
                             <input type="number"
-                                   class="form-control"
+                                   class="form-control col-9"
                                    id="fiyat"
                                    required />
-                            <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                            <select class="form-select col-3" id="paraBirim" required>
+                            </select>
                         </div>
-                        <div class="col-md-12">
-                            <label class="form-label">Açıklama Giriniz :</label>
-                            <textarea class="form-control" id="aciklama"></textarea>
-                        </div>
-
-                        <button type="button"
-                                class="btn btn-secondary"
-                                data-bs-dismiss="modal">
-                            Vazgeç
-                        </button>
-                        <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Açıklama Giriniz :</label>
+                        <textarea class="form-control" id="aciklama"></textarea>
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Vazgeç
+                    </button>
+                    <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+                </div>
             </div>
             <div class="modal-footer"></div>
         </div>
