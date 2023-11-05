@@ -117,19 +117,19 @@ function TalepTeklifleriniGetir(gizliId) {
             <td> <span style="color: ${arr[i].onayDurum === null ? 'gray' : arr[i].onayDurum ? 'green' : 'red'};">
                          ${arr[i].onayDurum === null ? 'Beklemede' : arr[i].onayDurum ? 'Onaya Gönderildi' : 'Reddedildi'}
             </span></td>`;
-            if (arr[i].onayDurum===null) {
+            if (arr[i].state===0) {
                 html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i></td><td><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
-                "${arr[i].id}","${arr[i].aciklama}","${arr[i].fiyatTeklif}","${arr[i].tedarikciAd}","${arr[i].saTalepId}"
+                "${arr[i].id}","${arr[i].details}","${arr[i].offeredPrice}","${arr[i].currencyId}","${arr[i].supplierId}"
             )'></i></td>`;
             }
             html += `
             <td>
             <i class="bi bi-arrow-up-square-fill text-success px-2 py-2 mx-3 border border-success" onclick='UstBirim(
-                 "${arr[i].id}","${arr[i].aciklama}","${arr[i].fiyatTeklif}","${arr[i].tedarikciAd}","${arr[i].saTalepId}","${gizliId}")'></i>
+                 "${arr[i].id}","${arr[i].status}","${arr[i].approvingEmployeeId}","${gizliId}")'></i>
             </td>
             <td>
             <i class="bi bi-x-square text-danger px-2 py-2 mx-3 border border-danger" onclick='Reddet(
-                "${arr[i].id}","${arr[i].aciklama}","${arr[i].fiyatTeklif}","${arr[i].tedarikciAd}","${arr[i].saTalepId}","${gizliId}")'></i>
+                "${arr[i].id}","${arr[i].status}","${arr[i].approvingEmployeeId}","${gizliId}")'></i>
             </td>
             <td>
             `;
@@ -151,48 +151,54 @@ function TalepTeklifleriniGetir(gizliId) {
 }
 
 function Sil(id) {
-    Delete(`TedarikciTeklif/Sil?id=${id}`, (data) => {
-        OnaylanmisTalepleriGetir();
+    Delete(`Offer/DeletePermanent/${id}`, (data) => {
+        OnaylanmisTalepleriGetir(); //Kalıcı silme işlemi
     });
 }
 
-function Duzenle(id, aciklama, fiyatTeklif, tedarikciAd, saTalepId) {
-    selectedId = id;
-    $("#aciklama").val(aciklama);
-    $("#fiyat").val(fiyatTeklif);
-    $("#tad").val(tedarikciAd);
-    $("#gizliId").val(saTalepId);
+function Duzenle(id, details, offeredPrice, supplierId, currencyId) {
+    $("#idG").val(id);
+    $("#aciklamaG").val(details);
+    $("#fiyatG").val(offeredPrice);
+    $("#tadG").val(supplierId);
+    $("#paraBirimG").val(currencyId);
     $("#staticBackdrop1").modal("hide");
-    $("#staticBackdrop").modal("show");
+    $("#staticBackdrop2").modal("show");
 }
 
-function Reddet(id, aciklama, fiyatTeklif, tedarikciAd, saTalepId,gizliId) {
+function Guncelle() {
+    var teklif = {
+        Id: $("#idG").val(),
+        Details: $("#aciklamaG").val(),
+        OfferedPrice: $("#fiyatG").val(),
+        CurrencyId: $("#paraBirimG").val(),
+        SupplierId: $("#tadG").val()
+    };
+    Put("Offer/Update", teklif, (data) => {
+        $("#staticBackdrop2").modal("hide");
+    });
+}
+
+
+function Reddet(id, approvingEmployeeId, gizliId) {
     var teklif = {
         Id: id,
-        Aciklama: aciklama,
-        FiyatTeklif: fiyatTeklif,
-        TedarikciAd: tedarikciAd,
-        SATalepId: saTalepId,
-        OnayDurum: 0
+        Status: 1//Reddetme
 
     };
-    Post("TedarikciTeklif/Kaydet", teklif, (data) => {
+    Put("Offer/UpdateOfferState", teklif, (data) => {
         OnaylanmisTalepleriGetir();
         TalepTeklifleriniGetir(gizliId);
     });
 }
 
-function UstBirim(id, aciklama, fiyatTeklif, tedarikciAd, saTalepId,gizliId) {
+function UstBirim(id, approvingEmployeeId, gizliId) {
     var teklif = {
         Id: id,
-        Aciklama: aciklama,
-        FiyatTeklif: fiyatTeklif,
-        TedarikciAd: tedarikciAd,
-        SATalepId: saTalepId,
-        OnayDurum: 2
+        Status: 3//Yönetime Gönderme / Yönetim Bekleme
 
     };
-    Post("TedarikciTeklif/Kaydet", teklif, (data) => {
+    Put("Offer/UpdateOfferState", teklif, (data) => {
         OnaylanmisTalepleriGetir();
         TalepTeklifleriniGetir(gizliId);
     });
@@ -202,8 +208,10 @@ function TumParaBirimleriGetir() {
     Get("Currency/GetAll", (data) => {
         var getdata = data;
         var dropdown = $("#paraBirim");
+        var dropdownG = $("#paraBirimG");
         $.each(getdata, function (index, para) {
             dropdown.append($("<option>").val(para.id).text(para.name));
+            dropdownG.append($("<option>").val(para.id).text(para.name));
         });
     });
 }
@@ -212,8 +220,10 @@ function TumTedarikcileriGetir() {
     Get("Supplier/GetAll", (data) => {
         var getdata = data;
         var dropdown = $("#tad");
+        var dropdownG = $("#tadG");
         $.each(getdata, function (index, sirket) {
             dropdown.append($("<option>").val(sirket.id).text(sirket.name));
+            dropdownG.append($("<option>").val(sirket.id).text(sirket.name));
         });
     });
 }

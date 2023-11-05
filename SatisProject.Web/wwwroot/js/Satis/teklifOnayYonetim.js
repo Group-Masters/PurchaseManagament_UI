@@ -32,16 +32,16 @@
 
             <table class="table">
               <thead class="position-relative">
-                <tr class="bg-primary text-primary">
+                 <tr class="bg-primary text-primary">
                   <th scope="col">·</th>
                   <th class="position-absolute top-0 end-0" scope="col">
                   <span class="">
                     <i class="bi bi-check-square-fill text-success px-2 py-2 mx-3 border border-success" onclick='Onayla(
-                 "${arr[i].id}","${arr[i].aciklama}","${arr[i].fiyatTeklif}","${arr[i].tedarikciAd}","${arr[i].saTalepId}")'></i>
+                 "${arr[i].id}")'></i>
                   </span>
                   <span class="">
                     <i class="bi bi-x-square text-danger px-2 py-2 mx-3 border border-danger" onclick='Reddet(
-                "${arr[i].id}","${arr[i].aciklama}","${arr[i].fiyatTeklif}","${arr[i].tedarikciAd}","${arr[i].saTalepId}")'></i>
+                "${arr[i].id}")'></i>
                   </span>
                   </th>
                 </tr>
@@ -49,7 +49,7 @@
               <tbody>
                 <tr>
                   <th scope="row">Tedarikçi Adı :</th>
-                  <td>${arr[i].tedarikciAd}</td>
+                  <td>${arr[i].supplierName}</td>
                 </tr>
                 <tr>
                   <th scope="row">Ürün Adı :</th>
@@ -61,11 +61,11 @@
                 </tr>
                 <tr>
                   <th scope="row">Fiyat Teklifi :</th>
-                  <td>${arr[i].fiyatTeklif} ₺</td>
+                  <td>${arr[i].offeredPrice} ₺</td>
                 </tr>
                 <tr>
                   <th scope="row">Açıklama :</th>
-                  <td>${arr[i].aciklama}</td>
+                  <td>${arr[i].details}</td>
                 </tr>
                 <tr>
                   <th scope="row">Talep Eden Birim :</th>
@@ -91,35 +91,25 @@
     });
 }
 
-
-
-let selectedId = 0;
-function Onayla(id, aciklama, fiyatTeklif, tedarikciAd, saTalepId) {
+function Reddet(id, approvingEmployeeId) {
     var teklif = {
         Id: id,
-        Aciklama: aciklama,
-        FiyatTeklif: fiyatTeklif,
-        TedarikciAd: tedarikciAd,
-        SATalepId: saTalepId,
-        OnayDurum: 1
+        Status: 1//Reddetme 1 Olmalı Fakat Api tarafında Status Enum'u içerisinde Hem Reddetme Hem YönetimRed kısmı var!!
 
     };
-    Post("TedarikciTeklif/Kaydet", teklif, (data) => {
+    Put("Offer/UpdateOfferState", teklif, (data) => {
         OnaylanmisTalepleriGetir();
     });
 }
 
-function Reddet(id, aciklama, fiyatTeklif, tedarikciAd, saTalepId) {
+
+function Onayla(id, approvingEmployeeId) {
     var teklif = {
         Id: id,
-        Aciklama: aciklama,
-        FiyatTeklif: fiyatTeklif,
-        TedarikciAd: tedarikciAd,
-        SATalepId: saTalepId,
-        OnayDurum: 0
+        Status: 2 //Onay 2 Olmalı Fakat Api tarafında Status Enum'u içerisinde Hem Onay Hem YonetimOnay kısmı var!!
 
     };
-    Post("TedarikciTeklif/Kaydet", teklif, (data) => {
+    Put("Offer/UpdateOfferState", teklif, (data) => {
         OnaylanmisTalepleriGetir();
     });
 }

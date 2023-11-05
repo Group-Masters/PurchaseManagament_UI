@@ -102,6 +102,66 @@
     </div>
 </div>
 
+
+<div class="modal fade"
+     id="staticBackdrop2"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kullanici Bilgileri</h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+                    <div class="col-md-12 d-none">
+                        <input type="text"
+                               class="form-control"
+                               id="idG" />
+                    </div>
+                    <div class="col-md-12">
+                        <label for="ad" class="form-label">Tedarikci Adını Giriniz  :</label>
+                        <select class="form-select" id="tadG" required>
+                        </select>
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="fiyat" class="form-label">Fiyat Teklifini Giriniz  :</label>
+                        <div class="d-flex">
+                            <input type="number"
+                                   class="form-control col-9"
+                                   id="fiyatG"
+                                   required />
+                            <select class="form-select col-3" id="paraBirimG" required>
+                            </select>
+                        </div>
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Açıklama Giriniz :</label>
+                        <textarea class="form-control" id="aciklamaG"></textarea>
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Vazgeç
+                    </button>
+                    <button class="btn btn-primary" type="submit" onclick="Guncelle()">Güncelle</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
 <script>
     (() => {
         "use strict";
