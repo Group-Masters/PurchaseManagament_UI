@@ -1,6 +1,6 @@
 ﻿function TeklifleriGetir() {
     var girisSirketId = $("#girisSirketId").val();
-    Get(`MuhasebeFatura/FaturasıOlusturulacakTeklifler/${girisSirketId}`, (data) => {
+    Get(`Offer/GetByAproved/${girisSirketId}`, (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
             `<thead class="text-light bg-primary"><tr><th>Id</th><th>Ürün Adı</th><th>Adet</th><th>Tedarikci Adı</th><th>Fiyat Teklifi</th><th>Talep Eden Kullanıcı</th><th>Onay Durumu</th><th></th></tr></thead>`;
 
@@ -9,11 +9,11 @@
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].urunAd}</td><td>${arr[i].adet}</td><td>${arr[i].tedarikciAd}</td><td>${arr[i].fiyatTeklif}₺ </td><td>${arr[i].kullaniciAd} ${arr[i].kullaniciSoyad}</td><td> <span style="color: ${arr[i].onayDurum === null ? 'gray' : arr[i].onayDurum ? 'green' : 'red'};">
-                         ${arr[i].onayDurum === null ? 'Beklemede' : arr[i].onayDurum ? 'Onaylandı' : 'Reddedildi'}
+            html += `<td>${arr[i].id}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td>${arr[i].supplierName}</td><td>${arr[i].offeredPrice} ${arr[i].currencyName} </td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td><td> <span style="color: ${arr[i].status === 3 ? 'black' : arr[i].status === 4 ? 'green' : 'red'};">
+                         ${arr[i].status === 3 ? 'Beklemede' : arr[i].status === 4 ? 'Onaylandı' : 'Reddedildi'}
                      </span></td>`;
             html += `<td>
-            <i class="bi bi-receipt text-primary px-2 py-2 mx-3 border border-primary" title="Fatura Oluştur" onclick='Kaydet("${arr[i].id}","${arr[i].fiyatTeklif}")'></i>
+            <i class="bi bi-receipt text-primary px-2 py-2 mx-3 border border-primary" title="Fatura Oluştur" onclick='Duzenle("${arr[i].id}","${arr[i].productName}","${arr[i].quantity}","${arr[i].supplierName}","${arr[i].offeredPrice}","${arr[i].currencyName}","${arr[i].currencyName}","${arr[i].currencyName}")'></i>
             </td>`;
             html += `</tr>`
         }
@@ -31,14 +31,24 @@
         });
     });
 }
-let selectedId = 0;
-function Kaydet(id,fiyatTeklif ) {
+
+function Duzenle(id, productName, quantity, supplierName, offeredPrice, currencyName) {
+    $("#id").val(id);
+    $("#urunAd").val(productName);
+    $("#adet").val(quantity);
+    $("#tedarikciAd").val(supplierName);
+    $("#fiyat").val(offeredPrice);
+    $("#birim").val(currencyName);
+    $("#uUID").val("");
+    $("#staticBackdrop").modal("show");
+}
+
+function Kaydet() {
     var fatura = {
-        Id: 0,
-        OnaylananTeklifId: id,
-        Tutar: fiyatTeklif
+        OfferId: $("#id").val(),
+        UUID: $("#uUID").val()
     };
-    Post("MuhasebeFatura/Kaydet", fatura, (data) => {
+    Post("Invoice/Create", fatura, (data) => {
         TumFaturalariGetir();
     });
 }
@@ -46,7 +56,7 @@ function Kaydet(id,fiyatTeklif ) {
 function TumFaturalariGetir() {
     var girisSirketId = $("#girisSirketId").val();
     var html = ``;
-    Get(`MuhasebeFatura/TumFaturalar/${girisSirketId}`, (data) => {
+    Get(`Invoice/GetInvoicesByCompany/${girisSirketId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
@@ -62,7 +72,7 @@ function TumFaturalariGetir() {
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].id} ${arr[i].kullaniciAd} ${arr[i].kullaniciSoyad}
+            ${arr[i].id} ${arr[i].supplierName}
           </button>
         </h2>
         <div
@@ -75,32 +85,33 @@ function TumFaturalariGetir() {
             <table class="table">
               <tbody>
                 <tr>
-                  <th scope="row">Tedarikçi Adı :</th>
-                  <td>${arr[i].tedarikciAd}</td>
+                  <th scope="row">Tedarikçi Adı / Adresi :</th>
+                  <td>${arr[i].supplierName} -- ${arr[i].supplierAddress}</td>
+                </tr>
+                 <tr>
+                  <th scope="row">Şirket Adı / Adresi :</th>
+                  <td>${arr[i].companyName} -- ${arr[i].companyAddress}</td>
                 </tr>
                 <tr>
                   <th scope="row">Ürün Adı :</th>
-                  <td>${arr[i].urunAd}</td>
+                  <td>${arr[i].productName} ${arr[i].measuringUnit}</td>
                 </tr>
                 <tr>
                   <th scope="row">Adet Bilgisi :</th>
-                  <td>${arr[i].adet}</td>
+                  <td>${arr[i].quantity}</td>
                 </tr>
                 <tr>
                   <th scope="row">Fiyat Teklifi :</th>
-                  <td>${arr[i].tutar} ₺</td>
+                  <td>${arr[i].offeredPrice} ${arr[i].currency}</td>
                 </tr>
-                <tr>
-                  <th scope="row">Talep Eden Birim :</th>
-                  <td>${arr[i].birimAd}</td>
-                </tr>
+               
                 <tr>
                   <th scope="row">Talep Tarihi :</th>
-                  <td>${arr[i].talepTarih}</td>
+                  <td>${arr[i].requestCreatedDate}</td>
                 </tr>
                 <tr>
                   <th scope="row">Faturalandırma Tarihi :</th>
-                  <td>${arr[i].tarih}</td>
+                  <td>${arr[i].createdDate}</td>
                 </tr>
               </tbody>
             </table>

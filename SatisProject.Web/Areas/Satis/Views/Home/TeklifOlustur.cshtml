@@ -43,20 +43,20 @@
                                id="gizliId" />
                     </div>
                     <div class="col-md-12">
-                        <label for="ad" class="form-label">Tedarikci Adını Giriniz  :</label>
+                        <label for="ad" class="form-label"> <span class="text-danger">*</span>Tedarikci Adını Giriniz  :</label>
                         <select class="form-select" id="tad" required>
                         </select>
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
                     <div class="col-md-12">
-                        <label for="fiyat" class="form-label">Fiyat Teklifini Giriniz  :</label>
+                        <label for="fiyat" class="form-label"> <span class="text-danger">*</span>Fiyat Teklifini ve Para Birimini Giriniz  :</label>
                         <div class="d-flex">
+                            <select class="form-select col-3" id="paraBirim" required>
+                            </select>
                             <input type="number"
                                    class="form-control col-9"
                                    id="fiyat"
                                    required />
-                            <select class="form-select col-3" id="paraBirim" required>
-                            </select>
                         </div>
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>

@@ -1,7 +1,7 @@
 ﻿function OnaylanmisTalepleriGetir() {
     var girisSirketId = $("#girisSirketId").val();
     var html = ``;
-    Get(`TedarikciTeklif/OnaylanmisTekliflerYonetim/${girisSirketId}`, (data) => {
+    Get(`Offer/GetByManager/${girisSirketId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
@@ -17,9 +17,9 @@
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].id} ${arr[i].kullaniciAd} ${arr[i].kullaniciSoyad}
-            <span class="position-absolute top-25 end-50" style="color:  ${arr[i].onayDurum === 2 ? 'Blue' : arr[i].onayDurum === 0 ? 'Red' : arr[i].onayDurum === 1 ? 'Green' : 'Gray'};">
-                ${arr[i].onayDurum === 2 ? 'Onay Bekliyor' : arr[i].onayDurum === 0 ? 'Reddedildi' : arr[i].onayDurum === 1 ? 'Onaylandı' : 'Geçersiz Durum'}
+            ${arr[i].id} ${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}
+            <span class="position-absolute top-25 end-50" style="color:  ${arr[i].status === 3 ? 'Blue' : arr[i].status === 1 ? 'Red' : arr[i].status === 4 ? 'Green' : 'Gray'};">
+                ${arr[i].status === 3 ? 'Onay Bekliyor' : arr[i].status === 1 ? 'Reddedildi' : arr[i].status === 4 ? 'Onaylandı' : 'Geçersiz Durum'}
             </span>
           </button>
         </h2>
@@ -34,7 +34,7 @@
               <thead class="position-relative">
                  <tr class="bg-primary text-primary">
                   <th scope="col">·</th>
-                  <th class="position-absolute top-0 end-0" scope="col">
+                  <th class="position-absolute top-0 end-0" scope="col" style="top:-5px !important;">
                   <span class="">
                     <i class="bi bi-check-square-fill text-success px-2 py-2 mx-3 border border-success" onclick='Onayla(
                  "${arr[i].id}")'></i>
@@ -53,23 +53,19 @@
                 </tr>
                 <tr>
                   <th scope="row">Ürün Adı :</th>
-                  <td>${arr[i].urunAd}</td>
+                  <td>${arr[i].productName}</td>
                 </tr>
                 <tr>
                   <th scope="row">Adet Bilgisi :</th>
-                  <td>${arr[i].adet}</td>
+                  <td>${arr[i].quantity}</td>
                 </tr>
                 <tr>
                   <th scope="row">Fiyat Teklifi :</th>
-                  <td>${arr[i].offeredPrice} ₺</td>
+                  <td>${arr[i].offeredPrice} ${arr[i].currencyName}</td>
                 </tr>
                 <tr>
                   <th scope="row">Açıklama :</th>
                   <td>${arr[i].details}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Talep Eden Birim :</th>
-                  <td>${arr[i].birimAd}</td>
                 </tr>
               </tbody>
             </table>
@@ -106,7 +102,7 @@ function Reddet(id, approvingEmployeeId) {
 function Onayla(id, approvingEmployeeId) {
     var teklif = {
         Id: id,
-        Status: 2 //Onay 2 Olmalı Fakat Api tarafında Status Enum'u içerisinde Hem Onay Hem YonetimOnay kısmı var!!
+        Status: 4 //Onay 2 Olmalı Fakat Api tarafında Status Enum'u içerisinde Hem Onay Hem YonetimOnay kısmı var!!
 
     };
     Put("Offer/UpdateOfferState", teklif, (data) => {

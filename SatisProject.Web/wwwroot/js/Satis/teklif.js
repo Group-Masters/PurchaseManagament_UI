@@ -99,14 +99,14 @@ function IdVer(id) {
     $("#aciklama").val("");
     $("#paraBirim").val("");
     $("#staticBackdrop").modal("show");
-    
+
 }
 
 function TalepTeklifleriniGetir(gizliId) {
     $("#staticBackdrop1").modal("show");
     Get(`Offer/GetByRequestId/${gizliId}`, (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover">` +
-            `<thead class="text-light bg-black"><tr><th>Id</th><th>Tedarikci Adı</th><th>Fiyat Teklifi</th><th>Açıklama</th><th>Onay Durumu</th><th></th><th></th><th></th><th></th></tr></thead>`;
+            `<thead class="text-light bg-primary"><tr><th>Id</th><th>Tedarikci Adı</th><th>Fiyat Teklifi</th><th>Açıklama</th><th>Onay Durumu</th><th></th><th></th><th></th><th></th></tr></thead>`;
 
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
@@ -114,10 +114,10 @@ function TalepTeklifleriniGetir(gizliId) {
             html += `<tr id="arama">`;
             html += `<td>${arr[i].id}</td><td>${arr[i].supplierName}</td><td>${arr[i].offeredPrice} - ${arr[i].currencyName}</td>
             <td>${arr[i].details == null ? 'Açıklama Yok' : arr[i].details}</td>
-            <td> <span style="color: ${arr[i].onayDurum === null ? 'gray' : arr[i].onayDurum ? 'green' : 'red'};">
-                         ${arr[i].onayDurum === null ? 'Beklemede' : arr[i].onayDurum ? 'Onaya Gönderildi' : 'Reddedildi'}
+            <td> <span style="color: ${arr[i].status === 0 ? 'black' : arr[i].status === 3 ? 'green' : 'red'};">
+                         ${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 3 ? 'Onaya Gönderildi' : 'Reddedildi'}
             </span></td>`;
-            if (arr[i].state===0) {
+            if (arr[i].status === 0) {
                 html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i></td><td><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
                 "${arr[i].id}","${arr[i].details}","${arr[i].offeredPrice}","${arr[i].currencyId}","${arr[i].supplierId}"
             )'></i></td>`;
