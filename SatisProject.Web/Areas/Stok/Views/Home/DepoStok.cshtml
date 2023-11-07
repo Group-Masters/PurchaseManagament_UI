@@ -81,7 +81,7 @@
 </div>
 
 <div class="modal fade"
-     id="staticBackdrop1"
+     id="staticBackdropArtir"
      data-bs-backdrop="static"
      data-bs-keyboard="false"
      tabindex="-1"
@@ -100,27 +100,15 @@
 
                 <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
 
-                    <div class="col-md-6 d-none">
                         <input type="text"
-                               class="form-control"
-                               id="gizliSirketIdG"
-                               value="@Repo.Session.CompanyId" />
-                        <input type="text"
-                               class="form-control"
-                               id="idG"/>
-                    </div>
+                               class="form-control d-none"
+                               id="idArtir"/>
 
-                    <div class="form-group col-md-6">
-                        <label class="form-label" for="urunAdG">Ürün Seçiniz :</label>
-                        <select class="form-select" id="urunAdG">
-                        </select>
-                    </div>
-
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <label for="adetG" class="form-label">Adet Giriniz  :</label>
                         <input type="number"
                                class="form-control"
-                               id="adetG"
+                               id="adetArtir"
                                required />
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
@@ -130,7 +118,59 @@
                             data-bs-dismiss="modal">
                         Vazgeç
                     </button>
-                    <button class="btn btn-primary" type="submit" onclick="Guncelle()">Güncelle</button>
+                    <button class="btn btn-primary" type="submit" onclick="GuncelleArtir()">Güncelle</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"
+     id="staticBackdropAzalt"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kullanici Bilgileri</h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+
+                        <input type="text"
+                               class="form-control d-none"
+                               id="idAzalt" />
+
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="urunAdG">Verilen Departmanı Seçiniz :</label>
+                        <select class="form-select" id="departmanAzalt">
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="adetG" class="form-label">Adet Giriniz  :</label>
+                        <input type="number"
+                               class="form-control"
+                               id="adetAzalt"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Vazgeç
+                    </button>
+                    <button class="btn btn-primary" type="submit" onclick="GuncelleAzalt()">Güncelle</button>
                 </div>
             </div>
             <div class="modal-footer"></div>

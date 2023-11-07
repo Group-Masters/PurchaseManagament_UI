@@ -13,7 +13,7 @@
                          ${arr[i].status === 3 ? 'Beklemede' : arr[i].status === 4 ? 'Onaylandı' : 'Reddedildi'}
                      </span></td>`;
             html += `<td>
-            <i class="bi bi-receipt text-primary px-2 py-2 mx-3 border border-primary" title="Fatura Oluştur" onclick='Duzenle("${arr[i].id}","${arr[i].productName}","${arr[i].quantity}","${arr[i].supplierName}","${arr[i].offeredPrice}","${arr[i].currencyName}","${arr[i].currencyName}","${arr[i].currencyName}")'></i>
+            <button class="btn btn-primary"  onclick='Duzenle("${arr[i].id}","${arr[i].productName}","${arr[i].quantity}","${arr[i].supplierName}","${arr[i].offeredPrice}","${arr[i].currencyName}","${arr[i].companyAddress}","${arr[i].supplierAddress}")'>Faturasını Oluştur</button>
             </td>`;
             html += `</tr>`
         }
@@ -32,26 +32,20 @@
     });
 }
 
-function Duzenle(id, productName, quantity, supplierName, offeredPrice, currencyName) {
+function Duzenle(id, productName, quantity, supplierName, offeredPrice, currencyName, companyAddress, supplierAddress) {
     $("#id").val(id);
     $("#urunAd").val(productName);
     $("#adet").val(quantity);
     $("#tedarikciAd").val(supplierName);
     $("#fiyat").val(offeredPrice);
     $("#birim").val(currencyName);
+    $("#sirketAdres").val(companyAddress);
+    $("#tedarikciAdres").val(supplierAddress);
     $("#uUID").val("");
     $("#staticBackdrop").modal("show");
 }
 
-function Kaydet() {
-    var fatura = {
-        OfferId: $("#id").val(),
-        UUID: $("#uUID").val()
-    };
-    Post("Invoice/Create", fatura, (data) => {
-        TumFaturalariGetir();
-    });
-}
+
 
 function TumFaturalariGetir() {
     var girisSirketId = $("#girisSirketId").val();
@@ -130,6 +124,16 @@ function TumFaturalariGetir() {
             });
         });
 
+    });
+}
+
+function Kaydet() {
+    var fatura = {
+        OfferId: $("#id").val(),
+        UUID: $("#uUID").val()
+    };
+    Post("Invoice/Create", fatura, (data) => {
+        TumFaturalariGetir();
     });
 }
 

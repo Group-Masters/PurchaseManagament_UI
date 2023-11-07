@@ -39,19 +39,19 @@ function Getir() {
     <div class="card">
       <img src="https://resim.epey.com/886465/m_xiaomi-redmi-gaming-monitor-g24-1.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
       <div class="card-body ">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center gap-2">
             <h5 class="card-title fs-6">
-                <i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i>
+                <button class="btn btn-danger" onclick='Sil(${arr[i].id})'>Sil</button>
             </h5>
             <h5 class="card-title fs-6">
-                <i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
+                <button class="btn btn-primary" onclick='Duzenle(
                 "${arr[i].id}","${arr[i].name}","${arr[i].description}","${arr[i].measuringUnitId}"
-            )'></i>
+            )'>Düzenle</button>
             </h5>
-            <h5 class="card-title fs-6">
-                <i class="bi bi-database-fill-slash text-warning px-2 py-2 mx-3 border border-primary" onclick='VeriTabaniSil(
+            <h5 class="card-title fs-6" title="Veri tabanına Taşıma İşlemi">
+                 <button class="btn btn-warning" onclick='VeriTabaniSil(
                 "${arr[i].id}","${arr[i].name}","${arr[i].description}","${arr[i].measuringUnitId}"
-            )'></i>
+            )'>VTT</button>
             </h5>
         </div>
         <div class="d-flex justify-content-between">

@@ -13,8 +13,8 @@
 
             html += `
                 <td>
-                <i class="bi bi-check-square-fill text-success px-2 py-2 mx-3 border border-success" title="Onayla" onclick='Onayla("${arr[i].id}")'></i>
-                <i class="bi bi-x-square text-danger px-2 py-2 mx-3 border border-danger" title="Reddet" onclick='Reddet("${arr[i].id}")'></i>
+                <button class="btn btn-success" onclick='Onayla("${arr[i].id}")'>Onayla</button>
+                <button class="btn btn-danger" onclick='Reddet("${arr[i].id}")'>Reddet</button>
                 </td>`;
 
             html += `</tr>`;

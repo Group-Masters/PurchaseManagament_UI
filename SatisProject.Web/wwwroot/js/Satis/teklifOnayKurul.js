@@ -32,16 +32,16 @@
 
             <table class="table">
               <thead class="position-relative">
-                <tr class="bg-primary text-primary">
-                  <th scope="col">·</th>
-                  <th class="position-absolute top-0 end-0" scope="col" style="top:-5px !important;">
+                 <tr class="bg-primary text-primary">
+                  <th scope="col" style="border:none;">·</th>
+                  <th class="position-absolute top-0 end-0" scope="col" style="top:-7px !important;border:none;">
                   <span class="">
-                    <i class="bi bi-check-square-fill text-success px-2 py-2 mx-3 border border-success" onclick='Onayla(
-                 "${arr[i].id}")'></i>
+                    <button class="btn btn-success" onclick='Onayla(
+                 "${arr[i].id}")'>Onayla</button>
                   </span>
                   <span class="">
-                    <i class="bi bi-x-square text-danger px-2 py-2 mx-3 border border-danger" onclick='Reddet(
-                "${arr[i].id}")'></i>
+                    <button class="btn btn-danger" onclick='Reddet(
+                 "${arr[i].id}")'>Reddet</button>
                   </span>
                   </th>
                 </tr>

@@ -8,10 +8,16 @@
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].productName} ${arr[i].measuringName}</td><td>${arr[i].quantity}</td>`;
-            html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
-                "${arr[i].id}","${arr[i].productId}","${arr[i].quantity}","${arr[i].companyId}"
-            )'></i></td>`;
+            html += `<td>${arr[i].id}</td><td>${arr[i].productName} ${arr[i].measuringUnitName}</td><td>${arr[i].quantity}</td>`;
+            html += `<td>
+            <button class="btn btn-danger"  onclick='Sil(${arr[i].id})'>Sil</button>
+            <button class="btn btn-success mx-2" onclick='Artir(
+                "${arr[i].id}"
+            )'>Artır</button>
+             <button class="btn btn-warning" onclick='Azalt(
+                 "${arr[i].id}"
+            )'>Azalt</button>
+            </td>`;
             html += `</tr>`
         }
         html += `</table></div>`;
@@ -129,29 +135,45 @@ function Kaydet() {
 
 
 function Sil(id) {
-    Delete(`DepoStok/Sil?id=${id}`, (data) => {
+    Delete(`CompanyStock/DeletePermanent/${id}`, (data) => {
         StokUrunleriGetir();
     });
 }
 
-function Duzenle(id, productId, quantity, companyId) {
-    $("#idG").val(id);
-    $("#urunAdG").val(productId);
-    $("#adetG").val(quantity);
-    $("#gizliSirketIdG").val(companyId);
-    $("#staticBackdrop1").modal("show");
+function Artir(id) {
+    $("#idArtir").val(id);
+    $("#adetArtir").val("");
+    $("#kullaniciArtir").val("");
+    $("#staticBackdropArtir").modal("show");
 }
 
-function Guncelle() {
+function GuncelleArtir() {
     var stok = {
-        Id: $("#idG").val(),
-        ProductId: $("#urunAdG").val(),
-        Quantity: $("#adetG").val(),
-        CompanyId: $("#gizliSirketIdG").val()
+        Id: $("#idArtir").val(),
+        Quantity: $("#adetArtir").val()
     };
-    Put("CompanyStock/Update", stok, (data) => {
+    Put("CompanyStock/UpdateQuantityAdd", stok, (data) => {
         StokUrunleriGetir();
-        $("#staticBackdrop1").modal("hide");
+        $("#staticBackdropArtir").modal("hide");
+    });
+}
+
+function Azalt(id) {
+    $("#idAzalt").val(id);
+    $("#adetAzalt").val("");
+    $("#kullaniciAzalt").val("");
+    $("#staticBackdropAzalt").modal("show");
+}
+
+function GuncelleAzalt() {
+    var stok = {
+        Id: $("#idAzalt").val(),
+        Quantity: $("#adetAzalt").val(),
+        CompanyDepartmentId: $("#departmanAzalt").val()
+    };
+    Put("CompanyStock/UpdateQuantityReduce", stok, (data) => {
+        StokUrunleriGetir();
+        $("#staticBackdropAzalt").modal("hide");
     });
 }
 
@@ -159,10 +181,18 @@ function TumUrunleriGetir() {
     Get("Product/GetAll", (data) => {
         var urundata = data;
         var dropdown = $("#urunAd");
-        var dropdownG = $("#urunAdG");
         $.each(urundata, function (index, urun) {
             dropdown.append($("<option>").val(urun.id).text(`${urun.name} - ${urun.measuringName}`));
-            dropdownG.append($("<option>").val(urun.id).text(`${urun.name} - ${urun.measuringName}`));
+        });
+    });
+}
+
+function TumDepartmanlariGetir() {
+    Get("Department/GetAll", (data) => {
+        var getData = data;
+        var dropdownAzalt = $("#departmanAzalt");
+        $.each(getData, function (index, get) {
+            dropdownAzalt.append($("<option>").val(get.id).text(`${get.name}`));
         });
     });
 }
@@ -173,6 +203,7 @@ $(document).ready(function () {
     StokUrunleriGetir();
     TumFaturalariGetir();
     TumUrunleriGetir();
+    TumDepartmanlariGetir();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir

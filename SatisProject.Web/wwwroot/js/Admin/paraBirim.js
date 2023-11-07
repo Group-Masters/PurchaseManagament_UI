@@ -8,13 +8,16 @@ function ParaBirimleriGetir() {
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
             html += `<td>${arr[i].id}</td><td>${arr[i].name}</td><td>${arr[i].rate}</td>`;
-            html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
+            html += `<td>
+            <button class="btn btn-danger" onclick='Sil(${arr[i].id})'>Sil</button>
+            <button class="btn btn-primary" onclick='Duzenle(
                 "${arr[i].id}","${arr[i].name}","${arr[i].rate}"
-            )'></i></td>`;
+            )'>Duzenle</button>
+            </td>`;
             html += `</tr>`
         }
         html += `</table></div>`;
-
+        
         $("#divParaBirimleri").html(html);
 
         $(function () {

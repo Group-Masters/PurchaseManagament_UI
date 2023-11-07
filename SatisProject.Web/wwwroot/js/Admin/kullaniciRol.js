@@ -45,8 +45,8 @@
             html += `</ul>
             </td>
             <td>
-                <button type="button" class="btn btn-link btn-sm btn-rounded">
-                    <i class="bi bi-pencil-square text-primary px-2 py-2 mx-2 mt-4 border border-primary" onclick='YeniRolVermeDuzenle("${arr[i].id}")'></i>
+                <button class="btn btn-primary" onclick='YeniRolVermeDuzenle("${arr[i].id}")'>
+                   Rol Ver
                 </button>
             </td>
         </tr>
@@ -80,7 +80,7 @@ function KullaniciRolGetir() {
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
             html += `<td>${arr[i].id}</td><td>${arr[i].employeeName} ${arr[i].employeeSurname}</td><td>${arr[i].employeeEmail}</td><td>${arr[i].roleName}</td>`;
-            html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='KullaniciRolSil(${arr[i].id})'></i></td>`;
+            html += `<td><button class="btn btn-danger" onclick='KullaniciRolSil(${arr[i].id})'>Rol Sil</button></td>`;
             html += `</tr>`
         }
         html += `</table></div>`;

@@ -157,8 +157,8 @@ function KullaniciGetirDeneme() {
                 <span class="badge p-2 text-white badge-success rounded-pill d-inline" style="background-color: ${arr[i].isActive ? 'green' : 'red'};">${arr[i].isActive ? 'Aktif' : 'Pasif'}</span>
             </td>
             <td>
-                <button type="button" class="btn btn-link btn-sm btn-rounded">
-                    <i class="bi bi-pencil-square text-primary px-2 py-2 mx-2 mt-4 border border-primary" onclick='KullaniciDuzenle(${arr[i].id},"${arr[i].username}","${arr[i].address}","${arr[i].phone}","${arr[i].email}","${arr[i].isActive}")'></i>
+                <button class="btn btn-primary" onclick='KullaniciDuzenle(${arr[i].id},"${arr[i].username}","${arr[i].address}","${arr[i].phone}","${arr[i].email}","${arr[i].isActive}")'>
+                    Düzenle
                 </button>
             </td>
         </tr>

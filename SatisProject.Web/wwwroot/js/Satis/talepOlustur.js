@@ -8,12 +8,15 @@
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td><ul><li>${arr[i].createdDate}</li><li>${arr[i].details}</li></ul></td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td><td> <span style="color: ${arr[i].state === 0 ? 'black' : arr[i].state === 1 ? 'red' : 'green'};">
+            html += `<td>${arr[i].id}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td><ul><li>${arr[i].createdDate}</li><li>${arr[i].details}</li></ul></td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td><td> <span class="fw-bold" style="color: ${arr[i].state === 0 ? 'black' : arr[i].state === 1 ? 'red' : 'green'};">
                          ${arr[i].state === 0 ? 'Beklemede' : arr[i].state === 1 ? 'Reddedildi' : 'Onaylandı'}
                      </span></td>`;
 
             if (arr[i].state === 0) {
-                html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle("${arr[i].id}","${arr[i].productId}","${arr[i].quantity}","${arr[i].details}")'></i></td>`;
+                html += `<td>
+                <button class="btn btn-danger" onclick='Sil(${arr[i].id})'>Sil</button>
+                <button class="btn btn-primary"  onclick='Duzenle("${arr[i].id}","${arr[i].productId}","${arr[i].quantity}","${arr[i].details}")'>Düzenle</button>
+                </td>`;
             }
 
             html += `</tr>`;

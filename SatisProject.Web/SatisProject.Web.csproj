@@ -14,6 +14,8 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Kullanici\Models\" />
+    <Folder Include="Areas\Rapor\Models\" />
     <Folder Include="Areas\Satis\Models\" />
     <Folder Include="Areas\Stok\Models\" />
     <Folder Include="Areas\Muhasebe\Models\" />

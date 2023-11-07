@@ -114,22 +114,23 @@ function TalepTeklifleriniGetir(gizliId) {
             html += `<tr id="arama">`;
             html += `<td>${arr[i].id}</td><td>${arr[i].supplierName}</td><td>${arr[i].offeredPrice} - ${arr[i].currencyName}</td>
             <td>${arr[i].details == null ? 'Açıklama Yok' : arr[i].details}</td>
-            <td> <span style="color: ${arr[i].status === 0 ? 'black' : arr[i].status === 3 ? 'green' : 'red'};">
-                         ${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 3 ? 'Onaya Gönderildi' : 'Reddedildi'}
+            <td> <span style="color: ${arr[i].status === 0 ? 'black' : arr[i].status === 3 ? 'green' : arr[i].status === 1 ? 'red' : 'blue'};">
+                         ${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 3 ? 'Onaya Gönderildi' : arr[i].status === 1 ? 'Reddedildi' : 'Tamamlandı'}
             </span></td>`;
             if (arr[i].status === 0) {
-                html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='Sil(${arr[i].id})'></i></td><td><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='Duzenle(
+                html += `<td><button class="btn btn-danger" onclick='Sil(${arr[i].id})'>Sil</button></td>
+                <td><button class="btn btn-primary" onclick='Duzenle(
                 "${arr[i].id}","${arr[i].details}","${arr[i].offeredPrice}","${arr[i].currencyId}","${arr[i].supplierId}"
-            )'></i></td>`;
+            )'>Düzenle</button></td>`;
             }
             html += `
             <td>
-            <i class="bi bi-arrow-up-square-fill text-success px-2 py-2 mx-3 border border-success" onclick='UstBirim(
-                 "${arr[i].id}","${arr[i].status}","${arr[i].approvingEmployeeId}","${gizliId}")'></i>
+            <button class="btn btn-success" onclick='UstBirim(
+                 "${arr[i].id}","${arr[i].status}","${arr[i].approvingEmployeeId}","${gizliId}")'>Onayla</button>
             </td>
             <td>
-            <i class="bi bi-x-square text-danger px-2 py-2 mx-3 border border-danger" onclick='Reddet(
-                "${arr[i].id}","${arr[i].status}","${arr[i].approvingEmployeeId}","${gizliId}")'></i>
+            <button class="btn btn-danger" onclick='Reddet(
+                 "${arr[i].id}","${arr[i].status}","${arr[i].approvingEmployeeId}","${gizliId}")'>Reddet</button>
             </td>
             <td>
             `;
@@ -180,7 +181,7 @@ function Guncelle() {
 }
 
 
-function Reddet(id, approvingEmployeeId, gizliId) {
+function Reddet(id, gizliId) {
     var teklif = {
         Id: id,
         Status: 1//Reddetme
@@ -192,7 +193,7 @@ function Reddet(id, approvingEmployeeId, gizliId) {
     });
 }
 
-function UstBirim(id, approvingEmployeeId, gizliId) {
+function UstBirim(id, gizliId) {
     var teklif = {
         Id: id,
         Status: 3//Yönetime Gönderme / Yönetim Bekleme

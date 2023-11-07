@@ -8,9 +8,9 @@
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
             html += `<td>${arr[i].id}</td><td>${arr[i].name}</td>`;
-            html += `<td><i class="bi bi-trash text-danger px-2 py-2 mx-3 border border-danger " onclick='RolSil(${arr[i].id})'></i><i class="bi bi-pencil-square text-primary px-2 py-2 mx-3 border border-primary" onclick='RolDuzenle(
-                "${arr[i].id}","${arr[i].name}")'></i>
-                <i class="bi bi-database-fill-slash text-warning px-2 py-2 mx-3 border border-warning" onclick='VeriTabaniSil(${arr[i].id})'></i>
+            html += `<td><button class="btn btn-danger"  onclick='RolSil(${arr[i].id})'>Sil</button><button class="btn btn-primary mx-2" onclick='RolDuzenle(
+                "${arr[i].id}","${arr[i].name}")'>Düzenle</button>
+                <button class="btn btn-warning" onclick='VeriTabaniSil(${arr[i].id})' title="Veri Tabanına Taşıma İşlemi">VTT</button>
                 </td>`;
             html += `</tr>`
         }
