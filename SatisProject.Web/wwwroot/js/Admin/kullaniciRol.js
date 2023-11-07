@@ -1,4 +1,4 @@
-﻿function KullanicilariGetir() {
+﻿function KullanicilariGetirRolVer() {
     var html = ``;
     var girisSirketId = $("#girisSirketId").val();
     Get(`Employee/GetIsActiceByCompany/${girisSirketId}`, (data) => {
@@ -55,13 +55,13 @@
 
         html += `</tbody></table>`;
 
-        $("#divKullanicilar").html(html);
+        $("#divKullanicilarRolVer").html(html);
 
 
 
         $("#ara").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#divKullanicilar .searchTable").filter(function () {
+            $("#divKullanicilarRolVer .searchTable").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
             });
         });
@@ -105,7 +105,7 @@ function YeniRolVer() {
         RoleId: $("#rolAd").val()
     };
     Post("EmployeeRole/Create", rol, (data) => {
-        KullanicilariGetir();
+        KullanicilariGetirRolVer();
         KullaniciRolGetir();
         $("#rolVerModal").modal("hide");
     });
@@ -113,7 +113,7 @@ function YeniRolVer() {
 
 function KullaniciRolSil(id) {
     Delete(`EmployeeRole/DeletePermanent/${id}`, (data) => {
-        KullanicilariGetir();
+        KullanicilariGetirRolVer();
         KullaniciRolGetir();
     });
 }
@@ -139,11 +139,11 @@ $(document).ready(function () {
     TumSirketleriGetir();
     TumRolleriGetir();
     KullaniciRolGetir();
-    KullanicilariGetir()
+    KullanicilariGetirRolVer()
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
-        KullanicilariGetir()
+        KullanicilariGetirRolVer()
         KullaniciRolGetir();
     });
 });

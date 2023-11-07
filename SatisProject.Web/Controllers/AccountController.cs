@@ -17,6 +17,11 @@ namespace SatisProject.Web.Controllers
 
         public IActionResult Login()=>View();
 
+        public IActionResult LoginDogrulama()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> GirisYap(LoginVM model)
         {
 

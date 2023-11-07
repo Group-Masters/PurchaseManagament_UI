@@ -9,5 +9,15 @@ namespace SatisProject.Web.Areas.Rapor.Controllers
         {
             return View();
         }
+
+        public IActionResult BirimRapor()
+        {
+            return View();
+        }
+
+        public IActionResult SirketRapor()
+        {
+            return View();
+        }
     }
 }

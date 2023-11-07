@@ -1,7 +1,7 @@
-﻿function KullaniciRapor() {
-    var giriskullaniciId = $("#kullanici").val();
+﻿function Rapor() {
+    var girisId = $("#birim").val();
     var html = ``;
-    Get(`Report/GetByEmployee/${giriskullaniciId}`, (data) => {
+    Get(`Report/GetByDepartment/${girisId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
@@ -79,11 +79,11 @@
     </div>`;
 
         }
-        $("#divKullanici").html(html);
+        $("#divBirim").html(html);
 
         $("#ara").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#divKullanici .accordion").filter(function () {
+            $("#divBirim .accordion").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
             });
         });
@@ -94,15 +94,15 @@
 
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
-    KullaniciRapor();
-    KullanicilariGetir();
+    Rapor();
+    DepartmanlariGetir();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
-        KullaniciRapor();
+        Rapor();
     });
-    $("#kullanici").on("change", function () {
+    $("#birim").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
-        KullaniciRapor();
+        Rapor();
     });
 });
