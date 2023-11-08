@@ -1,29 +1,6 @@
 ﻿
 var BASE_API_URI = "https://localhost:7064";
 
-//function Get(action, success) {
-//    $.ajax({
-//        type: "GET",
-//        url: `${BASE_API_URI}/${action}`,
-//        //beforeSend: function (xhr) {
-//        //    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-//        //},
-//        dataType: "json",
-//        contentType: "application/json; charset=utf-8",
-//        success: function (response) {
-//            if (response.success) {
-//                success(response.data);
-//            }
-//            else {
-//                alert(response.message);
-//            }
-//        },
-//        error: function (XMLHttpRequest, textStatus, errorThrown) {
-//            alert(XMLHttpRequest + "-" + textStatus + "-" + errorThrown);
-//        }
-//    });
-//}
-
 function Get(action, item) {
     $.ajax({
         type: "GET",
@@ -38,17 +15,6 @@ function Get(action, item) {
                 item(response.data);
 
             }
-            //if(!response.success) {
-
-
-            //    console.log("fghjkl");
-
-            //    /*error(response.errors.join(", "));*/
-
-
-
-
-            //}
         },
 
         error: function (xhr, status, error) {
@@ -86,78 +52,18 @@ function Post(action, data, success, ask = true) {
                     alert(response.message);
                 }
             },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert(XMLHttpRequest + "-" + textStatus + "-" + errorThrown);
+            error: function (xhr, status, error) {
+                var errorMessage = JSON.parse(xhr.responseText);
+                if (errorMessage && errorMessage.errors) {
+                    var errorString = errorMessage.errors.join(", ");
+                    alert(errorString);
+                } else {
+                    alert("An unknown error occurred.");
+                }
             }
         });
     }
 }
-
-//function Post(action, data, success) {
-//    $.ajax({
-//        type: "POST",
-//        url: `${BASE_API_URI}/${action}`,
-//        //beforeSend: function (xhr) {
-//        //    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-//        //},
-//        dataType: "json",
-//        contentType: "application/json; charset=utf-8",
-//        data: JSON.stringify(data),
-//        success: function (response) {
-//            if (response.success) {
-//                success(response.data);
-//            }
-//            else {
-//                alert(response.errors);
-//            }
-//        },
-//        error: function (xhr, status, error) {
-//            var errorMessage = JSON.parse(xhr.responseText);
-//            if (errorMessage && errorMessage.errors) {
-//                var errorString = errorMessage.errors.join(", ");
-//                alert(errorString);
-//            } else {
-//                alert("An unknown error occurred.");
-//            }
-//        }
-//    });
-//}
-
-//function Post(action, data, success, ask = true) {
-//    var confirmed = true;
-//    if (ask) {
-//        confirmed = confirm("İşlemi gerçekleştirmek istediğinize emin misiniz?");
-//    }
-//    if (confirmed) {
-//        $.ajax({
-//            type: "POST",
-//            url: `${BASE_API_URI}/${action}`,
-//            //beforeSend: function (xhr) {
-//            //    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-//            //},
-//            dataType: "json",
-//            contentType: "application/json; charset=utf-8",
-//            data: JSON.stringify(data),
-//            success: function (response) {
-//                if (response.success) {
-//                    success(response.data);
-//                }
-//                else {
-//                    alert(response.errors);
-//                }
-//            },
-//            error: function (xhr, status, error) {
-//                var errorMessage = JSON.parse(xhr.responseText);
-//                if (errorMessage && errorMessage.errors) {
-//                    var errorString = errorMessage.errors.join(", ");
-//                    alert(errorString);
-//                } else {
-//                    alert("An unknown error occurred.");
-//                }
-//            }
-//        });
-//    }
-//}
 
 function Delete(action, success, ask = true) {
     var confirmed = true;
@@ -181,8 +87,17 @@ function Delete(action, success, ask = true) {
                     alert(response.message);
                 }
             },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                alert(XMLHttpRequest + "-" + textStatus + "-" + errorThrown);
+            //error: function (XMLHttpRequest, textStatus, errorThrown) {
+            //    alert(XMLHttpRequest + "-" + textStatus + "-" + errorThrown);
+            //}
+            error: function (xhr, status, error) {
+                var errorMessage = JSON.parse(xhr.responseText);
+                if (errorMessage && errorMessage.errors) {
+                    var errorString = errorMessage.errors.join(", ");
+                    alert(errorString);
+                } else {
+                    alert("An unknown error occurred.");
+                }
             }
         });
     }
@@ -256,6 +171,26 @@ function DepartmanlariGetir() {
         var dropdown = $("#birim");
         $.each(getdata, function (index, get) {
             dropdown.append($("<option>").val(get.id).text(`${get.name}`));
+        });
+    });
+}
+
+function TedarikcileriGetir() {
+    Get("Supplier/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#tedarikci");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name}`));
+        });
+    });
+}
+
+function UrunleriGetir() {
+    Get("Product/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#urun");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.measuringName}`));
         });
     });
 }

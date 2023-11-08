@@ -19,5 +19,13 @@ namespace SatisProject.Web.Areas.Rapor.Controllers
         {
             return View();
         }
+        public IActionResult TedarikciRapor()
+        {
+            return View();
+        }
+        public IActionResult MalzemeRapor()
+        {
+            return View();
+        }
     }
 }

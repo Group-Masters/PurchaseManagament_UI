@@ -29,7 +29,7 @@
 
                                     <form class="col-md-5 col-lg-6 d-flex align-items-center">
 
-                                        <div class="d-flex align-items-center mb-3 pb-1">
+                                        @* <div class="d-flex align-items-center mb-3 pb-1">
                                             @if (!string.IsNullOrEmpty(ViewBag.LoginError))
                                             {
                                                 <div class="alert alert-danger col-xl-12" role="alert">
@@ -38,8 +38,16 @@
 
                                             }
                                             <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
-                                        </div>
-
+                                        </div> *@
+                                        @if (ViewBag.LoginErrors != null)
+                                        {
+                                            <div class="alert alert-danger">
+                                                    @foreach (var error in ViewBag.LoginErrors)
+                                                    {
+                                                        <div>@error</div>
+                                                    }
+                                            </div>
+                                        }
                                         <h6 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Hoşgeldiniz! Hesabınıza Giriş Yapın</h6>
 
                                         <div class="form-outline mb-4">

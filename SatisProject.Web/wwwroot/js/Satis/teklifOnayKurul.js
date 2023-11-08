@@ -90,7 +90,7 @@
 function Reddet(id, approvingEmployeeId) {
     var teklif = {
         Id: id,
-        Status: 1//Reddetme 1 Olmalı Fakat Api tarafında Status Enum'u içerisinde Hem Reddetme Hem YönetimRed kısmı var!!
+        Status: 5//Reddetme 1 Olmalı Fakat Api tarafında Status Enum'u içerisinde Hem Reddetme Hem YönetimRed kısmı var!!
 
     };
     Put("Offer/UpdateOfferState", teklif, (data) => {
