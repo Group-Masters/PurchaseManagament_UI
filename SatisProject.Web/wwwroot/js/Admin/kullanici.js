@@ -8,7 +8,7 @@ function KullaniciGetirDeneme() {
 
         html += `<table class="table align-middle mb-0 bg-white" style="border-radius:35px;">
   <thead class="bg-light">
-    <tr>
+    <tr >
       <th>Ad - Soyad</th>
       <th>Şirket - Birim</th>
       <th>Kimlik - Telefon</th>
@@ -41,7 +41,7 @@ function KullaniciGetirDeneme() {
                 <p class="text-muted mb-0">${arr[i].phone}</p>
             </td>
             <td>
-                <ul>`;
+                <ul class="p-0">`;
             if (arr[i].roles.length <= 0) {
                 html += '<li class="text-danger" style="list-style: none;">Role Sahip Değil</li>';
             } else {

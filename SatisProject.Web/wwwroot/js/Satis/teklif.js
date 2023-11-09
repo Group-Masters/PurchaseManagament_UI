@@ -30,7 +30,7 @@
 
             <table class="table">
               <thead class="position-relative">
-                <tr class="bg-primary text-primary">
+                <tr style="background-color:#9e9494; color:#9e9494;">
                   <th scope="col">·</th>
                   <th scope="col">
                   <span class="position-absolute top-0 end-0">
@@ -106,7 +106,7 @@ function TalepTeklifleriniGetir(gizliId) {
     $("#staticBackdrop1").modal("show");
     Get(`Offer/GetByRequestId/${gizliId}`, (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover">` +
-            `<thead class="text-light bg-primary"><tr><th>Id</th><th>Tedarikci Adı</th><th>Fiyat Teklifi</th><th>Açıklama</th><th>Onay Durumu</th><th></th><th></th><th></th><th></th></tr></thead>`;
+            `<thead class="text-light" style="background-color:#9e9494;"><tr><th>Id</th><th>Tedarikci Adı</th><th>Fiyat Teklifi</th><th>Açıklama</th><th>Onay Durumu</th><th></th><th></th><th></th><th></th></tr></thead>`;
 
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);

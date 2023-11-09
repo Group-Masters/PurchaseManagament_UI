@@ -2,7 +2,7 @@
     var girisSirketId = $("#girisSirketId").val();
     Get(`CompanyStock/GetAllByCompanyId/${girisSirketId}`, (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
-            `<thead class="text-light bg-primary"><tr><th>Id</th><th>Ürün Adı</th><th>Adet</th><th></th><th></th></tr></thead>`;
+            `<thead class="text-light" style="background-color:#9e9494;"><tr><th>Id</th><th>Ürün Adı</th><th>Adet</th><th></th><th></th></tr></thead>`;
 
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
@@ -65,6 +65,17 @@ function TumFaturalariGetir() {
           <div class="accordion-body">
 
             <table class="table">
+             <thead class="position-relative">
+                 <tr style="background-color:#9e9494; color:#9e9494;">
+                  <th scope="col" style="border:none;">·</th>
+                  <th class="position-absolute top-0 end-0" scope="col" style="top:-7px !important;border:none;">
+                  <span class="">
+                    <button class="btn btn-light" onclick='StokTamamla(
+                 "${arr[i].id}")'>Stok İşlemini Tamamla</button>
+                  </span>
+                  </th>
+                </tr>
+              </thead>
               <tbody>
                 <tr>
                   <th scope="row">Tedarikçi Adı / Adresi :</th>
@@ -161,6 +172,7 @@ function GuncelleArtir() {
 function Azalt(id) {
     $("#idAzalt").val(id);
     $("#adetAzalt").val("");
+    $("#departmanAzalt").val("");
     $("#kullaniciAzalt").val("");
     $("#staticBackdropAzalt").modal("show");
 }
@@ -169,11 +181,22 @@ function GuncelleAzalt() {
     var stok = {
         Id: $("#idAzalt").val(),
         Quantity: $("#adetAzalt").val(),
-        CompanyDepartmentId: $("#departmanAzalt").val()
+        EmployeeId: $("#kullaniciAzalt").val()
     };
     Put("CompanyStock/UpdateQuantityReduce", stok, (data) => {
         StokUrunleriGetir();
         $("#staticBackdropAzalt").modal("hide");
+    });
+}
+
+function StokTamamla(id) {
+    var stok = {
+        Id: id,
+        Status: 9
+    };
+    Put("Invoice/UpdateStatus", stok, (data) => {
+        StokUrunleriGetir();
+        TumFaturalariGetir();
     });
 }
 
@@ -187,15 +210,34 @@ function TumUrunleriGetir() {
     });
 }
 
-function TumDepartmanlariGetir() {
+$(document).ready(function () {
     Get("Department/GetAll", (data) => {
         var getData = data;
-        var dropdownAzalt = $("#departmanAzalt");
+        var ddlSirket = $("#departmanAzalt");
         $.each(getData, function (index, get) {
-            dropdownAzalt.append($("<option>").val(get.id).text(`${get.name}`));
+            ddlSirket.append($("<option>").val(get.id).text(get.name));
         });
     });
-}
+    $("#departmanAzalt").change(function () {
+        var depId = $(this).val();
+        var ddlkullanici = $("#kullaniciAzalt");
+        ddlkullanici.empty();
+        if (depId !== "") {
+            Get(`Employee/GetByCompany/${depId}`, (data) => {
+                if (data != "") {
+                    var getData = data;
+                    $.each(getData, function (index, get) {
+                        ddlkullanici.append($("<option>").val(get.id).text(get.name));
+                    });
+                }
+                else {
+                    alert("Departmana Ait Kullanıcı Yok");
+                }
+
+            });
+        }
+    });
+});
 
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
@@ -203,7 +245,6 @@ $(document).ready(function () {
     StokUrunleriGetir();
     TumFaturalariGetir();
     TumUrunleriGetir();
-    TumDepartmanlariGetir();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir

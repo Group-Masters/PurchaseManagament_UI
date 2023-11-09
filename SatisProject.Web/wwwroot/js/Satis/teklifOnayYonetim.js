@@ -32,7 +32,7 @@
 
             <table class="table">
               <thead class="position-relative">
-                 <tr class="bg-primary text-primary">
+                 <tr style="background-color:#9e9494; color:#9e9494;">
                   <th scope="col" style="border:none;">·</th>
                   <th class="position-absolute top-0 end-0" scope="col" style="top:-7px !important;border:none;">
                   <span class="">
