@@ -121,6 +121,7 @@ function Put(action, data, success, ask = true) {
             success: function (response) {
                 if (response.success) {
                     success(response.data);
+
                 }
                 else {
                     alert(response.message);
@@ -138,8 +139,6 @@ function Put(action, data, success, ask = true) {
         });
     }
 }
-
-
 
 var girisSirketId = $("#girisSirketId").val();
 var girisKullaniciId = $("#kullanici").val();

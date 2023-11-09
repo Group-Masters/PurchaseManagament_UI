@@ -343,6 +343,62 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed"
+                   href="#"
+                   data-toggle="collapse"
+                   data-target="#collapseSirket"
+                   aria-expanded="true"
+                   aria-controls="collapsePages">
+                    <i class="bi bi-building"></i>
+                    <span>Şirket-Birim</span>
+                </a>
+                <div id="collapseSirket"
+                     class="collapse"
+                     aria-labelledby="headingPages"
+                     data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
+                        <h6 class="collapse-header">Şirket-Birim</h6>
+                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Sirket">
+                            Sirketler
+                        </a>
+
+                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Birim">
+                            Birimler
+                        </a>
+                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="BirimSirket">
+                            Şirket Birimleri
+                        </a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed"
+                   href="#"
+                   data-toggle="collapse"
+                   data-target="#collapseBirimler"
+                   aria-expanded="true"
+                   aria-controls="collapsePages">
+                    <i class="bi bi-calculator"></i>
+                    <span>Para-Ölçüm Birimleri</span>
+                </a>
+                <div id="collapseBirimler"
+                     class="collapse"
+                     aria-labelledby="headingPages"
+                     data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
+                        <h6 class="collapse-header">Para-Adet</h6>
+                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="ParaBirim">
+                            Para Birimleri
+                        </a>
+                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="AdetBirim">
+                            Ölçüm Birimleri
+                        </a>
+                    </div>
+                </div>
+            </li>
+
             @*             @{
             if (admin || baskan)
             { *@
@@ -355,6 +411,12 @@
             @*                 }
             } *@
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Tedarikciler">
+                    <i class="fas fa-users"></i>
+                    <span>Tedarikciler</span>
+                </a>
+            </li>
 
             <!-- Nav Item - Tables -->
             @*             @{
@@ -369,53 +431,7 @@
             @*                 }
             } *@
 
-            @*             @{
-            if (admin)
-            { *@
-            <li class="nav-item">
-                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Sirket">
-                    <i class="bi bi-building"></i>
-                    <span>Sirketler</span>
-                </a>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Birim">
-                    <i class="bi bi-stack"></i>
-                    <span>Birimler</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="BirimSirket">
-                    <i class="bi bi-stack"></i>
-                    <span>Şirket Birimleri</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="ParaBirim">
-                    <i class="bi bi-coin"></i>
-                    <span>Para Birimleri</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Tedarikciler">
-                    <i class="fas fa-users"></i>
-                    <span>Tedarikciler</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="AdetBirim">
-                    <i class="fas fa-circle"></i>
-                    <span>Adet Birim</span>
-                </a>
-            </li>
-
-            @*                 }
-            } *@
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block" />
