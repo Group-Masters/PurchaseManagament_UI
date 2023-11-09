@@ -1,0 +1,63 @@
+﻿@using SatisProject.Web.Code;
+<nav class="navbar text-light mb-3 bg-white shadow" style="border-radius: 15px !important;">
+    <div class="container-fluid">
+        <h2><a class="navbar-brand fs-4" style="color:#858796;">Stok İşlemleri</a></h2>
+    </div>
+</nav>
+
+<div id="divStok" style="overflow-x: auto;">
+</div>
+
+<div class="modal fade"
+     id="staticBackdrop"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kullanici Bilgileri</h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+
+                    <input type="text"
+                           class="form-control"
+                           id="id" />
+                    <input type="text"
+                           class="form-control "
+                           id="companyStockId" />
+                    <input type="text"
+                           class="form-control "
+                           id="kullaniciId" />
+
+                    <div class="col-md-12">
+                        <label for="adetG" class="form-label">Adet Giriniz  :</label>
+                        <input type="number"
+                               class="form-control"
+                               id="adet"
+                               required />
+                        <div class="invalid-feedback">Bu alan boş geçilemez.</div>
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                        Vazgeç
+                    </button>
+                    <button class="btn btn-primary" type="submit" onclick="Guncelle()">Güncelle</button>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/stokurun/stokIslem.js" asp-append-version="true"></script>

@@ -33,11 +33,7 @@ namespace SatisProject.Web.Controllers
                 Repo.Session.Eposta = model.UsernameOrEmail;
                 Repo.Session.Token = item.Token;
 
-                //List<long> rolIdList = item.RolId;
-                //string.Join(",", rolIdList.Select(id => id.ToString()));
-
-                // string rolString = string.Join(",", Convert.ToString(item.RolId.Select(x=>x.ToString())));
-                List<long> rolIdList = item.RolId; // Örneğin, item.RolId listesi
+                List<long> rolIdList = item.RolId;
                 List<string> stringList = rolIdList.Select(id => id.ToString()).ToList();
                 string rolString = string.Join(",", stringList);
                 Repo.Session.RolId = rolString;
@@ -49,10 +45,9 @@ namespace SatisProject.Web.Controllers
             }
             else
             {
-                //ViewBag.LoginError = Convert.ToString(response.Data.Errors);
+
                 List<string> errors = (List<string>)response.Data.Errors;
                 ViewBag.LoginErrors = errors;
-                //return View("Login");
                 return View("LoginDogrulama", "Account");
             }
           
@@ -62,34 +57,15 @@ namespace SatisProject.Web.Controllers
         {
 
             var response = await _restService.PostAsync<LoginVM, Result<bool>>(model, "Employee/Login", false);
-            //UserRestClient client = new UserRestClient();
-            //dynamic result = client.Login(model.UsernameOrEmail, model.Password);
-
-            //bool success = result.success;
             
             if (response.Data.Success==true)
             {
-                //var item = response.Data.Data;
                 Repo.Session.Eposta = model.UsernameOrEmail;
-                //Repo.Session.Token = item.Token;
-
-                ////List<long> rolIdList = item.RolId;
-                ////string.Join(",", rolIdList.Select(id => id.ToString()));
-
-                //// string rolString = string.Join(",", Convert.ToString(item.RolId.Select(x=>x.ToString())));
-                //List<long> rolIdList = item.RolId; // Örneğin, item.RolId listesi
-                //List<string> stringList = rolIdList.Select(id => id.ToString()).ToList();
-                //string rolString = string.Join(",", stringList);
-                //Repo.Session.RolId = rolString;
-                //Repo.Session.Id = Convert.ToString(item.Id);
-                //Repo.Session.CompanyId = Convert.ToString(item.CompanyId);
-                //Repo.Session.DepartmentId = Convert.ToString(item.CompanyId);
 
                 return RedirectToAction("LoginDogrulama", "Account");
             }
             else
             {
-                //ViewBag.LoginError = Convert.ToString(response.Data.Errors);
                 List<string> errors = (List<string>)response.Data.Errors;
                 ViewBag.LoginErrors = errors;
                 return View("Login");

@@ -16,7 +16,7 @@
             )'>Artır</button>
              <button class="btn btn-warning" onclick='Azalt(
                  "${arr[i].id}"
-            )'>Azalt</button>
+            )'>Stoktan Ver</button>
             </td>`;
             html += `</tr>`
         }
@@ -181,7 +181,7 @@ function GuncelleAzalt() {
     var stok = {
         Id: $("#idAzalt").val(),
         Quantity: $("#adetAzalt").val(),
-        EmployeeId: $("#kullaniciAzalt").val()
+        ReceivingEmployeeId: $("#kullaniciAzalt").val()
     };
     Put("CompanyStock/UpdateQuantityReduce", stok, (data) => {
         StokUrunleriGetir();
@@ -227,7 +227,7 @@ $(document).ready(function () {
                 if (data != "") {
                     var getData = data;
                     $.each(getData, function (index, get) {
-                        ddlkullanici.append($("<option>").val(get.id).text(get.name));
+                        ddlkullanici.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
                     });
                 }
                 else {
