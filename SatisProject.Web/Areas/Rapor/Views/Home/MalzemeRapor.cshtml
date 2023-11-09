@@ -6,6 +6,7 @@
         <h2><a class="navbar-brand fs-4" style="color:#858796;">Malzeme Raporları</a></h2>
         <form class="d-flex" role="search">
             <label class="form-label text-black mt-2" for="urun" style="width:130px;">Ürün Seçiniz :</label>
+            <input type="text" class="d-none" value="@Repo.Session.CompanyId" id="malzemeSirketId" />
             <select class="form-select" id="urun" style="width:190px;">
                 <option class="d-none" value="1" selected></option>
             </select>

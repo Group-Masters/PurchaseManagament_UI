@@ -37,7 +37,7 @@
               <tbody>
               <tr>
                   <th scope="row">Fatura Id'si :</th>
-                  <td>${arr[i].invoiceId}</td>
+                  <td>${arr[i].invoiceId === null ? 'Fatura daha oluşmadı veya talep reddedildi.' : arr[i].supplyDate}</td>
                 </tr>
                 <tr>
                   <th scope="row">Şirket-Departman Adı :</th>
@@ -69,7 +69,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Talep Onaylanma Tarihi :</th>
-                  <td>${arr[i].supplyDate}</td>
+                  <td>${arr[i].supplyDate === null ? 'Talep daha onaylanmadı veya reddedildi.' : arr[i].supplyDate}</td>
                 </tr>
               </tbody>
             </table>

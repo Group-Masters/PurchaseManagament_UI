@@ -91,11 +91,62 @@
     });
 }
 
+function SirketeGoreKullanicilariGetir() {
+    $("#kullaniciSirketIdGetir").change(function () {
+        var sirketId = $(this).val();
+        var ddlKullanici = $("#kullanici");
+        ddlKullanici.empty();
+        if (sirketId !== "") {
+            Get(`Employee/GetByCompany/${sirketId}`, (data) => {
+                if (data != "") {
+                    var gets = data;
+                    $.each(gets, function (index, get) {
+                        ddlKullanici.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
+                    });
+                }
+                else {
+                    alert("Kullanici yok");
+                }
+
+            });
+        }
+    });
+}
+
+$(document).ready(function () {
+    Get("Company/GetAll", (data) => {
+        var sirketler = data;
+        var ddlSirket = $("#kullaniciSirketIdGetir");
+        $.each(sirketler, function (index, sirket) {
+            ddlSirket.append($("<option>").val(sirket.id).text(sirket.name));
+        });
+    });
+    $("#kullaniciSirketIdGetir").change(function () {
+        var sirketId = $(this).val();
+        var ddlKullanici = $("#kullanici");
+        ddlKullanici.empty();
+        if (sirketId !== "") {
+            Get(`Employee/GetByCompany/${sirketId}`, (data) => {
+                if (data != "") {
+                    var gets = data;
+                    $.each(gets, function (index, get) {
+                        ddlKullanici.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
+                    });
+                }
+                else {
+                    alert("Kullanici yok");
+                }
+
+            });
+        }
+    });
+});
 
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
+    TumSirketleriGetir();
     KullaniciRapor();
-    KullanicilariGetir();
+    SirketeGoreKullanicilariGetir();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
