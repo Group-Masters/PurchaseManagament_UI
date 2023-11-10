@@ -1,4 +1,5 @@
 ﻿
+
 var BASE_API_URI = "https://localhost:7064";
 
 function Get(action, item) {
@@ -95,22 +96,22 @@ function Delete(action, success, ask = true) {
             contentType: "application/json; charset=utf-8",
             success: function (response) {
                 if (response.success) {
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: "İşlem Başarılı",
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
+                    success(response.data);
                 }
                 else {
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'danger',
-                        title: "İşlem Başarısız",
-                        showConfirmButton: false,
-                        timer: 3000
-                    });
+                    alert(response.message);
+                }
+            },
+            //error: function (XMLHttpRequest, textStatus, errorThrown) {
+            //    alert(XMLHttpRequest + "-" + textStatus + "-" + errorThrown);
+            //}
+            error: function (xhr, status, error) {
+                var errorMessage = JSON.parse(xhr.responseText);
+                if (errorMessage && errorMessage.errors) {
+                    var errorString = errorMessage.errors.join(", ");
+                    alert(errorString);
+                } else {
+                    alert("An unknown error occurred.");
                 }
             }
         });
@@ -127,7 +128,9 @@ function Put(action, data, success, ask = true) {
         confirmButtonText: 'Evet, Kaydet',
         cancelButtonText: 'Hayır, İptal',
     }).then((result) => {
+        // Kullanıcı Evet'i seçerse
         if (result.isConfirmed) {
+            // Burada kaydetme işlemini gerçekleştirebilirsiniz
             $.ajax({
                 type: "PUT",
                 url: `${BASE_API_URI}/${action}`,
@@ -159,7 +162,7 @@ function Put(action, data, success, ask = true) {
                 }
             });
         }
-    });
+    }); // This is where the missing closing parenthesis should be
 }
 
 
