@@ -46,7 +46,14 @@ function Post(action, data, success, ask = true) {
             data: JSON.stringify(data),
             success: function (response) {
                 if (response.success) {
-                    success(response.data);
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: response.data,
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+
                 }
                 else {
                     alert(response.message);
@@ -56,7 +63,11 @@ function Post(action, data, success, ask = true) {
                 var errorMessage = JSON.parse(xhr.responseText);
                 if (errorMessage && errorMessage.errors) {
                     var errorString = errorMessage.errors.join(", ");
-                    alert(errorString);
+                    Swal.fire({
+                        icon: 'error',
+                        title: HataBilgisi.HataAciklama,
+                        html: errorString
+                    })
                 } else {
                     alert("An unknown error occurred.");
                 }
@@ -194,3 +205,6 @@ function UrunleriGetir() {
         });
     });
 }
+
+
+
