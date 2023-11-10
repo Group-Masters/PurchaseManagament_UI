@@ -36,7 +36,7 @@
                   <span class="position-absolute top-0 end-0">
                   <button class="btn btn-link"  onclick='IdVer(
                         ${arr[i].id}
-                   )'><a class="btn btn-light"> Teklif Ver</a></button>
+                   )'><a class="btn btn-light"> Teklif Gir</a></button>
                    <button class="btn btn-link"  onclick='TalepTeklifleriniGetir(
                         ${arr[i].id}
                    )'><a class="btn btn-light"> Teklifleri Gör</a></button>

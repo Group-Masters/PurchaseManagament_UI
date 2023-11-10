@@ -6,6 +6,12 @@
     Get(`Report/GetbyProduct/${malzemeSirketId}/${girisId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
+        html += `            <nav class="navbar bg-white mb-2">
+              <button type="submit" class="btn btn-warning mr-3" title="PDF Oluştur" id="pdfOlustur" onclick="Pdf(${girisId},${malzemeSirketId})">
+                    PDF Oluştur
+                    <i class="bi bi-receipt text-black"></i>
+              </button>
+            </nav>`;
         for (var i = 0; i < arr.length; i++) {
             html += `<div class="secili accordion accordion-flush" id="accordionFlushExample">
       <div class="accordion-item">
@@ -89,6 +95,16 @@
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
             });
         });
+
+    });
+}
+
+function Pdf(girisId, malzemeSirketId) {
+    var pdf = {
+        ProductId: girisId,
+        CompanyId: malzemeSirketId
+    }
+    Post(`PDF/GenerateReportToPDFByProduct`, pdf, (data) => {
 
     });
 }

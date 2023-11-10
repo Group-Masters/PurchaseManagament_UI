@@ -38,11 +38,11 @@
 function TumFaturalariGetir() {
     var girisSirketId = $("#girisSirketId").val();
     var html = ``;
-    Get(`Invoice/GetInvoicesByCompany/${girisSirketId}`, (data) => {
+    Get(`Invoice/GetPendingInvoicesByCompany/${girisSirketId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
-            html += `<div class="secili accordion accordion-flush" id="accordionFlushExample">
+            html += `<div class="secili accordion accordion-flush px-4" id="accordionFlushExample">
       <div class="accordion-item">
         <h2 class="accordion-header border border-black">
           <button
@@ -133,7 +133,7 @@ function StoktanKarsilanlar() {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
-            html += `<div class="secili accordion accordion-flush" id="accordionFlushExample">
+            html += `<div class="secili accordion accordion-flush px-4" id="accordionFlushExample">
       <div class="accordion-item">
         <h2 class="accordion-header border border-black">
           <button
@@ -161,7 +161,7 @@ function StoktanKarsilanlar() {
                   <th scope="col" style="border:none;">·</th>
                   <th class="position-absolute top-0 end-0" scope="col" style="top:-7px !important;border:none;">
                   <span class="">
-                    <button class="btn btn-light" onclick='StokTamamla(
+                    <button class="btn btn-light" onclick='StokTamamlaOffer(
                  "${arr[i].id}")'>Stok İşlemini Tamamla</button>
                   </span>
                   </th>
@@ -268,11 +268,22 @@ function GuncelleAzalt() {
 }
 
 function StokTamamla(id) {
-    var stok = {
+    var fatura = {
         Id: id,
         Status: 9
     };
-    Put("Invoice/UpdateStatus", stok, (data) => {
+    Put("Invoice/UpdateStatus", fatura, (data) => {
+        StokUrunleriGetir();
+        TumFaturalariGetir();
+    });
+}
+
+function StokTamamlaOffer(id) {
+    var teklif = {
+        Id: id,
+        Status: 9
+    };
+    Put("Offer/UpdateOfferState", teklif, (data) => {
         StokUrunleriGetir();
         TumFaturalariGetir();
     });

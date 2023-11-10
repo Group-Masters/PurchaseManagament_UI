@@ -3,7 +3,15 @@
     var html = ``;
     Get(`Report/GetByEmployee/${giriskullaniciId}`, (data) => {
         /*var arr = data;*/
+
         var arr = data.sort((a, b) => b.id - a.id);
+
+        html += `            <nav class="navbar bg-white mb-2">
+              <button type="submit" class="btn btn-warning mr-3" title="PDF Oluştur" id="pdfOlustur" onclick="Pdf(${giriskullaniciId})">
+                    PDF Oluştur
+                    <i class="bi bi-receipt text-black"></i>
+              </button>
+            </nav>`;
         for (var i = 0; i < arr.length; i++) {
             html += `<div class="secili accordion accordion-flush" id="accordionFlushExample">
       <div class="accordion-item">
@@ -91,17 +99,28 @@
     });
 }
 
+
+function Pdf(giriskullaniciId) {
+    var pdf ={
+        Id: giriskullaniciId
+    }
+    Post(`PDF/GenerateReportToPDFByEmploye`, pdf,(data) => {
+
+    });
+}
+
 function SirketeGoreKullaniciGetirAdmin() {
     $("#girisSirketId").change(function () {
         var sirketId = $(this).val();
         var ddlKullanici = $("#kullaniciAdmin");
+        $("#pdfOlustur").data("selected-value", selectedValue);
         ddlKullanici.empty();
         if (sirketId !== "") {
             Get(`Employee/GetByCompany/${sirketId}`, (data) => {
                 if (data != "") {
                     var gets = data;
                     $.each(gets, function (index, get) {
-                        ddlKullanici.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
+                        ddlKullanici.append($("<option >").val(get.id).text(`${get.name} ${get.surname}`));
                     });
                 }
                 else {
@@ -139,8 +158,4 @@ $(document).ready(function () {
         // Yeni şirket seçildiğinde verileri getir
         KullaniciRapor();
     });
-    //$("#kullaniciYonetim").on("change", function () {
-    //    // Yeni şirket seçildiğinde verileri getir
-    //    KullaniciRapor();
-    //});
 });

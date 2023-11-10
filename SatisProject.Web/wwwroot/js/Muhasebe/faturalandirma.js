@@ -53,8 +53,11 @@ function TumFaturalariGetir() {
     Get(`Invoice/GetInvoicesByCompany/${girisSirketId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
-        for (var i = 0; i < arr.length; i++) {
-            html += `<div class="secili accordion accordion-flush" id="accordionFlushExample">
+
+        for (var i = 0; i < (arr.length <= 10 ? arr.length : 10); i++) {
+            html += `
+            
+            <div class="secili accordion accordion-flush" id="accordionFlushExample">
       <div class="accordion-item">
         <h2 class="accordion-header border border-black">
           <button
@@ -112,7 +115,9 @@ function TumFaturalariGetir() {
           </div>
         </div>
       </div>
-    </div>`;
+    </div>
+    
+    `;
 
         }
         $("#divFatura").html(html);
