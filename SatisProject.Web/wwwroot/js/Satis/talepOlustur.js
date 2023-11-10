@@ -50,11 +50,16 @@ function Kaydet() {
         Details: $("#aciklama").val(),
         Quantity: $("#adet").val()
     };
+    
+    
     Post("Request/Create", talep, (data) => {
-
         TalepleriKullaniciyaGoreGetir();
         $("#staticBackdrop").modal("hide");
+
     });
+
+
+
 }
 
 

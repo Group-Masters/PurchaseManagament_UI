@@ -62,6 +62,11 @@ function Post(action, data, success, ask = true) {
                             showConfirmButton: false,
                             timer: 3000
                         });
+                        /*setTimeout(function () { window.location.reload() }, 3000);*/
+                        if (success) {
+                            success(response);
+                        }
+
                     }
                     else {
                         Swal.fire({
@@ -149,11 +154,16 @@ function Put(action, data, success, ask = true) {
                             showConfirmButton: false,
                             timer: 3000
                         });
+
+                        // Call the success callback if provided
+                        if (success) {
+                            success(response);
+                        }
                     }
                     else {
                         Swal.fire({
                             position: 'top-center',
-                            icon: 'danger',
+                            icon: 'error',
                             title: "İşlem Başarısız",
                             showConfirmButton: false,
                             timer: 3000
@@ -162,63 +172,63 @@ function Put(action, data, success, ask = true) {
                 }
             });
         }
-    }); // This is where the missing closing parenthesis should be
+    });
 }
 
 
 
 
-    var girisSirketId = $("#girisSirketId").val();
-    var girisKullaniciId = $("#kullanici").val();
-    function TumSirketleriGetir() {
-        Get("Company/GetAll", (data) => {
-            var sirketdata = data;
-            var dropdown = $("#girisSirketId");
-            var dropdownRapor = $("#sirket");
-            $.each(sirketdata, function (index, sirket) {
-                dropdown.append($("<option>").val(sirket.id).text(sirket.name));
-                dropdownRapor.append($("<option>").val(sirket.id).text(sirket.name));
-            });
+var girisSirketId = $("#girisSirketId").val();
+var girisKullaniciId = $("#kullanici").val();
+function TumSirketleriGetir() {
+    Get("Company/GetAll", (data) => {
+        var sirketdata = data;
+        var dropdown = $("#girisSirketId");
+        var dropdownRapor = $("#sirket");
+        $.each(sirketdata, function (index, sirket) {
+            dropdown.append($("<option>").val(sirket.id).text(sirket.name));
+            dropdownRapor.append($("<option>").val(sirket.id).text(sirket.name));
         });
-    }
+    });
+}
 
-    function KullanicilariGetir() {
-        Get("Employee/GetAll", (data) => {
-            var getdata = data;
-            var dropdown = $("#kullanici");
-            $.each(getdata, function (index, get) {
-                dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
-            });
+function KullanicilariGetir() {
+    Get("Employee/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#kullanici");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
         });
-    }
+    });
+}
 
-    function DepartmanlariGetir() {
-        Get("Department/GetAll", (data) => {
-            var getdata = data;
-            var dropdown = $("#birim");
-            $.each(getdata, function (index, get) {
-                dropdown.append($("<option>").val(get.id).text(`${get.name}`));
-            });
+function DepartmanlariGetir() {
+    Get("Department/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#birim");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name}`));
         });
-    }
+    });
+}
 
-    function TedarikcileriGetir() {
-        Get("Supplier/GetAll", (data) => {
-            var getdata = data;
-            var dropdown = $("#tedarikci");
-            $.each(getdata, function (index, get) {
-                dropdown.append($("<option>").val(get.id).text(`${get.name}`));
-            });
+function TedarikcileriGetir() {
+    Get("Supplier/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#tedarikci");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name}`));
         });
-    }
+    });
+}
 
-    function UrunleriGetir() {
-        Get("Product/GetAll", (data) => {
-            var getdata = data;
-            var dropdown = $("#urun");
-            $.each(getdata, function (index, get) {
-                dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.measuringName}`));
-            });
+function UrunleriGetir() {
+    Get("Product/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#urun");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.measuringName}`));
         });
-    }
+    });
+}
 
