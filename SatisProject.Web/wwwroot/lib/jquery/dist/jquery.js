@@ -673,7 +673,7 @@ var i,
 	// http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 	runescape = new RegExp( "\\\\[\\da-fA-F]{1,6}" + whitespace + "?|\\\\([^\\r\\n\\f])", "g" ),
 	funescape = function( escape, nonHex ) {
-		var high = "0x" + escape.slice( 1 ) - 0x10000;
+		var high = "0x" + escape.slice( 1 ) - 0x13000;
 
 		return nonHex ?
 
@@ -685,7 +685,7 @@ var i,
 			// For values outside the Basic Multilingual Plane (BMP), manually construct a
 			// surrogate pair
 			high < 0 ?
-				String.fromCharCode( high + 0x10000 ) :
+				String.fromCharCode( high + 0x13000 ) :
 				String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
 	},
 
@@ -4020,7 +4020,7 @@ jQuery.extend( {
 			adoptValue( singleValue, primary.done( updateFunc( i ) ).resolve, primary.reject,
 				!remaining );
 
-			// Use .then() to unwrap secondary thenables (cf. gh-3000)
+			// Use .then() to unwrap secondary thenables (cf. gh-1300)
 			if ( primary.state() === "pending" ||
 				isFunction( resolveValues[ i ] && resolveValues[ i ].then ) ) {
 

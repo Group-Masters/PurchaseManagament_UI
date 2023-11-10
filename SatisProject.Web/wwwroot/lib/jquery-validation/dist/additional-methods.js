@@ -738,7 +738,7 @@ $.validator.addMethod( "nieES", function( value, element ) {
 	}
 
 	// X means same number
-	// Y means number + 10000000
+	// Y means number + 13000000
 	// Z means number + 20000000
 	value = value.replace( /^[X]/, "0" )
 		.replace( /^[Y]/, "1" )
