@@ -79,50 +79,55 @@ function Post(action, data, success, ask = true) {
 
 
 
-    function Delete(action, success, ask = true) {
-        var confirmed = true;
-        if (ask) {
-            confirmed = confirm("Kaydı silmek istediğinizden emin misiniz?");
-        }
-        if (confirmed) {
-            $.ajax({
-                type: "DELETE",
-                url: `${BASE_API_URI}/${action}`,
-                beforeSend: function (xhr) {
-                    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-                },
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (response) {
-                    if (response.success) {
-                        success(response.data);
-                    }
-                    else {
-                        alert(response.message);
-                    }
-                },
-                //error: function (XMLHttpRequest, textStatus, errorThrown) {
-                //    alert(XMLHttpRequest + "-" + textStatus + "-" + errorThrown);
-                //}
-                error: function (xhr, status, error) {
-                    var errorMessage = JSON.parse(xhr.responseText);
-                    if (errorMessage && errorMessage.errors) {
-                        var errorString = errorMessage.errors.join(", ");
-                        alert(errorString);
-                    } else {
-                        alert("An unknown error occurred.");
-                    }
-                }
-            });
-        }
+function Delete(action, success, ask = true) {
+    var confirmed = true;
+    if (ask) {
+        confirmed = confirm("Kaydı silmek istediğinizden emin misiniz?");
     }
+    if (confirmed) {
+        $.ajax({
+            type: "DELETE",
+            url: `${BASE_API_URI}/${action}`,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+            },
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                if (response.success) {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: "İşlem Başarılı",
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                }
+                else {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'danger',
+                        title: "İşlem Başarısız",
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                }
+            }
+        });
+    }
+}
 
-    function Put(action, data, success, ask = true) {
-        var confirmed = true;
-        if (ask) {
-            confirmed = confirm("Kaydı güncellemek istediğinizden emin misiniz?");
-        }
-        if (confirmed) {
+function Put(action, data, success, ask = true) {
+    var confirmed = true;
+    Swal.fire({
+        title: 'Emin misiniz?',
+        text: 'Değişiklikleri kaydetmek istediğinizden emin misiniz?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Evet, Kaydet',
+        cancelButtonText: 'Hayır, İptal',
+    }).then((result) => {
+        if (result.isConfirmed) {
             $.ajax({
                 type: "PUT",
                 url: `${BASE_API_URI}/${action}`,
@@ -134,24 +139,29 @@ function Post(action, data, success, ask = true) {
                 data: JSON.stringify(data),
                 success: function (response) {
                     if (response.success) {
-                        success(response.data);
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'success',
+                            title: "İşlem Başarılı",
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
                     }
                     else {
-                        alert(response.message);
-                    }
-                },
-                error: function (xhr, status, error) {
-                    var errorMessage = JSON.parse(xhr.responseText);
-                    if (errorMessage && errorMessage.errors) {
-                        var errorString = errorMessage.errors.join(", ");
-                        alert(errorString);
-                    } else {
-                        alert("An unknown error occurred.");
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'danger',
+                            title: "İşlem Başarısız",
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
                     }
                 }
             });
         }
-    }
+    });
+}
+
 
 
 
