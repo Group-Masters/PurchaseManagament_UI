@@ -1,4 +1,5 @@
 ﻿
+
 var BASE_API_URI = "https://localhost:7064";
 
 function Get(action, item) {
@@ -31,114 +32,173 @@ function Get(action, item) {
 
 function Post(action, data, success, ask = true) {
     var confirmed = true;
-    if (ask) {
-        confirmed = confirm("İşlemi gerçekleştirmek istediğinize emin misiniz?");
-    }
-    if (confirmed) {
-        $.ajax({
-            type: "POST",
-            url: `${BASE_API_URI}/${action}`,
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-            },
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(data),
-            success: function (response) {
-                if (response.success) {
-                    success(response.data);
+    // SweetAlert ile bir onay iletişim kutusu göster
+    Swal.fire({
+        title: 'Emin misiniz?',
+        text: 'Değişiklikleri kaydetmek istediğinizden emin misiniz?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Evet, Kaydet',
+        cancelButtonText: 'Hayır, İptal',
+    }).then((result) => {
+        // Kullanıcı Evet'i seçerse
+        if (result.isConfirmed) {
+            // Burada kaydetme işlemini gerçekleştirebilirsiniz
+            $.ajax({
+                type: "POST",
+                url: `${BASE_API_URI}/${action}`,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+                },
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            position: 'top-mid',
+                            icon: 'success',
+                            title: "İşlem Başarılı",
+                            showConfirmButton: false,
+                            timer: 1300
+                        });
+                        /*setTimeout(function () { window.location.reload() }, 1300);*/
+                        if (success) {
+                            success(response);
+                        }
+
+                    }
+                    else {
+                        Swal.fire({
+                            position: 'top-mid',
+                            icon: 'danger',
+                            title: "İşlem Başarısız",
+                            showConfirmButton: false,
+                            timer: 1300
+                        });
+                    }
                 }
-                else {
-                    alert(response.message);
-                }
-            },
-            error: function (xhr, status, error) {
-                var errorMessage = JSON.parse(xhr.responseText);
-                if (errorMessage && errorMessage.errors) {
-                    var errorString = errorMessage.errors.join(", ");
-                    alert(errorString);
-                } else {
-                    alert("An unknown error occurred.");
-                }
-            }
-        });
-    }
+            });
+        }
+    }); // This is where the missing closing parenthesis should be
 }
+
+
 
 function Delete(action, success, ask = true) {
     var confirmed = true;
     if (ask) {
-        confirmed = confirm("Kaydı silmek istediğinizden emin misiniz?");
-    }
-    if (confirmed) {
-        $.ajax({
-            type: "DELETE",
-            url: `${BASE_API_URI}/${action}`,
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-            },
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (response) {
-                if (response.success) {
-                    success(response.data);
-                }
-                else {
-                    alert(response.message);
-                }
-            },
-            //error: function (XMLHttpRequest, textStatus, errorThrown) {
-            //    alert(XMLHttpRequest + "-" + textStatus + "-" + errorThrown);
-            //}
-            error: function (xhr, status, error) {
-                var errorMessage = JSON.parse(xhr.responseText);
-                if (errorMessage && errorMessage.errors) {
-                    var errorString = errorMessage.errors.join(", ");
-                    alert(errorString);
-                } else {
-                    alert("An unknown error occurred.");
-                }
+        
+        Swal.fire({
+            title: 'Emin misiniz?',
+            text: 'Değişiklikleri kaydetmek istediğinizden emin misiniz?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Evet, Kaydet',
+            cancelButtonText: 'Hayır, İptal',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "DELETE",
+                    url: `${BASE_API_URI}/${action}`,
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+                    },
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire({
+                                position: 'top-mid',
+                                icon: 'success',
+                                title: "İşlem Başarılı",
+                                showConfirmButton: false,
+                                timer: 1300
+                            });
+
+                            // Call the success callback if provided
+                            if (success) {
+                                success(response);
+                            }
+
+                            TalepleriKullaniciyaGoreGetir();
+                        }
+                        else {
+                            Swal.fire({
+                                position: 'top-mid',
+                                icon: 'error',
+                                title: "İşlem Başarısız",
+                                showConfirmButton: false,
+                                timer: 1300
+                            });
+                        }
+
+                    }
+                });
             }
-        });
-    }
+        }
+        );
+}
+    
 }
 
 function Put(action, data, success, ask = true) {
     var confirmed = true;
-    if (ask) {
-        confirmed = confirm("Kaydı güncellemek istediğinizden emin misiniz?");
-    }
-    if (confirmed) {
-        $.ajax({
-            type: "PUT",
-            url: `${BASE_API_URI}/${action}`,
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
-            },
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(data),
-            success: function (response) {
-                if (response.success) {
-                    success(response.data);
+    Swal.fire({
+        title: 'Emin misiniz?',
+        text: 'Değişiklikleri kaydetmek istediğinizden emin misiniz?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Evet, Kaydet',
+        cancelButtonText: 'Hayır, İptal',
+    }).then((result) => {
+        // Kullanıcı Evet'i seçerse
+        if (result.isConfirmed) {
+            // Burada kaydetme işlemini gerçekleştirebilirsiniz
+            $.ajax({
+                type: "PUT",
+                url: `${BASE_API_URI}/${action}`,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+                },
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(data),
+                success: function (response) {
+                    if (response.success) {
+                        Swal.fire({
+                            position: 'top-mid',
+                            icon: 'success',
+                            title: "İşlem Başarılı",
+                            showConfirmButton: false,
+                            timer: 1300
+                        });
 
+                        // Call the success callback if provided
+                        if (success) {
+                            success(response);
+                        }
+
+                        TalepleriKullaniciyaGoreGetir();
+                    }
+                    else {
+                        Swal.fire({
+                            position: 'top-mid',
+                            icon: 'error',
+                            title: "İşlem Başarısız",
+                            showConfirmButton: false,
+                            timer: 1300
+                        });
+                    }
+                    
                 }
-                else {
-                    alert(response.message);
-                }
-            },
-            error: function (xhr, status, error) {
-                var errorMessage = JSON.parse(xhr.responseText);
-                if (errorMessage && errorMessage.errors) {
-                    var errorString = errorMessage.errors.join(", ");
-                    alert(errorString);
-                } else {
-                    alert("An unknown error occurred.");
-                }
-            }
-        });
-    }
+            });
+        }
+    });
 }
+
+
+
 
 var girisSirketId = $("#girisSirketId").val();
 var girisKullaniciId = $("#kullanici").val();
@@ -150,6 +210,46 @@ function TumSirketleriGetir() {
         $.each(sirketdata, function (index, sirket) {
             dropdown.append($("<option>").val(sirket.id).text(sirket.name));
             dropdownRapor.append($("<option>").val(sirket.id).text(sirket.name));
+        });
+    });
+}
+
+function KullanicilariGetir() {
+    Get("Employee/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#kullanici");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
+        });
+    });
+}
+
+function DepartmanlariGetir() {
+    Get("Department/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#birim");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name}`));
+        });
+    });
+}
+
+function TedarikcileriGetir() {
+    Get("Supplier/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#tedarikci");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name}`));
+        });
+    });
+}
+
+function UrunleriGetir() {
+    Get("Product/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#urun");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.measuringName}`));
         });
     });
 }
