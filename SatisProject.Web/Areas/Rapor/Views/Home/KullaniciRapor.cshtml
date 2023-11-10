@@ -6,8 +6,13 @@
         <h2><a class="navbar-brand fs-4" style="color:#858796;">Kullanıcı Raporları</a></h2>
         <form class="d-flex" role="search">
             <label class="form-label text-black mt-2" for="kullanici" style="width:120px;">Kullanıcı Seçiniz :</label>
-            <select class="form-select" id="kullanici" style="width:190px;">
-                <option class="d-none" value="@Repo.Session.Id" selected></option>
+             <input type="text" class="d-none" value="@Repo.Session.CompanyId" id="kullaniciSirketIdGetir" /> 
+@*            <select class="form-select" id="kullaniciYonetim" style="width:190px;">
+                <option class="" value="@Repo.Session.Id" selected>Şirketim</option>
+            </select>*@
+            <select class="form-select" id="kullaniciAdmin" style="width:190px;">
+                <option class="d-none" value="" selected></option>
+                <option class="d-none" value="@Repo.Session.Id"></option>
             </select>
         </form>
     </div>

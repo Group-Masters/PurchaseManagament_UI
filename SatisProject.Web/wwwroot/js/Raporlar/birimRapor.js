@@ -37,7 +37,7 @@
               <tbody>
               <tr>
                   <th scope="row">Fatura Id'si :</th>
-                  <td>${arr[i].invoiceId}</td>
+                  <td>${arr[i].invoiceId === null ? 'Fatura Oluşmadı veya Ürün Stoktan Karşılandı' : arr[i].invoiceId}</td>
                 </tr>
                 <tr>
                   <th scope="row">Şirket-Departman Adı :</th>
@@ -69,7 +69,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Talep Onaylanma Tarihi :</th>
-                  <td>${arr[i].supplyDate}</td>
+                  <td>${arr[i].supplyDate === null ? 'Talep daha onaylanmadı veya reddedildi' : arr[i].supplyDate}</td>
                 </tr>
               </tbody>
             </table>
@@ -91,7 +91,15 @@
     });
 }
 
-
+function DepartmanlariGetir() {
+    Get("Department/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#birim");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name}`));
+        });
+    });
+}
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
     Rapor();

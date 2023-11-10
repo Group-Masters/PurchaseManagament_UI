@@ -1,5 +1,5 @@
 ﻿function KullaniciRapor() {
-    var giriskullaniciId = $("#kullanici").val();
+    var giriskullaniciId = $("#kullaniciAdmin").val();
     var html = ``;
     Get(`Report/GetByEmployee/${giriskullaniciId}`, (data) => {
         /*var arr = data;*/
@@ -91,18 +91,56 @@
     });
 }
 
+function SirketeGoreKullaniciGetirAdmin() {
+    $("#girisSirketId").change(function () {
+        var sirketId = $(this).val();
+        var ddlKullanici = $("#kullaniciAdmin");
+        ddlKullanici.empty();
+        if (sirketId !== "") {
+            Get(`Employee/GetByCompany/${sirketId}`, (data) => {
+                if (data != "") {
+                    var gets = data;
+                    $.each(gets, function (index, get) {
+                        ddlKullanici.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
+                    });
+                }
+                else {
+                    alert("Kullanici yok");
+                }
+
+            });
+        }
+    });
+}
+
+var giriskullaniciSirket = $("#kullaniciSirketIdGetir").val();
+function SirketeGoreKullaniciGetirYonetim() {
+    Get(`Employee/GetByCompany/${giriskullaniciSirket}`, (data) => {
+        var getData = data;
+        var dropdown = $("#kullaniciAdmin");
+        $.each(getData, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(get.name));
+        });
+    });
+}
 
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
+    TumSirketleriGetir();
     KullaniciRapor();
-    KullanicilariGetir();
+    SirketeGoreKullaniciGetirAdmin();
+    SirketeGoreKullaniciGetirYonetim();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
         KullaniciRapor();
     });
-    $("#kullanici").on("change", function () {
+    $("#kullaniciAdmin").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
         KullaniciRapor();
     });
+    //$("#kullaniciYonetim").on("change", function () {
+    //    // Yeni şirket seçildiğinde verileri getir
+    //    KullaniciRapor();
+    //});
 });

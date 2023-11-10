@@ -1,7 +1,7 @@
 ﻿function Rapor() {
-    var girisId = $("#birim").val();
+    var girisId = $("#tedarikci").val();
     var html = ``;
-    Get(`Report/GetByDepartment/${girisId}`, (data) => {
+    Get(`Report/GetSupplierById/${girisId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
@@ -12,16 +12,16 @@
             class="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#flush-collapse${arr[i].requestId}"
+            data-bs-target="#flush-collapse${arr[i].offerId}"
             aria-expanded="false"
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].requestId} ${arr[i].requestby}
+            ${arr[i].supplierName}
           </button>
         </h2>
         <div
-          id="flush-collapse${arr[i].requestId}"
+          id="flush-collapse${arr[i].offerId}"
           class="accordion-collapse collapse"
           data-bs-parent="#accordionFlushExample"
         >
@@ -36,19 +36,11 @@
               </thead>
               <tbody>
               <tr>
-                  <th scope="row">Fatura Id'si :</th>
-                  <td>${arr[i].invoiceId}</td>
+                  <th scope="row">Teklif Id'si :</th>
+                  <td>${arr[i].offerId}</td>
                 </tr>
                 <tr>
-                  <th scope="row">Şirket-Departman Adı :</th>
-                  <td>${arr[i].companydepartment}</td>
-                </tr>
-                 <tr>
-                  <th scope="row">Tedarikçi Adı :</th>
-                  <td>${arr[i].supplier}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Talep Edilen Ürün Adı :</th>
+                  <th scope="row">Teklif Verilen Ürün Adı :</th>
                   <td>${arr[i].product}</td>
                 </tr>
                 <tr>
@@ -57,19 +49,20 @@
                 </tr>
                 <tr>
                   <th scope="row">Ödenen Fiyat:</th>
-                  <td>${arr[i].prices}</td>
+                  <td>${arr[i].price}</td>
                 </tr>
                 <tr>
-                  <th scope="row">Onaylayan Yetkili :</th>
-                  <td>${arr[i].approvedEmployee}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Talep Oluşma Tarihi:</th>
+                  <th scope="row">Teklif Oluşma Tarihi:</th>
                   <td>${arr[i].createDate}</td>
                 </tr>
                 <tr>
-                  <th scope="row">Talep Onaylanma Tarihi :</th>
-                  <td>${arr[i].supplyDate}</td>
+                  <th scope="row">Teklif Detayları:</th>
+                  <td>${arr[i].detail}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Teklif İşlem Durumu:</th>
+                  <td>${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 1 ? 'Birim Müdürü Tarafından Reddedildi' : arr[i].status === 2 ? 'Birim Müdürü Tarafından Onaylandı' : arr[i].status === 3 ? 'Yönetimde Bekliyor'
+                : arr[i].status === 4 ? 'Yöneti Tarafından Onaylandı' : arr[i].status === 5 ? 'Yönetim Tarafından Reddedildi' : arr[i].status === 6 ? 'Ürün Bekleniyor' : 'Tamamlandı'}</td>
                 </tr>
               </tbody>
             </table>
@@ -79,7 +72,7 @@
     </div>`;
 
         }
-        $("#divBirim").html(html);
+        $("#divTedarikci").html(html);
 
         $("#ara").on("keyup", function () {
             var value = $(this).val().toLowerCase();
@@ -91,6 +84,15 @@
     });
 }
 
+function TedarikcileriGetir() {
+    Get("Supplier/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#tedarikci");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name}`));
+        });
+    });
+}
 
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
@@ -101,7 +103,7 @@ $(document).ready(function () {
         // Yeni şirket seçildiğinde verileri getir
         Rapor();
     });
-    $("#birim").on("change", function () {
+    $("#tedarikci").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
         Rapor();
     });

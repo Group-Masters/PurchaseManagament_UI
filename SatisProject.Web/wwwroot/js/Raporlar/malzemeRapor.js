@@ -1,7 +1,9 @@
 ﻿function Rapor() {
     var girisId = $("#urun").val();
+    var malzemeSirketId = $("#malzemeSirketId").val();
     var html = ``;
-    Get(`Report/GetByDepartment/${girisId}`, (data) => {
+
+    Get(`Report/GetbyProduct/${malzemeSirketId}/${girisId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
@@ -79,7 +81,7 @@
     </div>`;
 
         }
-        $("#divBirim").html(html);
+        $("#divMalzeme").html(html);
 
         $("#ara").on("keyup", function () {
             var value = $(this).val().toLowerCase();
@@ -88,6 +90,16 @@
             });
         });
 
+    });
+}
+
+function UrunleriGetir() {
+    Get("Product/GetAll", (data) => {
+        var getdata = data;
+        var dropdown = $("#urun");
+        $.each(getdata, function (index, get) {
+            dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.measuringName}`));
+        });
     });
 }
 

@@ -126,6 +126,84 @@ function TumFaturalariGetir() {
     });
 }
 
+function StoktanKarsilanlar() {
+    var girisSirketId = $("#girisSirketId").val();
+    var html = ``;
+    Get(`Offer/GetFromStock/${girisSirketId}`, (data) => {
+        /*var arr = data;*/
+        var arr = data.sort((a, b) => b.id - a.id);
+        for (var i = 0; i < arr.length; i++) {
+            html += `<div class="secili accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header border border-black">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse${arr[i].id}"
+            aria-expanded="false"
+            aria-controls="flush-collapseOne"
+            
+          >
+            ${arr[i].id} ${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}
+          </button>
+        </h2>
+        <div
+          id="flush-collapse${arr[i].id}"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+
+            <table class="table">
+             <thead class="position-relative">
+                 <tr style="background-color:#9e9494; color:#9e9494;">
+                  <th scope="col" style="border:none;">·</th>
+                  <th class="position-absolute top-0 end-0" scope="col" style="top:-7px !important;border:none;">
+                  <span class="">
+                    <button class="btn btn-light" onclick='StokTamamla(
+                 "${arr[i].id}")'>Stok İşlemini Tamamla</button>
+                  </span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Tedarikçi Adı / Adresi :</th>
+                  <td>${arr[i].supplierName}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Ürün Adı :</th>
+                  <td>${arr[i].productName} ${arr[i].measuringUnit}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Adet Bilgisi :</th>
+                  <td>${arr[i].quantity}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Talep Eden Kişi :</th>
+                  <td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+        }
+        $("#divStokTalep").html(html);
+
+        $("#ara").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#divStokTalep .accordion").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+
+    });
+}
+
 
 function Yeni() {
     $("#adet").val("");
@@ -245,10 +323,12 @@ $(document).ready(function () {
     StokUrunleriGetir();
     TumFaturalariGetir();
     TumUrunleriGetir();
+    StoktanKarsilanlar();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
         StokUrunleriGetir();
         TumFaturalariGetir();
+        StoktanKarsilanlar();
     });
 });
