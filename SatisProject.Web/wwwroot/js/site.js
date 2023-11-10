@@ -63,7 +63,13 @@ function Post(action, data, success, ask = true) {
                         });
                     }
                     else {
-                        alert(response.message);
+                        Swal.fire({
+                            position: 'top-center',
+                            icon: 'danger',
+                            title: "İşlem Başarısız",
+                            showConfirmButton: false,
+                            timer: 3000
+                        });
                     }
                 }
             });
