@@ -78,7 +78,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="mailAdress" class="form-label">Mail Adres  Giriniz :</label>
-                        <input type="text"
+                        <input type="email"
                                class="form-control"
                                id="mailAdress"
                                placeholder="mailadres@xyz.com"
@@ -99,7 +99,9 @@
                         <input type="tel"
                                class="form-control"
                                id="telNo"
-                               required />
+                               placeholder="0(XXX) XXX XX XX"
+                               required 
+                               maxlength="11"/>
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
                     <div class="col-md-6">
@@ -107,17 +109,18 @@
                         <input type="text"
                                class="form-control"
                                id="tcNo"
-                               placeholder="XXXXXXXXXXX"
-                               required />
+                               required
+                               maxlength="11"/>
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
                     <div class="col-md-6">
-                        <label for="tcNo" class="form-label">Doğum Tarihi/Yıl :</label>
-                        <input type="text"
+                        <label for="dogumTarih" class="form-label">Doğum Tarihi/Yıl :</label>
+                        <input type="number"
                                class="form-control"
                                id="dogumTarih"
                                placeholder="YYYY"
-                               required />
+                               required
+                               min="1940" max="2100" />
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
                     <div class="col-md-6">
@@ -219,39 +222,4 @@
         </div>
     </div>
 </div>
-
-@* <script>
-    function selectGender() {
-        var selectBox = document.getElementById("cinsiyet");
-        var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-
-        // AJAX isteği yaparken bu değeri kullanabilirsiniz
-        // Örneğin, bu değeri bir formda bir alan olarak gönderirken kullanabilirsiniz
-        // veya AJAX isteği sırasında bir parametre olarak kullanabilirsiniz
-        console.log("Seçilen cinsiyet değeri: ", selectedValue);
-    }
-</script> *@
-
-<script>
-    (() => {
-        "use strict";
-
-        const forms = document.querySelectorAll(".needs-validation");
-        const kullanici = document.querySelectorAll("#kullaniciEkleForm");
-        Array.from(forms).forEach((kullanici) => {
-            kullanici.addEventListener(
-                "submit",
-                (event) => {
-                    if (!kullanici.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-
-                    kullanici.classList.add("was-validated");
-                },
-                false
-            );
-        });
-    })();
-</script>
 <script src="~/js/admin/kullanici.js" asp-append-version="true"></script>

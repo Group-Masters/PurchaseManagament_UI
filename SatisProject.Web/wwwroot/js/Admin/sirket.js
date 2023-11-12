@@ -11,7 +11,7 @@
             html += `<td>
             <button class="btn btn-danger" onclick='Sil(${arr[i].id})'>Sil</button>
             <button class="btn btn-primary" onclick='Duzenle(
-                "${arr[i].id}","${arr[i].name}","${arr[i].adress}"
+                "${arr[i].id}","${arr[i].name}","${arr[i].address}"
             )'>Düzenle</button>
             </td>`;
             html += `</tr>`

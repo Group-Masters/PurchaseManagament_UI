@@ -113,7 +113,6 @@ function SirketeGoreKullaniciGetirAdmin() {
     $("#girisSirketId").change(function () {
         var sirketId = $(this).val();
         var ddlKullanici = $("#kullaniciAdmin");
-        $("#pdfOlustur").data("selected-value", selectedValue);
         ddlKullanici.empty();
         if (sirketId !== "") {
             Get(`Employee/GetByCompany/${sirketId}`, (data) => {
@@ -138,7 +137,7 @@ function SirketeGoreKullaniciGetirYonetim() {
         var getData = data;
         var dropdown = $("#kullaniciAdmin");
         $.each(getData, function (index, get) {
-            dropdown.append($("<option>").val(get.id).text(get.name));
+            dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
         });
     });
 }

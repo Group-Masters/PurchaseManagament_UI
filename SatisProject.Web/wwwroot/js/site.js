@@ -197,9 +197,6 @@ function Put(action, data, success, ask = true) {
     });
 }
 
-
-
-
 var girisSirketId = $("#girisSirketId").val();
 var girisKullaniciId = $("#kullanici").val();
 function TumSirketleriGetir() {
@@ -210,46 +207,6 @@ function TumSirketleriGetir() {
         $.each(sirketdata, function (index, sirket) {
             dropdown.append($("<option>").val(sirket.id).text(sirket.name));
             dropdownRapor.append($("<option>").val(sirket.id).text(sirket.name));
-        });
-    });
-}
-
-function KullanicilariGetir() {
-    Get("Employee/GetAll", (data) => {
-        var getdata = data;
-        var dropdown = $("#kullanici");
-        $.each(getdata, function (index, get) {
-            dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
-        });
-    });
-}
-
-function DepartmanlariGetir() {
-    Get("Department/GetAll", (data) => {
-        var getdata = data;
-        var dropdown = $("#birim");
-        $.each(getdata, function (index, get) {
-            dropdown.append($("<option>").val(get.id).text(`${get.name}`));
-        });
-    });
-}
-
-function TedarikcileriGetir() {
-    Get("Supplier/GetAll", (data) => {
-        var getdata = data;
-        var dropdown = $("#tedarikci");
-        $.each(getdata, function (index, get) {
-            dropdown.append($("<option>").val(get.id).text(`${get.name}`));
-        });
-    });
-}
-
-function UrunleriGetir() {
-    Get("Product/GetAll", (data) => {
-        var getdata = data;
-        var dropdown = $("#urun");
-        $.each(getdata, function (index, get) {
-            dropdown.append($("<option>").val(get.id).text(`${get.name} ${get.measuringName}`));
         });
     });
 }

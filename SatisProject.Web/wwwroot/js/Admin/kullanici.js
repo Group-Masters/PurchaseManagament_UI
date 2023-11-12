@@ -10,7 +10,7 @@ function KullaniciGetirDeneme() {
   <thead class="bg-light">
     <tr >
       <th>Ad - Soyad</th>
-      <th>Şirket - Birim</th>
+      <th>Birim Ad</th>
       <th>Kimlik - Telefon</th>
       <th>Pozisyon</th>
       <th>Durum</th>

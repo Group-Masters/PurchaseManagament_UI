@@ -2,16 +2,14 @@
     var girisSirketId = $("#girisSirketId").val();
     Get(`Offer/GetByAproved/${girisSirketId}`, (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
-            `<thead class="text-light"  style="background-color:#9e9494;"><tr><th>Id</th><th>Ürün Adı</th><th>Adet</th><th>Tedarikci Adı</th><th>Fiyat Teklifi</th><th>Talep Eden Kullanıcı</th><th>Onay Durumu</th><th></th></tr></thead>`;
+            `<thead class="text-light"  style="background-color:#9e9494;"><tr><th>Id</th><th>Ürün Adı</th><th>Adet</th><th>Tedarikci Adı</th><th>Fiyat Teklifi</th><th>Talep Eden Kullanıcı</th><th></th></tr></thead>`;
 
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td>${arr[i].supplierName}</td><td>${arr[i].offeredPrice} ${arr[i].currencyName} </td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td><td> <span style="color: ${arr[i].status === 3 ? 'black' : arr[i].status === 4 ? 'green' : 'red'};">
-                         ${arr[i].status === 3 ? 'Beklemede' : arr[i].status === 4 ? 'Onaylandı' : 'Reddedildi'}
-                     </span></td>`;
+            html += `<td>${arr[i].id}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td>${arr[i].supplierName}</td><td>${arr[i].offeredPrice} ${arr[i].currencyName} </td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td>`;
             html += `<td>
             <button class="btn btn-primary"  onclick='Duzenle("${arr[i].id}","${arr[i].productName}","${arr[i].quantity}","${arr[i].supplierName}","${arr[i].offeredPrice}","${arr[i].currencyName}","${arr[i].companyAddress}","${arr[i].supplierAddress}")'>Faturasını Oluştur</button>
             </td>`;

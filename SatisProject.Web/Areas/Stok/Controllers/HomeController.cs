@@ -4,14 +4,13 @@ using SatisProject.Web.Code.Filters;
 namespace SatisProject.Web.Areas.Stok.Controllers
 {
     [Area("Stok")]
+    [AuthActionFilter(Rol = "1,2,9")]//Admin,Satın Alma,Stok Sorumlusu
     public class HomeController : Controller
     {
-        //[AuthActionFilter(Rol = "1,2,10")]
         public IActionResult Urun()
         {
             return View();
         }
-        //[AuthActionFilter(Rol = "1,2,10")]
         public IActionResult DepoStok()
         {
             return View();

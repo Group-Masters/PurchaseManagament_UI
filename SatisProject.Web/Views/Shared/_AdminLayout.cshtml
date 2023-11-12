@@ -44,19 +44,19 @@
 </head>
 
 <body id="page-top" style="background-color: #edeaea;">
-    @*     @{
-    string rolString = Repo.Session.Rol;
-    bool admin = rolString.Split(',').Any(r => r.Trim() == "1");
-    bool satinAlma = rolString.Split(',').Any(r => r.Trim() == "2");
-    bool onay = rolString.Split(',').Any(r => r.Trim() == "3");
-    bool talep = rolString.Split(',').Any(r => r.Trim() == "4");
-    bool birimSorumlu = rolString.Split(',').Any(r => r.Trim() == "6");
-    bool muhasebe = rolString.Split(',').Any(r => r.Trim() == "7");
-    bool genelMudur = rolString.Split(',').Any(r => r.Trim() == "8");
-    bool baskan = rolString.Split(',').Any(r => r.Trim() == "9");
-    bool stokSorumlu = rolString.Split(',').Any(r => r.Trim() == "10");
-    bool birimMudur = rolString.Split(',').Any(r => r.Trim() == "11");
-    } *@
+    @{
+        string rolString = Repo.Session.RolId;
+        bool admin = rolString.Split(',').Any(r => r.Trim() == "1");
+        bool satinAlma = rolString.Split(',').Any(r => r.Trim() == "2");
+        bool onay = rolString.Split(',').Any(r => r.Trim() == "3");
+        bool talep = rolString.Split(',').Any(r => r.Trim() == "4");
+        bool birimSorumlu = rolString.Split(',').Any(r => r.Trim() == "5");
+        bool muhasebe = rolString.Split(',').Any(r => r.Trim() == "6");
+        bool genelMudur = rolString.Split(',').Any(r => r.Trim() == "7");
+        bool baskan = rolString.Split(',').Any(r => r.Trim() == "8");
+        bool stokSorumlu = rolString.Split(',').Any(r => r.Trim() == "9");
+        bool birimMudur = rolString.Split(',').Any(r => r.Trim() == "10");
+    }
     <nav class="navbar navbar-expand navbar-light text-black bg-white topbar mb-4 static-top shadow border-bottom border-dark border-4 d-flex justify-content-between pl-4 pr-4">
         <div class="text-center" style="width:220px;">
             <h3 style="letter-spacing:20px;font-weight:bold;user-select: none;">XYZ</h3>
@@ -82,37 +82,23 @@
                 </div>
             </form>
 
-            @* <form class="d-none d-md-inline-block col-md-4">
-            @{
-            if (admin)
-            {
-
-            <div class="">
-            <select class="form-select" id="girisSirketId">
-            <option value="@Repo.Session.SirketId" selected></option>
-            </select>
-            </div>
-            }
-            <div class="col-md-0 d-none">
-            <select class="form-select" id="girisSirketId">
-            <option value="@Repo.Session.SirketId" selected></option>
-            </select>
-            </div>
-            }
-            </form> *@
             <form class="d-none d-md-inline-block col-md-4">
+                @{
+                    if (admin)
+                    {
 
-                <div class="">
-                    <select class="form-select" id="girisSirketId">
-                        <option value="@Repo.Session.CompanyId" selected></option>
-                    </select>
-                </div>
-
-                <div class="col-md-0 d-none">
-                    <select class="form-select" id="girisSirketId">
-                        <option value="@Repo.Session.CompanyId" selected></option>
-                    </select>
-                </div>
+                        <div class="">
+                            <select class="form-select" id="girisSirketId">
+                                <option value="@Repo.Session.CompanyId" selected></option>
+                            </select>
+                        </div>
+                    }
+                    <div class="col-md-0 d-none">
+                        <select class="form-select" id="girisSirketId">
+                            <option value="@Repo.Session.CompanyId" selected></option>
+                        </select>
+                    </div>
+                }
             </form>
         </div>
 
@@ -190,248 +176,266 @@
                      data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
                         <h6 class="collapse-header">Talep İşlemleri :</h6>
-                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="SatinAlmaTalep">Taleplerim</a>
-                        @*                       @{
-                        if (onay || admin)
-                        { *@
-                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="SatinAlmaTalepOnay">Talep Onay</a>
-                        @*                             }
-                        } *@
-                    </div>
-                </div>
-            </li>
-
-
-
-            @*             @{
-            if (admin || satinAlma || stokSorumlu)
-            { *@
-            <li class="nav-item">
-                <a class="nav-link collapsed"
-                   href="#"
-                   data-toggle="collapse"
-                   data-target="#collapseProduct"
-                   aria-expanded="true"
-                   aria-controls="collapsePages">
-                    <i class="bi bi-box-fill"></i>
-                    <span>Ürun-Stok</span>
-                </a>
-                <div id="collapseProduct"
-                     class="collapse"
-                     aria-labelledby="headingPages"
-                     data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
-                        <h6 class="collapse-header">Ürün ve Stok İşlem :</h6>
-                        <a class="collapse-item" asp-area="Stok" asp-controller="Home" asp-action="Urun">Ürünler</a>
-                        <a class="collapse-item" asp-area="Stok" asp-controller="Home" asp-action="DepoStok">Stok Takibi</a>
-                        <a class="collapse-item" asp-area="Stok" asp-controller="Home" asp-action="StokIslem">Stok İşlemleri</a>
-                    </div>
-                </div>
-            </li>
-            @*                 }
-            } *@
-
-
-            @*             @{
-            if (admin || satinAlma || genelMudur || baskan)
-            { *@
-            <li class="nav-item">
-                <a class="nav-link collapsed"
-                   href="#"
-                   data-toggle="collapse"
-                   data-target="#collapseTeklif"
-                   aria-expanded="true"
-                   aria-controls="collapsePages">
-                    <i class="bi bi-telephone-outbound-fill"></i>
-                    <span>Teklif-Onay</span>
-                </a>
-                <div id="collapseTeklif"
-                     class="collapse"
-                     aria-labelledby="headingPages"
-                     data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
-                        <h6 class="collapse-header">Teklif ve Onay İslemleri :</h6>
-                        @* @{
-                        if (admin || satinAlma)
-                        {
-                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOlustur">Teklif Oluştur</a>
-                        }
+                        @{
+                            if (talep || admin || genelMudur || baskan)
+                            {
+                                <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="SatinAlmaTalep">Taleplerim</a>
+                            }
                         }
                         @{
-                        if (admin || genelMudur)
-                        {
-                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOnayYonetim">Teklif Onayla G.Müdür</a>
+                            if (onay || admin)
+                            {
+                                <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="SatinAlmaTalepOnay">Talep Onay</a>
+                            }
                         }
-                        }
-                        @{
-                        if (admin || baskan)
-                        {
-                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOnayKurul">Teklif Onayla Y.K Baskan</a>
-                        }
-                        } *@
-
-
-                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOlustur">Teklif Oluştur</a>
-
-                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOnayYonetim">Teklif Onayla G.Müdür</a>
-
-
-                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOnayKurul">Teklif Onayla Y.K Baskan</a>
-
-
-
-                    </div>
-                </div>
-            </li>
-            @*                 }
-            } *@
-
-            @*             @{
-            if (admin || baskan)
-            { *@
-            <li class="nav-item">
-                <a class="nav-link collapsed"
-                   href="#"
-                   data-toggle="collapse"
-                   data-target="#collapseRol"
-                   aria-expanded="true"
-                   aria-controls="collapsePages">
-                    <i class="bi bi-person-gear"></i>
-                    <span>Rol</span>
-                </a>
-                <div id="collapseRol"
-                     class="collapse"
-                     aria-labelledby="headingPages"
-                     data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
-                        <h6 class="collapse-header">Rol İşlemleri</h6>
-                        @*                                 @{
-                        if (admin)
-                        { *@
-                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Rol">Rol Oluştur</a>
-                        @*                                      }
-                        } *@
-
-                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="KullaniciRol">Rol Ver & Al</a>
-
-                    </div>
-                </div>
-            </li>
-            @*                 }
-            } *@
-
-            <li class="nav-item">
-                <a class="nav-link collapsed"
-                   href="#"
-                   data-toggle="collapse"
-                   data-target="#collapseReport"
-                   aria-expanded="true"
-                   aria-controls="collapsePages">
-                    <i class="bi bi-flag-fill"></i>
-                    <span>Raporlar</span>
-                </a>
-                <div id="collapseReport"
-                     class="collapse"
-                     aria-labelledby="headingPages"
-                     data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
-                        <h6 class="collapse-header">Raporlar :</h6>
-                        <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="KullaniciRapor">Kullanıcı Raporları</a>
-                        <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="BirimRapor">Birim Raporları</a>
-                        <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="SirketRapor">Sirket Raporları</a>
-                        <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="TedarikciRapor">Tedarikci Raporları</a>
-                        <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="MalzemeRapor">Malzeme Raporları</a>
                     </div>
                 </div>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed"
-                   href="#"
-                   data-toggle="collapse"
-                   data-target="#collapseSirket"
-                   aria-expanded="true"
-                   aria-controls="collapsePages">
-                    <i class="bi bi-building"></i>
-                    <span>Şirket-Birim</span>
-                </a>
-                <div id="collapseSirket"
-                     class="collapse"
-                     aria-labelledby="headingPages"
-                     data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
-                        <h6 class="collapse-header">Şirket-Birim</h6>
-                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Sirket">
-                            Sirketler
-                        </a>
 
-                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Birim">
-                            Birimler
-                        </a>
-                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="BirimSirket">
-                            Şirket Birimleri
-                        </a>
-                    </div>
-                </div>
-            </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed"
-                   href="#"
-                   data-toggle="collapse"
-                   data-target="#collapseBirimler"
-                   aria-expanded="true"
-                   aria-controls="collapsePages">
-                    <i class="bi bi-calculator"></i>
-                    <span>Para-Ölçüm Birimleri</span>
-                </a>
-                <div id="collapseBirimler"
-                     class="collapse"
-                     aria-labelledby="headingPages"
-                     data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
-                        <h6 class="collapse-header">Para-Adet</h6>
-                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="ParaBirim">
-                            Para Birimleri
+            @{
+                if (admin || satinAlma || stokSorumlu)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link collapsed"
+                           href="#"
+                           data-toggle="collapse"
+                           data-target="#collapseProduct"
+                           aria-expanded="true"
+                           aria-controls="collapsePages">
+                            <i class="bi bi-box-fill"></i>
+                            <span>Ürun-Stok</span>
                         </a>
-                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="AdetBirim">
-                            Ölçüm Birimleri
+                        <div id="collapseProduct"
+                             class="collapse"
+                             aria-labelledby="headingPages"
+                             data-parent="#accordionSidebar">
+                            <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
+                                <h6 class="collapse-header">Ürün ve Stok İşlem :</h6>
+                                <a class="collapse-item" asp-area="Stok" asp-controller="Home" asp-action="Urun">Ürünler</a>
+                                <a class="collapse-item" asp-area="Stok" asp-controller="Home" asp-action="DepoStok">Stok Takibi</a>
+                                <a class="collapse-item" asp-area="Stok" asp-controller="Home" asp-action="StokIslem">Stok İşlemleri</a>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+
+
+            @{
+                if (admin || satinAlma || genelMudur || baskan)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link collapsed"
+                           href="#"
+                           data-toggle="collapse"
+                           data-target="#collapseTeklif"
+                           aria-expanded="true"
+                           aria-controls="collapsePages">
+                            <i class="bi bi-telephone-outbound-fill"></i>
+                            <span>Teklif-Onay</span>
                         </a>
-                    </div>
-                </div>
-            </li>
+                        <div id="collapseTeklif"
+                             class="collapse"
+                             aria-labelledby="headingPages"
+                             data-parent="#accordionSidebar">
+                            <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
+                                <h6 class="collapse-header">Teklif ve Onay İslemleri :</h6>
+                                @{
+                                    if (admin || satinAlma)
+                                    {
+                                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOlustur">Teklif Oluştur</a>
+                                    }
+                                }
+                                @{
+                                    if (admin || genelMudur)
+                                    {
+                                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOnayYonetim">Teklif Onayla G.Müdür</a>
+                                    }
+                                }
+                                @{
+                                    if (admin || baskan)
+                                    {
+                                        <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOnayKurul">Teklif Onayla Y.K Baskan</a>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
 
-            @*             @{
-            if (admin || baskan)
-            { *@
-            <li class="nav-item">
-                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Kullanici">
-                    <i class="bi bi-person-circle"></i>
-                    <span>Kullanıcılar</span>
-                </a>
-            </li>
-            @*                 }
-            } *@
+            @{
+                if (admin || baskan)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link collapsed"
+                           href="#"
+                           data-toggle="collapse"
+                           data-target="#collapseRol"
+                           aria-expanded="true"
+                           aria-controls="collapsePages">
+                            <i class="bi bi-person-gear"></i>
+                            <span>Rol</span>
+                        </a>
+                        <div id="collapseRol"
+                             class="collapse"
+                             aria-labelledby="headingPages"
+                             data-parent="#accordionSidebar">
+                            <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
+                                <h6 class="collapse-header">Rol İşlemleri</h6>
+                                @{
+                                    if (admin)
+                                    {
+                                        <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Rol">Rol Oluştur</a>
+                                    }
+                                }
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Tedarikciler">
-                    <i class="fas fa-users"></i>
-                    <span>Tedarikciler</span>
-                </a>
-            </li>
+                                <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="KullaniciRol">Rol Ver & Al</a>
+
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+
+            @{
+                if (admin || baskan)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link collapsed"
+                           href="#"
+                           data-toggle="collapse"
+                           data-target="#collapseReport"
+                           aria-expanded="true"
+                           aria-controls="collapsePages">
+                            <i class="bi bi-flag-fill"></i>
+                            <span>Raporlar</span>
+                        </a>
+                        <div id="collapseReport"
+                             class="collapse"
+                             aria-labelledby="headingPages"
+                             data-parent="#accordionSidebar">
+                            <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
+                                <h6 class="collapse-header">Raporlar :</h6>
+                                <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="KullaniciRapor">Kullanıcı Raporları</a>
+                                <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="BirimRapor">Birim Raporları</a>
+                                <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="SirketRapor">Sirket Raporları</a>
+                                <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="TedarikciRapor">Tedarikci Raporları</a>
+                                <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="MalzemeRapor">Malzeme Raporları</a>
+                            </div>
+                        </div>
+                    </li>
+                }
+
+            }
+
+            @{
+                if (admin)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link collapsed"
+                           href="#"
+                           data-toggle="collapse"
+                           data-target="#collapseSirket"
+                           aria-expanded="true"
+                           aria-controls="collapsePages">
+                            <i class="bi bi-building"></i>
+                            <span>Şirket-Birim</span>
+                        </a>
+                        <div id="collapseSirket"
+                             class="collapse"
+                             aria-labelledby="headingPages"
+                             data-parent="#accordionSidebar">
+                            <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
+                                <h6 class="collapse-header">Şirket-Birim</h6>
+                                <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Sirket">
+                                    Sirketler
+                                </a>
+
+                                <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Birim">
+                                    Birimler
+                                </a>
+                                <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="BirimSirket">
+                                    Şirket Birimleri
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                }
+
+            }
+
+            @{
+                if (admin)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link collapsed"
+                           href="#"
+                           data-toggle="collapse"
+                           data-target="#collapseBirimler"
+                           aria-expanded="true"
+                           aria-controls="collapsePages">
+                            <i class="bi bi-calculator"></i>
+                            <span>Para-Ölçüm Birimleri</span>
+                        </a>
+                        <div id="collapseBirimler"
+                             class="collapse"
+                             aria-labelledby="headingPages"
+                             data-parent="#accordionSidebar">
+                            <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
+                                <h6 class="collapse-header">Para-Adet</h6>
+                                <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="ParaBirim">
+                                    Para Birimleri
+                                </a>
+                                <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="AdetBirim">
+                                    Ölçüm Birimleri
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+            
+
+
+            @{
+                if (admin || baskan)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Kullanici">
+                            <i class="bi bi-person-circle"></i>
+                            <span>Kullanıcılar</span>
+                        </a>
+                    </li>
+                }
+            }
+
+            @{
+                if (admin || baskan || satinAlma || genelMudur)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Tedarikciler">
+                            <i class="fas fa-users"></i>
+                            <span>Tedarikciler</span>
+                        </a>
+                    </li>
+                }
+            }
 
             <!-- Nav Item - Tables -->
-            @*             @{
-            if (admin || muhasebe || baskan)
-            { *@
-            <li class="nav-item">
-                <a class="nav-link collapsed" asp-area="Muhasebe" asp-controller="Home" asp-action="Faturalandirma">
-                    <i class="bi bi-coin"></i>
-                    <span>Muhasebe</span>
-                </a>
-            </li>
-            @*                 }
-            } *@
+            @{
+                if (admin || muhasebe || baskan || genelMudur)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" asp-area="Muhasebe" asp-controller="Home" asp-action="Faturalandirma">
+                            <i class="bi bi-coin"></i>
+                            <span>Muhasebe</span>
+                        </a>
+                    </li>
+                }
+            }
 
 
 
@@ -465,42 +469,42 @@
     </div>
     <!-- End of Page Wrapper -->
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a class="scroll-to-top rounded" id="btn-back-to-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
+    @*    <!-- Logout Modal-->
     <div class="modal fade"
-         id="logoutModal"
-         tabindex="-1"
-         role="dialog"
-         aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close"
-                            type="button"
-                            data-dismiss="modal"
-                            aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Select "Logout" below if you are ready to end your current session.
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary"
-                            type="button"
-                            data-dismiss="modal">
-                        Cancel
-                    </button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
+    id="logoutModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+    <button class="close"
+    type="button"
+    data-dismiss="modal"
+    aria-label="Close">
+    <span aria-hidden="true">×</span>
+    </button>
     </div>
+    <div class="modal-body">
+    Select "Logout" below if you are ready to end your current session.
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-secondary"
+    type="button"
+    data-dismiss="modal">
+    Cancel
+    </button>
+    <a class="btn btn-primary" href="login.html">Logout</a>
+    </div>
+    </div>
+    </div>
+    </div>*@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
             integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="

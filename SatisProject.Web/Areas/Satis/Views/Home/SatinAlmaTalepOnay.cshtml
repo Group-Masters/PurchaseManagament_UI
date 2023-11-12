@@ -7,13 +7,13 @@
 
 <nav class="navbar text-light mb-3 bg-white shadow" style="border-radius: 15px !important;">
     <div class="container-fluid">
-        <h2><a class="navbar-brand fs-4" style="color:#858796;">Talepler</a></h2>
+        <h2><a class="navbar-brand fs-4" style="color:#858796;">Talep Onay</a></h2>
         <form class="d-flex" role="search">
             @{
                 string rolString = Repo.Session.RolId;
                 bool admin = rolString.Split(',').Any(r => r.Trim() == "1");
-                bool genelMudur = rolString.Split(',').Any(r => r.Trim() == "8");
-                bool baskan = rolString.Split(',').Any(r => r.Trim() == "9");
+                bool genelMudur = rolString.Split(',').Any(r => r.Trim() == "7");
+                bool baskan = rolString.Split(',').Any(r => r.Trim() == "8");
 
                 if (admin || genelMudur || baskan)
                 {

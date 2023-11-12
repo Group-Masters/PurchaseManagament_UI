@@ -118,6 +118,7 @@ $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
     Rapor();
     DepartmanlariGetir();
+    TumSirketleriGetir();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
