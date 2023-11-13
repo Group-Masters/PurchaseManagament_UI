@@ -77,6 +77,15 @@
                   <th scope="row">Talep Onaylanma Tarihi :</th>
                   <td>${arr[i].supplyDate === null ? 'Talep daha onaylanmadı veya reddedildi.' : arr[i].supplyDate}</td>
                 </tr>
+                 <tr>
+                  <th scope="row">Talep Onay Durumu :</th>
+                     <td>
+                        <span class="fw-bold"
+                         style="color: ${arr[i].status === 0 ? 'black' : arr[i].status === 1 ? 'red' : arr[i].status === 2 ? 'green' : arr[i].status === 3 ? 'black' : arr[i].status === 4 ? 'green' : arr[i].status === 5 ? 'black' : arr[i].status === 6 ? 'black' : 'blue'};">
+                         ${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 1 ? 'Reddedildi' : arr[i].status === 2 ? 'Onaylandı' : arr[i].status === 3 ? 'Yönetimde Bekliyor' : arr[i].status === 4 ? 'Yönetimde Onaylandı' : arr[i].status === 5 ? 'Yönetimde Reddedildi' : arr[i].status === 6 ? 'Ürün Bekleniyor' : 'Talep İşlemi Tamamlandı'}
+                     </span>
+                    </td>
+                </tr>
               </tbody>
             </table>
           </div>

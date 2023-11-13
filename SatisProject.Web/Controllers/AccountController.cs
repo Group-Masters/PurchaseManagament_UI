@@ -81,6 +81,7 @@ namespace SatisProject.Web.Controllers
             Repo.Session.CompanyId = "";
             Repo.Session.DepartmentId = "";
 
+            ViewBag.Script = "<script>TokenReset();</script>";
             return RedirectToAction("Login", "Account");
         }
     }

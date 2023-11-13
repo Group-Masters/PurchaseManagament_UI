@@ -254,6 +254,7 @@ function Put(action, data, success, ask = true) {
 
 var girisSirketId = $("#girisSirketId").val();
 var girisKullaniciId = $("#kullanici").val();
+
 function TumSirketleriGetir() {
     Get("Company/GetAll", (data) => {
         var sirketdata = data;
@@ -266,3 +267,6 @@ function TumSirketleriGetir() {
     });
 }
 
+function TokenReset(){
+    var TOKEN = "";
+}

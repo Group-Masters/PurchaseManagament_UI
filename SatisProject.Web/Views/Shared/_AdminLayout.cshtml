@@ -69,9 +69,9 @@
                 <div class="input-group ml-n2">
                     <input type="text"
                            id="ara"
-                           class="form-control text-white border-0 small"
-                           style="background-color: #b9b9b9;"
-                           placeholder="Search for..."
+                           class="form-control text-black border-0 small"
+                           style="background-color: #edeaea;"
+                           placeholder="Arama yap..."
                            aria-label="Search"
                            aria-describedby="basic-addon2" />
                     <div class="input-group-append">
@@ -123,11 +123,18 @@
                         <i class="bi bi-person-circle fa-sm fa-fw mr-2 text-gray-400"></i>
                         Profilim
                     </a>
-                    <a class="dropdown-item"
-                       asp-area="" asp-controller="Account" asp-action="CikisYap">
-                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Çıkış Yap
-                    </a>
+                    @using (Html.BeginForm("CikisYap", "Account"))
+                    {
+                        <a class="dropdown-item"
+                           asp-area="" asp-controller="Account" asp-action="CikisYap">
+                            <div>
+                                @ViewBag.Script
+                            </div>
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Çıkış Yap
+
+                        </a>
+                    }
                 </div>
             </li>
         </ul>
@@ -321,7 +328,12 @@
                                 <h6 class="collapse-header">Raporlar :</h6>
                                 <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="KullaniciRapor">Kullanıcı Raporları</a>
                                 <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="BirimRapor">Birim Raporları</a>
-                                <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="SirketRapor">Sirket Raporları</a>
+                                @{
+                                    if (admin)
+                                    {
+                                        <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="SirketRapor">Sirket Raporları</a>
+                                    }
+                                }
                                 <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="TedarikciRapor">Tedarikci Raporları</a>
                                 <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="MalzemeRapor">Malzeme Raporları</a>
                             </div>
@@ -397,7 +409,7 @@
                     </li>
                 }
             }
-            
+
 
 
             @{

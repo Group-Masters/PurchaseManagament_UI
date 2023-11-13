@@ -17,7 +17,7 @@ namespace SatisProject.Web.Areas.Rapor.Controllers
         {
             return View();
         }
-        [AuthActionFilter(Rol = "1,8")]//Admin-Baskan
+        [AuthActionFilter(Rol = "1")]//Admin
         public IActionResult SirketRapor()
         {
             return View();
