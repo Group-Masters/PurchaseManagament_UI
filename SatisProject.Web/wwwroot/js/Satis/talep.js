@@ -47,7 +47,7 @@ function Onayla(id) {
         Id: id,
         State: 2
     };
-    Put("Request/UpdateProductState", talep, (data) => {
+    Put("Request/UpdateState", talep, (data) => {
         TalepleriGetir();
         TalepleriKullaniciyaGoreGetir();
     });
@@ -59,7 +59,7 @@ function Reddet(id) {
         State: 1
 
     };
-    Put("Request/UpdateProductState", talep, (data) => {
+    Put("Request/UpdateState", talep, (data) => {
         TalepleriGetir();
         TalepleriKullaniciyaGoreGetir();
     });
