@@ -77,6 +77,25 @@ function Post(action, data, success, ask = true) {
                             timer: 1300
                         });
                     }
+                },
+                error: function (xhr, status, error) {
+                    var errorMessage = JSON.parse(xhr.responseText);
+                    if (errorMessage && errorMessage.errors) {
+                        var errorString = errorMessage.errors.join(", ");
+                        /*alert(errorString);*/
+                        Swal.fire({
+                            position: 'top-mid',
+                            icon: 'error',
+                            title: "İşlem Başarısız",
+                            text: errorString,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+
+
+                    } else {
+                        alert("An unknown error occurred.");
+                    }
                 }
             });
         }
