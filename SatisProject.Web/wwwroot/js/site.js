@@ -22,7 +22,14 @@ function Get(action, item) {
             var errorMessage = JSON.parse(xhr.responseText);
             if (errorMessage && errorMessage.errors) {
                 var errorString = errorMessage.errors.join(", ");
-                alert(errorString);
+                Swal.fire({
+                    position: 'top-mid',
+                    icon: 'error',
+                    title: "İşlem Başarısız",
+                    text: errorString,
+                    showConfirmButton: false,
+                    timer: 1300
+                });
             } else {
                 alert("An unknown error occurred.");
             }
@@ -71,7 +78,7 @@ function Post(action, data, success, ask = true) {
                     else {
                         Swal.fire({
                             position: 'top-mid',
-                            icon: 'danger',
+                            icon: 'error',
                             title: "İşlem Başarısız",
                             showConfirmButton: false,
                             timer: 1300
@@ -82,17 +89,14 @@ function Post(action, data, success, ask = true) {
                     var errorMessage = JSON.parse(xhr.responseText);
                     if (errorMessage && errorMessage.errors) {
                         var errorString = errorMessage.errors.join(", ");
-                        /*alert(errorString);*/
                         Swal.fire({
                             position: 'top-mid',
                             icon: 'error',
                             title: "İşlem Başarısız",
                             text: errorString,
                             showConfirmButton: false,
-                            timer: 1500
+                            timer: 1300
                         });
-
-
                     } else {
                         alert("An unknown error occurred.");
                     }
@@ -152,6 +156,22 @@ function Delete(action, success, ask = true) {
                             });
                         }
 
+                    },
+                    error: function (xhr, status, error) {
+                        var errorMessage = JSON.parse(xhr.responseText);
+                        if (errorMessage && errorMessage.errors) {
+                            var errorString = errorMessage.errors.join(", ");
+                            Swal.fire({
+                                position: 'top-mid',
+                                icon: 'error',
+                                title: "İşlem Başarısız",
+                                text: errorString,
+                                showConfirmButton: false,
+                                timer: 1300
+                            });
+                        } else {
+                            alert("An unknown error occurred.");
+                        }
                     }
                 });
             }
@@ -210,6 +230,22 @@ function Put(action, data, success, ask = true) {
                         });
                     }
                     
+                },
+                error: function (xhr, status, error) {
+                    var errorMessage = JSON.parse(xhr.responseText);
+                    if (errorMessage && errorMessage.errors) {
+                        var errorString = errorMessage.errors.join(", ");
+                        Swal.fire({
+                            position: 'top-mid',
+                            icon: 'error',
+                            title: "İşlem Başarısız",
+                            text: errorString,
+                            showConfirmButton: false,
+                            timer: 1300
+                        });
+                    } else {
+                        alert("An unknown error occurred.");
+                    }
                 }
             });
         }
