@@ -137,6 +137,9 @@ function Kaydet() {
     };
     Post("Invoice/Create", fatura, (data) => {
         TumFaturalariGetir();
+        TeklifleriGetir();
+        $("#staticBackdrop").modal("hide");
+
     });
 }
 

@@ -285,7 +285,7 @@ function StokTamamlaOffer(id) {
     };
     Put("Offer/UpdateOfferState", teklif, (data) => {
         StokUrunleriGetir();
-        TumFaturalariGetir();
+        StoktanKarsilanlar();
     });
 }
 

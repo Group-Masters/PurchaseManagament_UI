@@ -202,6 +202,8 @@ function UstBirim(id, gizliId) {
     Put("Offer/UpdateOfferState", teklif, (data) => {
         OnaylanmisTalepleriGetir();
         TalepTeklifleriniGetir(gizliId);
+        $("#staticBackdrop1").modal("hide");
+
     });
 }
 

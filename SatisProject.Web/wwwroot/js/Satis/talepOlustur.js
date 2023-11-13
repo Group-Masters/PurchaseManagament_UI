@@ -57,9 +57,6 @@ function Kaydet() {
         $("#staticBackdrop").modal("hide");
 
     });
-
-
-
 }
 
 

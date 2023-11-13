@@ -217,8 +217,6 @@ function Put(action, data, success, ask = true) {
                         if (success) {
                             success(response);
                         }
-
-                        TalepleriKullaniciyaGoreGetir();
                     }
                     else {
                         Swal.fire({
