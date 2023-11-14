@@ -39,7 +39,7 @@ namespace SatisProject.Web.Controllers
                 Repo.Session.RolId = rolString;
                 Repo.Session.Id = Convert.ToString(item.Id);
                 Repo.Session.CompanyId = Convert.ToString(item.CompanyId);
-                Repo.Session.DepartmentId = Convert.ToString(item.CompanyId);
+                Repo.Session.DepartmentId = Convert.ToString(item.DepartmentId);
 
                 return RedirectToAction("index", "admin");
             }
