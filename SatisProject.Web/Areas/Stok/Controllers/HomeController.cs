@@ -19,6 +19,10 @@ namespace SatisProject.Web.Areas.Stok.Controllers
         public IActionResult StokIslem()
         {
             return View();
+        } 
+        public IActionResult StokSatinAlma()
+        {
+            return View();
         }
     }
 }
