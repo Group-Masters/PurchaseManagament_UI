@@ -23,7 +23,7 @@
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].supplierName}
+            ${i + 1} ${arr[i].supplierName}
           </button>
         </h2>
         <div

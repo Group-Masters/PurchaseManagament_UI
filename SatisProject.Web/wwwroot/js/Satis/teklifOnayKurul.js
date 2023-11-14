@@ -17,7 +17,7 @@
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].id} ${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}
+            ${i + 1} ${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}
             <span class="position-absolute top-25 end-50" style="color:  ${arr[i].status === 3 ? 'Blue' : arr[i].status === 1 ? 'Red' : arr[i].status === 4 ? 'Green' : 'Gray'};">
                 ${arr[i].status === 3 ? 'Onay Bekliyor' : arr[i].status === 1 ? 'Reddedildi' : arr[i].status === 4 ? 'Onaylandı' : 'Geçersiz Durum'}
             </span>

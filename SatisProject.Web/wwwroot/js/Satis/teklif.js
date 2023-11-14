@@ -112,7 +112,7 @@ function TalepTeklifleriniGetir(gizliId) {
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].supplierName}</td><td>${arr[i].offeredPrice} - ${arr[i].currencyName}</td>
+            html += `<td>${i + 1}</td><td>${arr[i].supplierName}</td><td>${arr[i].offeredPrice} - ${arr[i].currencyName}</td>
             <td>${arr[i].details == null ? 'Açıklama Yok' : arr[i].details}</td>
             <td> <span style="color: ${arr[i].status === 0 ? 'black' : arr[i].status === 3 ? 'green' : arr[i].status === 1 ? 'red' : 'blue'};">
                          ${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 3 ? 'Onaya Gönderildi' : arr[i].status === 1 ? 'Reddedildi' : 'Tamamlandı'}

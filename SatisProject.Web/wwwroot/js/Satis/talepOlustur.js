@@ -8,7 +8,7 @@
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td><ul class="p-0" style="list-style: none;"><li>${arr[i].createdDate}</li><li>${arr[i].details}</li></ul></td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td><td> <span class="fw-bold"
+            html += `<td>${i+1}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td><ul class="p-0" style="list-style: none;"><li>${arr[i].createdDate}</li><li>${arr[i].details}</li></ul></td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td><td> <span class="fw-bold"
             style="color: ${arr[i].state === 0 ? 'black' : arr[i].state === 1 ? 'red' : arr[i].state === 2 ? 'green' : arr[i].state === 3 ? 'black' : arr[i].state === 4 ? 'green' : arr[i].state === 5 ? 'black' : arr[i].state === 6 ? 'black' : 'blue'};">
                          ${arr[i].state === 0 ? 'Beklemede' : arr[i].state === 1 ? 'Reddedildi' : arr[i].state === 2 ? 'Onaylandı' : arr[i].state === 3 ? 'Yönetimde Bekliyor' : arr[i].state === 4 ? 'Yönetimde Onaylandı' : arr[i].state === 5 ? 'Yönetimde Reddedildi' : arr[i].state === 6 ? 'Ürün Bekleniyor' : 'Talebiniz Tamamlandı'}
                      </span></td>`;
@@ -92,18 +92,6 @@ function Sil(id) {
     
     /*    location.reload();*/
 }
-
-//function TumUrunleriGetir() {
-//    Get("Product/GetAll", (data) => {
-//        var urundata = data;
-//        var dropdown = $("#urunAd");
-//        var dropdownG = $("#urunAdG");
-//        $.each(urundata, function (index, urun) {
-//            dropdown.append($("<option>").val(urun.id, urun.measuringUnitId ).text(urun.name, urun.measuringName));
-//            dropdownG.append($("<option>").val(urun.id, urun.measuringUnitId ).text(urun.name, urun.measuringName));
-//        });
-//    });
-//}
 
 function TumUrunleriGetir() {
     Get("Product/GetAll", (data) => {

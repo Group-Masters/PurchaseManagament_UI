@@ -7,7 +7,7 @@ function AdetBirimleriGetir() {
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].name}</td>`;
+            html += `<td>${i+1}</td><td>${arr[i].name}</td>`;
             html += `
             <td>
             <button class="btn btn-danger" onclick='Sil(${arr[i].id})'>Sil</button>

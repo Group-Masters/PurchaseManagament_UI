@@ -8,7 +8,7 @@
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].receiverName} ${arr[i].receiverSurname}</td><td>${arr[i].quantity}</td><td>${arr[i].productName}</td>`;
+            html += `<td>${i + 1}</td><td>${arr[i].receiverName} ${arr[i].receiverSurname}</td><td>${arr[i].quantity}</td><td>${arr[i].productName}</td>`;
             html += `<td>
              <button class="btn btn-warning" onclick='iade(
                  "${arr[i].id}","${arr[i].receivingEmployeeId}","${arr[i].companyStockId}"

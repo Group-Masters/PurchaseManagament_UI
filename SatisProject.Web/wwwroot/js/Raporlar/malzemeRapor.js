@@ -1,6 +1,6 @@
 ﻿function Rapor() {
     var girisId = $("#urun").val();
-    var malzemeSirketId = $("#malzemeSirketId").val();
+    var malzemeSirketId = $("#girisSirketId").val();
     var html = ``;
 
     Get(`Report/GetbyProduct/${malzemeSirketId}/${girisId}`, (data) => {
@@ -25,7 +25,7 @@
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].requestId} ${arr[i].requestby}
+            ${i + 1} ${arr[i].requestby}
           </button>
         </h2>
         <div
@@ -133,6 +133,7 @@ $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
     Rapor();
     UrunleriGetir();
+    TumSirketleriGetir();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir

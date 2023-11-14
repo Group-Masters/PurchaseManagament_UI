@@ -9,7 +9,7 @@
 
         for (var i = 0; i < (arr.length <= 10 ? arr.length : 10); i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td><ul class="p-0" style="list-style: none;"><li>${arr[i].createdDate}</li><li>${arr[i].details}</li></ul></td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td>
+            html += `<td>${i + 1}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td><ul class="p-0" style="list-style: none;"><li>${arr[i].createdDate}</li><li>${arr[i].details}</li></ul></td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td>
             <td>
             <span class="fw-bold"
             style="color: ${arr[i].state === 0 ? 'black' : arr[i].state === 1 ? 'red' : arr[i].state === 2 ? 'green' : arr[i].state === 3 ? 'black' : arr[i].state === 4 ? 'green' : arr[i].state === 5 ? 'black' : arr[i].state === 6 ? 'black' : 'blue'};">

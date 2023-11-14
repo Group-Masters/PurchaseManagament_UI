@@ -7,7 +7,7 @@
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].name}</td>`;
+            html += `<td>${i + 1}</td><td>${arr[i].name}</td>`;
             html += `<td><button class="btn btn-danger"  onclick='RolSil(${arr[i].id})'>Sil</button><button class="btn btn-primary mx-2" onclick='RolDuzenle(
                 "${arr[i].id}","${arr[i].name}")'>Düzenle</button>
                 <button class="btn btn-warning" onclick='VeriTabaniSil(${arr[i].id})' title="Veri Tabanına Taşıma İşlemi">VTT</button>

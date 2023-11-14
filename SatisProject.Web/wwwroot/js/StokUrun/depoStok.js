@@ -8,7 +8,7 @@
         var arr = data.sort((a, b) => b.id - a.id);
         for (var i = 0; i < arr.length; i++) {
             html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].productName} / ${arr[i].measuringUnitName}</td><td>${arr[i].quantity}</td>`;
+            html += `<td>${i+1}</td><td>${arr[i].productName} / ${arr[i].measuringUnitName}</td><td>${arr[i].quantity}</td>`;
             html += `<td>
             <button class="btn btn-danger"  onclick='Sil(${arr[i].id})'>Sil</button>
             <button class="btn btn-success mx-2" onclick='Artir(
@@ -54,7 +54,7 @@ function TumFaturalariGetir() {
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].id} Talep Eden : ${arr[i].requestingEmployeeName} ${arr[i].requestingEmployeeSurname}
+            Talep Eden : ${arr[i].requestingEmployeeName} ${arr[i].requestingEmployeeSurname}
           </button>
         </h2>
         <div
@@ -145,7 +145,7 @@ function StoktanKarsilanlar() {
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].id} ${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}
+            ${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}
           </button>
         </h2>
         <div

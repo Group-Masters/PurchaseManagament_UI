@@ -24,7 +24,7 @@ function KullaniciGetirDeneme() {
         <tr class="searchTable">
             <td>
                 <div class="d-flex align-items-center">
-                    <h4 class="p-1">${arr[i].id}</h4>
+                    <h4 class="p-1">${i + 1}</h4>
                     <img src="${arr[i].gender === 0 ? 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/7-512.png' : 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/4-256.png'}"
                         alt="" style="width: 45px; height: 45px" class="rounded-circle" />
                     <div class="ms-3">

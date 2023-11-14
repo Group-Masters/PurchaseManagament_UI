@@ -6,7 +6,7 @@
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         html += `            <nav class="navbar bg-white mb-2">
-              <button type="submit" class="btn btn-warning mr-3" title="PDF Oluştur" id="pdfOlustur" onclick="Pdf(${girisId})">
+              <button type="submit" class="btn btn-warning mr-3" title="PDF Oluştur" id="pdfOlustur" onclick="Pdf(${companyId},${girisId})">
                     PDF Oluştur
                     <i class="bi bi-receipt text-black"></i>
               </button>
@@ -24,7 +24,7 @@
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].requestId} ${arr[i].requestby}
+            ${i+1} ${arr[i].requestby}
           </button>
         </h2>
         <div
@@ -106,9 +106,10 @@
 
     });
 }
-function Pdf(girisId) {
+function Pdf(companyId,girisId) {
     var pdf = {
-        Id: girisId
+        CompanyId: companyId,
+        DepartmentId: girisId
     }
     Post(`PDF/GenerateReportToPDFByDepartman`, pdf, (data) => {
 
