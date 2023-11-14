@@ -88,6 +88,10 @@ function TumFaturalariGetir() {
                   <td>${arr[i].companyName} -- ${arr[i].companyAddress}</td>
                 </tr>
                 <tr>
+                  <th scope="row">Talep Eden Kullanıcı :</th>
+                  <td>${arr[i].requestingEmployeeName} ${arr[i].requestingEmployeeSurname}</td>
+                </tr>
+                <tr>
                   <th scope="row">Ürün Adı :</th>
                   <td>${arr[i].productName} ${arr[i].measuringUnit}</td>
                 </tr>
