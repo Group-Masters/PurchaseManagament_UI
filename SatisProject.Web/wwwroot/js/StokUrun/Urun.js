@@ -7,7 +7,11 @@
         for (var i = 0; i < arr.length; i++) {
             html += `<div class="col mb-2">
     <div class="card">
-      <img src="https://resim.epey.com/886465/m_xiaomi-redmi-gaming-monitor-g24-1.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+    <div class="p-3">
+    <button class="btn btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="YeniFoto(${arr[i].id})"><i class="bi bi-camera"></i></button>
+     <img src="${arr[i].imgProduct === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : '/urunfoto/' + arr[i].imgProduct}" class="card-img-top"/>
+    </div>
+     
       <div class="card-body ">
         <div class="d-flex justify-content-center gap-2">
             <h5 class="card-title fs-6">
@@ -116,6 +120,31 @@ function TumUrunBirimleriniGetir() {
             dropdown.append($("<option>").val(urun.id).text(urun.name));
             dropdownG.append($("<option>").val(urun.id).text(urun.name));
         });
+    });
+}
+
+function GetFileNameFromPath(filePath) {
+    var startIndex = (filePath.indexOf('\\') >= 0 ? filePath.lastIndexOf('\\') : filePath.lastIndexOf('/'));
+    var fileName = filePath.substring(startIndex);
+    if (fileName.indexOf('\\') === 0 || fileName.indexOf('/') === 0) {
+        fileName = fileName.substring(1);
+    }
+    return fileName;
+}
+
+function YeniFoto(id) {
+    $("#urunFoto").val("");
+    $("#productId").val(id);
+    $("#modalFoto").modal("show");
+}
+function KaydetFoto() {
+    var kaydet = {
+        ProductId: $("#productId").val(),
+        ImageSrc: GetFileNameFromPath($("#urunFoto").val())
+    };
+    Post("ImgProduct/createProduct", kaydet, (data) => {
+        Getir();
+        $("#modalFoto").modal("hide");
     });
 }
 

@@ -62,8 +62,8 @@
                   <td>${arr[i].createDate}</td>
                 </tr>
                 <tr>
-                  <th scope="row">Teklif Detayları:</th>
-                  <td>${arr[i].detail}</td>
+                  <th scope="row">Fatura Tarihi :</th>
+                  <td>${arr[i].detail === null ? 'Fatura  daha oluşmadı veya talep reddedildi.' : arr[i].detail}</td>
                 </tr>
                 <tr>
                   <th scope="row">Teklif İşlem Durumu:</th>

@@ -74,8 +74,8 @@
                   <td>${arr[i].createDate}</td>
                 </tr>
                 <tr>
-                  <th scope="row">Talep Onaylanma Tarihi :</th>
-                  <td>${arr[i].supplyDate === null ? 'Talep daha onaylanmadı veya reddedildi.' : arr[i].supplyDate}</td>
+                  <th scope="row">Fatura Tarihi :</th>
+                  <td>${arr[i].supplyDate === null ? 'Fatura  daha oluşmadı veya talep reddedildi.' : arr[i].supplyDate}</td>
                 </tr>
                  <tr>
                   <th scope="row">Talep Onay Durumu :</th>
