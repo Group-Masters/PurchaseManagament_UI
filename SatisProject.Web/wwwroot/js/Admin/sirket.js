@@ -39,7 +39,7 @@ function Yeni() {
 function Kaydet() {
     var sirket = {
         Name: $("#inputSirketAd").val(),
-        Adress: $("#inputAdress").val()
+        Address: $("#inputAdress").val()
     };
     Post("Company/Create", sirket, (data) => {
         SirketleriGetir();
@@ -48,7 +48,7 @@ function Kaydet() {
 }
 
 function Sil(id) {
-    Delete(`Company/Delete/${id}`, (data) => {
+    Delete(`Company/DeletePermanent/${id}`, (data) => {
         SirketleriGetir();
     });
 }
