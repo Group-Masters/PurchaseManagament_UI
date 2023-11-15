@@ -100,10 +100,9 @@ function Guncelle() {
 }
 
 function VeriTabaniSil(id) {
-    Put(`Product/Delete/${id}`, (data) => {
+    Put(`Product/Delete/${id}`,id, (data) => {
         Getir();
     });
-    Getir();
 }
 
 function Sil(id) {

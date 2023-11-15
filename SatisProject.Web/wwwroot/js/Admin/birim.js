@@ -63,10 +63,9 @@ function Guncelle() {
 }
 
 function VeriTabaniSil(id) {
-    Put(`Department/Delete/${id}`, (data) => {
+    Put(`Department/Delete/${id}`,id, (data) => {
         BirimleriGetir();
     });
-    BirimleriGetir();
 }
 
 
