@@ -1,7 +1,8 @@
 ﻿function Rapor() {
     var girisId = $("#tedarikci").val();
+    var sirketId = $("#girisSirketId").val();
     var html = ``;
-    Get(`Report/GetSupplierById/${girisId}`, (data) => {
+    Get(`Report/GetSupplierById/${sirketId}/${girisId}`, (data) => {
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         html += `            <nav class="navbar bg-white mb-2">
@@ -110,6 +111,7 @@ function TedarikcileriGetir() {
 
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
+    TumSirketleriGetir();
     Rapor();
     TedarikcileriGetir();
     // Select değişiklik olayını dinle

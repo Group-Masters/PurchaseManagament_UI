@@ -2,7 +2,7 @@
     var girisSirketId = $("#girisSirketId").val();
     Get(`CompanyStock/GetAllByCompanyId/${girisSirketId}`, (data) => {
         var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
-            `<thead class="text-light" style="background-color:#9e9494;"><tr><th>Id</th><th>Ürün Adı</th><th>Adet</th><th></th><th></th></tr></thead>`;
+            `<thead class="text-light" style="background-color:#9e9494;"><tr><th>Id</th><th>Ürün Adı</th><th>Adet</th></tr></thead>`;
 
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
