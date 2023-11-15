@@ -84,13 +84,9 @@ function Guncelle() {
 }
 
 function Sil(id) {
-    Put(`Request/Delete/${id}`, (data) => {
-        /* TalepleriKullaniciyaGoreGetir();*/
+    Put(`Request/Delete/${id}`, id, (data) => {
         TalepleriKullaniciyaGoreGetir();
     });
-
-    
-    /*    location.reload();*/
 }
 
 function TumUrunleriGetir() {

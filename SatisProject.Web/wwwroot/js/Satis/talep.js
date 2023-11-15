@@ -75,28 +75,6 @@ function TumBirimleriGetir() {
     });
 }
 
-//$("#girisSirketId").change(function () {
-//    var sirketId = $(this).val();
-//    var ddlBirim = $("#birimler");
-//    ddlBirim.empty();
-//    if (sirketId !== "") {
-//        Get(`CompanyDepartment/GetDepartmentByCompanyId/${sirketId}`, (data) => {
-//            if (data != "") {
-//                var birimler = data;
-//                $.each(birimler, function (index, birim) {
-//                    ddlBirim.append($("<option>").val(birim.id).text(birim.name));
-//                });
-//            }
-//            else {
-//                alert("Departman yok");
-//            }
-
-//        });
-//    }
-//});
-
-
-
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
     TumSirketleriGetir();

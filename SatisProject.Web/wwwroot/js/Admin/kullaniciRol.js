@@ -99,6 +99,12 @@ function KullaniciRolGetir() {
 }
 
 
+function YeniRolVermeDuzenle(id) {
+    $("#gizliId").val(id);
+    $("#rolAd").val();
+    $("#rolVerModal").modal("show");
+}
+
 function YeniRolVer() {
     var rol = {
         EmployeeId: $("#gizliId").val(),
@@ -116,12 +122,6 @@ function KullaniciRolSil(id) {
         KullanicilariGetirRolVer();
         KullaniciRolGetir();
     });
-}
-
-function YeniRolVermeDuzenle(id) {
-    $("#gizliId").val(id);
-    $("#rolAd").val();
-    $("#rolVerModal").modal("show");
 }
 
 function TumRolleriGetir() {

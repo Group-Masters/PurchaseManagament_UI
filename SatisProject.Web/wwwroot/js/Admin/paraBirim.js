@@ -48,7 +48,7 @@ function Kaydet() {
 }
 
 function Sil(id) {
-    Put(`Currency/Delete/${id}`, (data) => {
+    Put(`Currency/Delete/${id}`,id, (data) => {
         ParaBirimleriGetir();
     });
     ParaBirimleriGetir();

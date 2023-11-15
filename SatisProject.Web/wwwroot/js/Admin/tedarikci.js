@@ -49,10 +49,9 @@ function Kaydet() {
 }
 
 function Sil(id) {
-    Put(`Supplier/Delete/${id}`, (data) => {
-        
+    Put(`Supplier/Delete/${id}`, id, (data) => {
+        TedarikcilerGetir();
     });
-    TedarikcilerGetir();
 }
 
 function Duzenle(id, name, address) {

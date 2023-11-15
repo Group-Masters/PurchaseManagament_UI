@@ -63,11 +63,9 @@ function Guncelle() {
 }
 
 function VeriTabaniSil(id) {
-
-    Put(`Role/Delete/${id}`, (data) => {
+    Put(`Role/Delete/${id}`, id, (data) => {
         RolleriGetir();
     });
-    RolleriGetir();
 }
 
 function RolSil(id) {

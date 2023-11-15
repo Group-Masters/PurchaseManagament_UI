@@ -1,5 +1,4 @@
-﻿
-function KullaniciGetirDeneme() {
+﻿function KullaniciGetir() {
     var html = ``;
     var girisSirketId = $("#girisSirketId").val();
     Get(`Employee/GetByCompany/${girisSirketId}`, (data) => {
@@ -113,7 +112,7 @@ function KullaniciKaydet() {
         Username: $("#kullaniciAdi").val()
     };
     Post("Employee/Create", kullanici, (data) => {
-        KullaniciGetirDeneme();
+        KullaniciGetir();
         $("#staticBackdrop").modal("hide");
     });
 }
@@ -138,7 +137,7 @@ function Guncelle() {
         IsActive: $("#aktifG").val() === "true" ? true : false
     };
     Put("Employee/Update", kullanici, (data) => {
-        KullaniciGetirDeneme();
+        KullaniciGetir();
         $("#staticBackdrop1").modal("hide");
     });
 }
@@ -172,26 +171,15 @@ $(document).ready(function () {
             });
         }
     });
-
-    //Patlarsa bundan patlı aç
-    //$("#aracEkleForm").submit(function (event) {
-    //    event.preventDefault();
-    //    var selectedMarkaId = $("#ddlMarka").val();
-    //    var selectedModelId = $("#ddlModel").val();
-    //});
 });
 
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
-    //TumBirimleriGetir();
     TumSirketleriGetir();
-    /*    KullaniciGetir();*/
-    KullaniciGetirDeneme();
-    /*    SirketleriGetir();*/
+    KullaniciGetir();
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {
         // Yeni şirket seçildiğinde verileri getir
-        /*        KullaniciGetir();*/
-        KullaniciGetirDeneme();
+        KullaniciGetir();
     });
 });

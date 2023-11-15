@@ -47,7 +47,7 @@ function Kaydet() {
 }
 
 function Sil(id) {
-    Put(`MeasuringUnit/Delete/${id}`, (data) => {
+    Put(`MeasuringUnit/Delete/${id}`,id, (data) => {
         AdetBirimleriGetir();
     });
     
