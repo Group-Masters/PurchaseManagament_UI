@@ -43,7 +43,7 @@
       </div>
     </div>
   </div>`;
-            
+
         }
         html += `</div>`;
 
@@ -100,7 +100,7 @@ function Guncelle() {
 }
 
 function VeriTabaniSil(id) {
-    Put(`Product/Delete/${id}`,id, (data) => {
+    Put(`Product/Delete/${id}`, id, (data) => {
         Getir();
     });
 }
@@ -131,15 +131,39 @@ function GetFileNameFromPath(filePath) {
     return fileName;
 }
 
+
 function YeniFoto(id) {
     $("#urunFoto").val("");
     $("#productId").val(id);
+/*    $("#imageData").val("");*/
     $("#modalFoto").modal("show");
 }
+
+//function ReadData(input) {
+//    if (input.files && input.files[0]) {
+//        let fs = new FileReader();
+//        fs.onload = function (e) {
+//            let arrayBuffer = e.target.result;
+//            let uintArray = new Uint8Array(arrayBuffer);
+//            let dataArray = Array.from(uintArray);
+
+//            let dataString = JSON.stringify(dataArray);
+
+//            $('#imageData').val(dataString);
+//        };
+//        fs.readAsArrayBuffer(input.files[0]);
+//    }
+//}
+
+$("#urunFoto").change(function () {
+    ReadData(this);
+});
+
 function KaydetFoto() {
     var kaydet = {
         ProductId: $("#productId").val(),
-        ImageSrc: GetFileNameFromPath($("#urunFoto").val())
+        ImageSrc: GetFileNameFromPath($("#urunFoto").val()),
+/*        ImageData : asfasfa ? ""*/
     };
     Post("ImgProduct/createProduct", kaydet, (data) => {
         Getir();

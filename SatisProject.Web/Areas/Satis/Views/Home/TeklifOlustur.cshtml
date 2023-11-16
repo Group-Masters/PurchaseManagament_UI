@@ -29,14 +29,14 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kullanici Bilgileri</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Teklif Bilgileri</h1>
                 <button type="button"
                         class="btn-close"
                         data-bs-dismiss="modal"
                         aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+                <div class="row g-3 needs-validation" id="ekleForm" novalidate>
                     <div class="col-md-12 d-none">
                         <input type="text"
                                class="form-control"
@@ -113,14 +113,14 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kullanici Bilgileri</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Teklif Bilgileri</h1>
                 <button type="button"
                         class="btn-close"
                         data-bs-dismiss="modal"
                         aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
+                <div class="row g-3 needs-validation" id="ekleForm" novalidate>
                     <div class="col-md-12 d-none">
                         <input type="text"
                                class="form-control"
@@ -133,14 +133,14 @@
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
                     <div class="col-md-12">
-                        <label for="fiyat" class="form-label">Fiyat Teklifini Giriniz  :</label>
+                        <label for="fiyat" class="form-label">Fiyat Teklifini ve Para Birimini Giriniz  :</label>
                         <div class="d-flex">
+                            <select class="form-select col-3" id="paraBirimG" required>
+                            </select>
                             <input type="number"
                                    class="form-control col-9"
                                    id="fiyatG"
                                    required />
-                            <select class="form-select col-3" id="paraBirimG" required>
-                            </select>
                         </div>
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>

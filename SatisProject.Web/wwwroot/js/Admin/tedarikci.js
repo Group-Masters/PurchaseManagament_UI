@@ -1,30 +1,41 @@
 function TedarikcilerGetir() {
     Get("Supplier/GetAll", (data) => {
-        var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
-            `<thead class="text-light" style="background-color:#9e9494;"><tr><th>Id</th><th>Tedarikci</th><th>Adress</th><th></th></tr></thead>`;
+        var html = `<div class="mx-4"><table class="table custom-table" style="border-collapse: separate;border-spacing: 0 5px;">
+        <thead>
+            <tr class="text-white" style="background-color:#9e9494;">
+                <th scope="col"></th>
+                <th scope="col">Tedarikci Ad</th>
+                <th scope="col">Sirket Adresi</th>
+                <th scope="col">Islemler</th>
+            </tr>
+        </thead><tbody>`;
 
-        var arr = data;
+        var arr = data.sort((a, b) => b.id - a.id);
 
         for (var i = 0; i < arr.length; i++) {
-            html += `<tr id="arama">`;
-            html += `<td>${i + 1}</td><td>${arr[i].name}</td><td>${arr[i].address}</td>`;
+            html += `<tr scope="row" class="arama">
+                        <td>${i + 1}</td>
+                        <td>${arr[i].name}</td>
+                        <td>${arr[i].address}</td>`
+
             html += `
-            <td>
+               <td>
             <button class="btn btn-danger" onclick='Sil(${arr[i].id})'>Sil</button>
             <button class="btn btn-primary" onclick='Duzenle(
                 "${arr[i].id}","${arr[i].name}","${arr[i].address}"
             )'>Duzenle</button>
-            </td>`;
-            html += `</tr>`
+            </td>
+                `;
+            `</tr>`;
         }
-        html += `</table></div>`;
+        html += `</tbody></table></div>`;
 
         $("#divTedarikciler").html(html);
 
         $(function () {
             $("#ara").keyup(function () {
                 var deger = $(this).val().toLowerCase();
-                $("#liste #arama").filter(function () {
+                $("#divTedarikciler .arama").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(deger) > -1);
                 });
             });

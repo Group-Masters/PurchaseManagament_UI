@@ -72,25 +72,41 @@
 function KullaniciRolGetir() {
     var girisSirketId = $("#girisSirketId").val();
     Get(`EmployeeRole/GetDetailByCompanyId/${girisSirketId}`, (data) => {
-        var html = `<div class=""><table id="liste" class="table table-hover shadow bg-light">` +
-            `<thead class="text-light"  style="background-color:#9e9494;"><tr><th>Id</th><th>Ad Soyad</th><th>Mail Adres</th><th>Şirket Rolü</th><th></th></tr></thead>`;
+        var html = `<div class="mx-4"><table class="table custom-table" style="border-collapse: separate;border-spacing: 0 5px;">
+        <thead>
+            <tr class="text-white" style="background-color:#9e9494;">
+                <th scope="col">Id</th>
+                <th scope="col">Ad Soyad</th>
+                <th scope="col">Mail Adres</th>
+                <th scope="col">Şirket Rolü</th>
+                <th scope="col">İşlemler</th>
+            </tr>
+        </thead><tbody>`;
 
-        /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
+
         for (var i = 0; i < arr.length; i++) {
-            html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].employeeName} ${arr[i].employeeSurname}</td><td>${arr[i].employeeEmail}</td><td>${arr[i].roleName}</td>`;
-            html += `<td><button class="btn btn-danger" onclick='KullaniciRolSil(${arr[i].id})'>Rol Sil</button></td>`;
-            html += `</tr>`
+            html += `<tr scope="row" class="arama">
+                        <td>${i + 1}</td>
+                        <td>${arr[i].employeeName} ${arr[i].employeeSurname}</td>
+                        <td>${arr[i].employeeEmail}</td>
+                        <td>${arr[i].roleName}</td>`
+
+            html += `
+                <td>
+                <button class="btn btn-danger" onclick='KullaniciRolSil(${arr[i].id})'>Rol Sil</button>
+                </td>
+                `;
+            `</tr>`;
         }
-        html += `</table></div>`;
+        html += `</tbody></table></div>`;
 
         $("#divKullaniciRol").html(html);
 
         $(function () {
             $("#ara").keyup(function () {
                 var deger = $(this).val().toLowerCase();
-                $("#liste #arama").filter(function () {
+                $("#divKullaniciRol .arama").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(deger) > -1);
                 });
             });

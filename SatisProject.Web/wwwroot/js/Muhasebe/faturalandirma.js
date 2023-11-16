@@ -1,28 +1,48 @@
 ﻿function TeklifleriGetir() {
     var girisSirketId = $("#girisSirketId").val();
     Get(`Offer/GetByAproved/${girisSirketId}`, (data) => {
-        var html = `<div class="container-fluid"><table id="liste" class="table table-hover shadow bg-light">` +
-            `<thead class="text-light"  style="background-color:#9e9494;"><tr><th>Id</th><th>Ürün Adı</th><th>Adet</th><th>Tedarikci Adı</th><th>Fiyat Teklifi</th><th>Talep Eden Kullanıcı</th><th></th></tr></thead>`;
+        var html = `<div class="mx-4"><table class="table custom-table" style="border-collapse: separate;border-spacing: 0 5px;">
+        <thead>
+            <tr class="text-white" style="background-color:#9e9494;">
+                <th scope="col"></th>
+                <th scope="col">Ürün Ad</th>
+                <th scope="col">Adet</th>
+                <th scope="col">Tedarikçi Adı</th>
+                <th scope="col">Fiyat Teklifi</th>
+                <th scope="col">Talep Eden Kullanıcı</th>
+                <th scope="col">İşlemler</th>
+            </tr>
+        </thead><tbody>`;
 
-        /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
 
         for (var i = 0; i < arr.length; i++) {
-            html += `<tr id="arama">`;
-            html += `<td>${arr[i].id}</td><td>${arr[i].productName}</td><td>${arr[i].quantity}</td><td>${arr[i].supplierName}</td><td>${arr[i].offeredPrice} ${arr[i].currencyName} </td><td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td>`;
-            html += `<td>
+            html += `<tr scope="row" class="arama">
+                        <td>${i + 1}</td>
+                        <td>${arr[i].productName}</td>
+                        <td>${arr[i].quantity}</td>
+                        <td>${arr[i].supplierName}</td>
+                        <td>
+                            ${arr[i].offeredPrice}
+                             <small class="d-block">${arr[i].currencyName}</small>
+                        </td>
+                        <td>${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}</td>`
+
+            html += `
+               <td>
             <button class="btn btn-primary"  onclick='Duzenle("${arr[i].id}","${arr[i].productName}","${arr[i].quantity}","${arr[i].supplierName}","${arr[i].offeredPrice}","${arr[i].currencyName}","${arr[i].companyAddress}","${arr[i].supplierAddress}")'>Faturasını Oluştur</button>
-            </td>`;
-            html += `</tr>`
+            </td>
+                `;
+            `</tr>`;
         }
-        html += `</table></div>`;
+        html += `</tbody></table></div>`;
 
         $("#divTeklifFatura").html(html);
 
         $(function () {
             $("#ara").keyup(function () {
                 var deger = $(this).val().toLowerCase();
-                $("#liste #arama").filter(function () {
+                $("#divTeklifFatura .arama").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(deger) > -1);
                 });
             });
@@ -67,7 +87,7 @@ function TumFaturalariGetir() {
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].id} ${arr[i].supplierName}
+            ${i+1} ${arr[i].supplierName}
           </button>
         </h2>
         <div
@@ -122,25 +142,39 @@ function TumFaturalariGetir() {
 
         $("#ara").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#divTeklif .accordion").filter(function () {
+            $("#divFatura .accordion").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
             });
         });
 
     });
 }
+function isValidGUID(guid) {
+    var guidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+    return guidPattern.test(guid);
+}
 
 function Kaydet() {
-    var fatura = {
-        OfferId: $("#id").val(),
-        UUID: $("#uUID").val()
-    };
-    Post("Invoice/Create", fatura, (data) => {
-        TumFaturalariGetir();
-        TeklifleriGetir();
-        $("#staticBackdrop").modal("hide");
-
-    });
+    var myGUID = $("#uUID").val();
+    if (isValidGUID(myGUID)) {
+        var fatura = {
+            OfferId: $("#id").val(),
+            UUID: myGUID
+        };
+        Post("Invoice/Create", fatura, (data) => {
+            TumFaturalariGetir();
+            TeklifleriGetir();
+            $("#staticBackdrop").modal("hide");
+        });
+    } else {
+        Swal.fire({
+            position: 'top-mid',
+            icon: 'error',
+            title: "Geçerli Bir Guid Giriniz",
+            showConfirmButton: false,
+            timer: 1300
+        });
+    }
 }
 
 $(document).ready(function () {
