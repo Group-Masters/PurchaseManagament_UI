@@ -58,7 +58,7 @@ namespace SatisProject.Web.Controllers
 
             var response = await _restService.PostAsync<LoginVM, Result<bool>>(model, "Employee/Login", false);
             
-            if (response.Data.Success==true)
+            if (response.Data?.Success==true)
             {
                 Repo.Session.Eposta = model.UsernameOrEmail;
 
@@ -66,7 +66,7 @@ namespace SatisProject.Web.Controllers
             }
             else
             {
-                List<string> errors = (List<string>)response.Data.Errors;
+                List<string> errors = (List<string>)response.Data?.Errors;
                 ViewBag.LoginErrors = errors;
                 return View("Login");
             }

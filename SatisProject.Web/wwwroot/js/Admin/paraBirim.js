@@ -45,7 +45,7 @@ function ParaBirimleriGetir() {
 
 function Yeni() {
     $("#inputBirimAd").val("");
-    $("#inputOran").val("");
+    $("#inputOran").val(0);
     $("#staticBackdrop").modal("show");
 }
 function Kaydet() {
