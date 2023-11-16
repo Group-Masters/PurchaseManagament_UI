@@ -95,7 +95,7 @@ function Kaydet() {
 function IdVer(id) {
     $("#gizliId").val(id);
     $("#tad").val("");
-    $("#fiyat").val("");
+    $("#fiyat").val(0);
     $("#aciklama").val("");
     $("#paraBirim").val("");
     $("#staticBackdrop").modal("show");

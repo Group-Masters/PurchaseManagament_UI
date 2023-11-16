@@ -206,7 +206,7 @@ function StoktanKarsilanlar() {
 
 
 function Yeni() {
-    $("#adet").val("");
+    $("#adet").val(0);
     $("#urunAd").val("")
     $("#staticBackdrop").modal("show");
 }
@@ -231,7 +231,7 @@ function Sil(id) {
 
 function Artir(id) {
     $("#idArtir").val(id);
-    $("#adetArtir").val("");
+    $("#adetArtir").val(0);
     $("#kullaniciArtir").val("");
     $("#staticBackdropArtir").modal("show");
 }
@@ -249,7 +249,7 @@ function GuncelleArtir() {
 
 function Azalt(id) {
     $("#idAzalt").val(id);
-    $("#adetAzalt").val("");
+    $("#adetAzalt").val(0);
     $("#departmanAzalt").val("");
     $("#kullaniciAzalt").val("");
     $("#staticBackdropAzalt").modal("show");
