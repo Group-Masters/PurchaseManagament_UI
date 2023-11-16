@@ -41,7 +41,7 @@
 function Yeni() {
     $("#urunAd").val("");
     $("#aciklama").val("");
-    $("#adet").val("");
+    $("#adet").val(0);
     $("#staticBackdrop").modal("show");
 }
 function Kaydet() {
