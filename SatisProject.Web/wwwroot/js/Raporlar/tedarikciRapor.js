@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Ödenen Fiyat:</th>
-                  <td>${arr[i].price}</td>
+                 <td>${arr[i].prices} / ${arr[i].prices_Try}</td>
                 </tr>
                 <tr>
                   <th scope="row">Teklif Oluşma Tarihi:</th>

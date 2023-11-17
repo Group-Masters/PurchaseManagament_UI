@@ -277,6 +277,7 @@ function GuncelleAzalt() {
     Put("CompanyStock/UpdateQuantityReduce", stok, (data) => {
         StokUrunleriGetir();
         $("#staticBackdropAzalt").modal("hide");
+        
     });
 }
 
@@ -313,36 +314,32 @@ function TumUrunleriGetir() {
 }
 
 $(document).ready(function () {
-    var girisSirketId = $("#girisSirketId").val();
-    $("#girisSirketId").change(function () {
-        Get(`CompanyDepartment/GetDepartmentByCompanyId/${girisSirketId}`, (data) => {
-            var getData = data;
-            var ddlSirket = $("#departmanAzalt");
-            $.each(getData, function (index, get) {
-                ddlSirket.append($("<option>").val(get.id).text(get.name));
-            });
+    Get(`Department/GetAll/`, (data) => {
+        var getData = data;
+        var ddlSirket = $("#departmanAzalt");
+        $.each(getData, function (index, get) {
+            ddlSirket.append($("<option>").val(get.id).text(get.name));
         });
     });
-    $("#departmanAzalt").change(function () {
-        var depId = $(this).val();
+
+    $("#departmanAzalt, #girisSirketId").on("change", function () {
+        var depId = $("#departmanAzalt").val();
+        var girisSirketId = $("#girisSirketId").val();
         var ddlkullanici = $("#kullaniciAzalt");
         ddlkullanici.empty();
         if (depId !== "") {
-            Get(`Employee/GetByCompany/${depId}`, (data) => {
+            Get(`Employee/GetIsActiveByCompanyDepartment/${girisSirketId}/${depId}`, (data) => {
                 if (data != "") {
                     var getData = data;
                     $.each(getData, function (index, get) {
                         ddlkullanici.append($("<option>").val(get.id).text(`${get.name} ${get.surname}`));
                     });
                 }
-                else {
-                    alert("Departmana Ait Kullanıcı Yok");
-                }
-
             });
         }
     });
 });
+
 
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir

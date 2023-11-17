@@ -7,16 +7,6 @@
 <div id="divKullanicilarRolVer" style="overflow-x: auto;">
 </div>
 
-<nav class="navbar text-light my-3 bg-white shadow" style="border-radius: 15px !important;">
-    <div class="container-fluid">
-        <h2><a class="navbar-brand fs-4" style="color:#858796;">Rol Sil</a></h2>
-    </div>
-</nav>
-
-<div id="divKullaniciRol" style="overflow-x: auto;">
-</div>
-
-
 <div class="modal fade" id="rolVerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -37,6 +27,30 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
                 <button type="button" class="btn btn-primary" onclick="YeniRolVer()">Kaydet</button>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade"
+     id="staticBackdrop"
+     data-bs-backdrop="static"
+     data-bs-keyboard="false"
+     tabindex="-1"
+     aria-labelledby="staticBackdropLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Kullanici Rol Bilgileri</h1>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="divKullaniciRol" style="overflow: auto; max-height: 400px;"></div>
+            </div>
+            <div class="modal-footer"></div>
         </div>
     </div>
 </div>

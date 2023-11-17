@@ -9,7 +9,7 @@
     <div class="card">
     <div class="p-3">
     <button class="btn btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="YeniFoto(${arr[i].id})"><i class="bi bi-camera"></i></button>
-     <img src="${arr[i].imgProduct === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : '/urunfoto/' + arr[i].imgProduct}" class="card-img-top"/>
+     <img src="${arr[i].imgProduct === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : '/img/urunfoto/' + arr[i].imgProduct}" class="card-img-top"/>
     </div>
      
       <div class="card-body ">
@@ -120,15 +120,6 @@ function TumUrunBirimleriniGetir() {
             dropdownG.append($("<option>").val(urun.id).text(urun.name));
         });
     });
-}
-
-function GetFileNameFromPath(filePath) {
-    var startIndex = (filePath.indexOf('\\') >= 0 ? filePath.lastIndexOf('\\') : filePath.lastIndexOf('/'));
-    var fileName = filePath.substring(startIndex);
-    if (fileName.indexOf('\\') === 0 || fileName.indexOf('/') === 0) {
-        fileName = fileName.substring(1);
-    }
-    return fileName;
 }
 
 

@@ -65,7 +65,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Ödenen Fiyat:</th>
-                  <td>${arr[i].prices}</td>
+                  <td>${arr[i].prices} / ${arr[i].prices_Try}</td>
                 </tr>
                 <tr>
                   <th scope="row">Onaylayan Yetkili :</th>

@@ -6,26 +6,18 @@ function ParaBirimleriGetir() {
                 <th scope="col"></th>
                 <th scope="col">Para Birimi Ad</th>
                 <th scope="col">Tl/Oran</th>
-                <th scope="col">Islemler</th>
             </tr>
         </thead><tbody>`;
 
-        var arr = data.sort((a, b) => b.id - a.id);
+        var arr = data;
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr scope="row" class="arama">
                         <td>${i + 1}</td>
                         <td>${arr[i].name}</td>
-                        <td>${arr[i].rate}</td>`
+                        <td>${arr[i].rate}</td>`;
 
-            html += `
-               <td>
-            <button class="btn btn-danger" onclick='Sil(${arr[i].id})'>Sil</button>
-            <button class="btn btn-primary" onclick='Duzenle(
-                "${arr[i].id}","${arr[i].name}","${arr[i].rate}"
-            )'>Duzenle</button>
-            </td>
-                `;
+
             `</tr>`;
         }
         html += `</tbody></table></div>`;
@@ -45,13 +37,11 @@ function ParaBirimleriGetir() {
 
 function Yeni() {
     $("#inputBirimAd").val("");
-    $("#inputOran").val(0);
     $("#staticBackdrop").modal("show");
 }
 function Kaydet() {
     var sirket = {
         Name: $("#inputBirimAd").val(),
-        Rate: $("#inputOran").val()
     };
     Post("Currency/Create", sirket, (data) => {
         ParaBirimleriGetir();
@@ -59,36 +49,17 @@ function Kaydet() {
     });
 }
 
-function Sil(id) {
-    Put(`Currency/Delete/${id}`,id, (data) => {
-        ParaBirimleriGetir();
-    });
-    ParaBirimleriGetir();
-}
-
-function Duzenle(id, name, rate) {
-    $("#idGuncelle").val(id);
-    $("#adGuncelle").val(name);
-    $("#oranGuncelle").val(rate);
-    $("#staticBackdrop1").modal("show");
-
-}
-
-function Guncelle() {
-    var guncelle = {
-        Id: $("#idGuncelle").val(),
-        Name: $("#adGuncelle").val(),
-        Rate: $("#oranGuncelle").val()
-
-    }
-
-    Put("Currency/Update", guncelle, (data) => {
-        ParaBirimleriGetir();
-
-        $("#staticBackdrop1").modal("hide");
+function TumParaBirimleriniGetir() {
+    Get("Currency/GetAllCurrencyNames", (data) => {
+        var getData = data;
+        var dropdown = $("#inputBirimAd");
+        $.each(getData, function (index, get) {
+            dropdown.append($("<option>").val(get.code).text(`${get.name} - ${get.code}`));
+        });
     });
 }
 
 $(document).ready(function () {
     ParaBirimleriGetir();
+    TumParaBirimleriniGetir();
 });

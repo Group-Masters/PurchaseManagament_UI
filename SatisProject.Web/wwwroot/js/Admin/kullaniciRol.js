@@ -48,6 +48,9 @@
                 <button class="btn btn-primary" onclick='YeniRolVermeDuzenle("${arr[i].id}")'>
                    Rol Ver
                 </button>
+                <button class="btn btn-danger" onclick='KullaniciRolGetir("${arr[i].id}")'>
+                   Rol Sil
+                </button>
             </td>
         </tr>
     `;
@@ -69,9 +72,9 @@
     });
 }
 
-function KullaniciRolGetir() {
-    var girisSirketId = $("#girisSirketId").val();
-    Get(`EmployeeRole/GetDetailByCompanyId/${girisSirketId}`, (data) => {
+function KullaniciRolGetir(employeeId) {
+    $("#staticBackdrop").modal("show");
+    Get(`EmployeeRole/GetDetailByEmployeeId/${employeeId}`, (data) => {
         var html = `<div class="mx-4"><table class="table custom-table" style="border-collapse: separate;border-spacing: 0 5px;">
         <thead>
             <tr class="text-white" style="background-color:#9e9494;">
@@ -94,7 +97,7 @@ function KullaniciRolGetir() {
 
             html += `
                 <td>
-                <button class="btn btn-danger" onclick='KullaniciRolSil(${arr[i].id})'>Rol Sil</button>
+                <button class="btn btn-danger" onclick='KullaniciRolSil(${arr[i].id},${employeeId})'>Rol Sil</button>
                 </td>
                 `;
             `</tr>`;
@@ -128,15 +131,14 @@ function YeniRolVer() {
     };
     Post("EmployeeRole/Create", rol, (data) => {
         KullanicilariGetirRolVer();
-        KullaniciRolGetir();
         $("#rolVerModal").modal("hide");
     });
 }
 
-function KullaniciRolSil(id) {
+function KullaniciRolSil(id, employeeId) {
     Delete(`EmployeeRole/DeletePermanent/${id}`, (data) => {
         KullanicilariGetirRolVer();
-        KullaniciRolGetir();
+        KullaniciRolGetir(employeeId);
     });
 }
 
@@ -154,7 +156,6 @@ $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir
     TumSirketleriGetir();
     TumRolleriGetir();
-    KullaniciRolGetir();
     KullanicilariGetirRolVer()
     // Select değişiklik olayını dinle
     $("#girisSirketId").on("change", function () {

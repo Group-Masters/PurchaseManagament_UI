@@ -29,6 +29,7 @@
     <Folder Include="Areas\Muhasebe\Models\" />
     <Folder Include="Code\Fiters\" />
     <Folder Include="Code\Rest\" />
+    <Folder Include="wwwroot\Img\faturaFoto\" />
   </ItemGroup>
 
 </Project>
