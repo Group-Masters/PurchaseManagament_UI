@@ -74,7 +74,6 @@ function TumFaturalariGetir() {
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal Başlık</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
                   </div>
                   <div class="modal-body">
@@ -149,11 +148,11 @@ function TumFaturalariGetir() {
                
                 <tr>
                   <th scope="row">Talep Tarihi :</th>
-                  <td>${arr[i].requestCreatedDate}</td>
+                  <td>${FormatDate(arr[i].requestCreatedDate)}</td>
                 </tr>
                 <tr>
                   <th scope="row">Faturalandırma Tarihi :</th>
-                  <td>${arr[i].createdDate}</td>
+                  <td>${FormatDate(arr[i].createdDate)}</td>
                 </tr>
               </tbody>
             </table>

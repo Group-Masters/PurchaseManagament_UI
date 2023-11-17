@@ -208,7 +208,7 @@ function Reddet(id, gizliId) {
     });
 }
 
-function UstBirim(id, gizliId) {
+function UstBirim(id) {
     var teklif = {
         Id: id,
         Status: 3//Yönetime Gönderme / Yönetim Bekleme
@@ -216,7 +216,6 @@ function UstBirim(id, gizliId) {
     };
     Put("Offer/UpdateOfferState", teklif, (data) => {
         OnaylanmisTalepleriGetir();
-        TalepTeklifleriniGetir(gizliId);
         $("#staticBackdrop1").modal("hide");
 
     });

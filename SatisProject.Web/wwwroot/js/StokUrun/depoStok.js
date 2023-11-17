@@ -113,11 +113,11 @@ function TumFaturalariGetir() {
                
                 <tr>
                   <th scope="row">Talep Tarihi :</th>
-                  <td>${arr[i].requestCreatedDate}</td>
+                  <td>${FormatDate(arr[i].requestCreatedDate)}</td>
                 </tr>
                 <tr>
                   <th scope="row">Faturalandırma Tarihi :</th>
-                  <td>${arr[i].createdDate}</td>
+                  <td>${FormatDate(arr[i].createdDate)}</td>
                 </tr>
               </tbody>
             </table>

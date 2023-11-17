@@ -114,6 +114,13 @@ function Pdf(companyId,girisId) {
     Post(`PDF/GenerateReportToPDFByDepartman`, pdf, (data) => {
 
     });
+    //Swal.fire({
+    //    position: 'top-mid',
+    //    icon: 'success',
+    //    title: "PDF İndirildi",
+    //    showConfirmButton: false,
+    //    timer: 1300
+    //});
 }
 
 function DepartmanlariGetir() {
