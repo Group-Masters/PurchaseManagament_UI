@@ -9,7 +9,7 @@
         html += `            <nav class="navbar bg-white mb-2">
               <button type="submit" class="btn btn-warning mr-3" title="PDF Oluştur" id="pdfOlustur" onclick="Pdf(${girisId},${malzemeSirketId})">
                     PDF Oluştur
-                    <i class="bi bi-receipt text-black"></i>
+                    <i class="bi bi-receipt text-light"></i>
               </button>
             </nav>`;
         for (var i = 0; i < arr.length; i++) {
@@ -36,12 +36,6 @@
           <div class="accordion-body">
 
             <table class="table">
-              <thead class="position-relative">
-                 <tr  style="background-color:#9e9494; color:#9e9494;">
-                  <th scope="col" style="border:none;">·</th>
-                  <th scope="col" style="border:none;">·</th>
-                </tr>
-              </thead>
               <tbody>
               <tr>
                   <th scope="row">Fatura Id'si :</th>

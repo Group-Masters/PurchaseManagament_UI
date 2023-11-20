@@ -6,9 +6,9 @@
         /*var arr = data;*/
         var arr = data.sort((a, b) => b.id - a.id);
         html += `            <nav class="navbar bg-white mb-2">
-              <button type="submit" class="btn btn-warning mr-3" title="PDF Oluştur" id="pdfOlustur" onclick="Pdf(${girisId})">
+              <button type="submit" class="btn btn-warning mr-3" title="PDF Oluştur" id="pdfOlustur" onclick="Pdf(${sirketId},${girisId})">
                     PDF Oluştur
-                    <i class="bi bi-receipt text-black"></i>
+                    <i class="bi bi-receipt text-light"></i>
               </button>
             </nav>`;
         for (var i = 0; i < arr.length; i++) {
@@ -35,12 +35,6 @@
           <div class="accordion-body">
 
             <table class="table">
-              <thead class="position-relative">
-                 <tr  style="background-color:#9e9494; color:#9e9494;">
-                  <th scope="col" style="border:none;">·</th>
-                  <th scope="col" style="border:none;">·</th>
-                </tr>
-              </thead>
               <tbody>
               <tr>
                   <th scope="row">Teklif Id'si :</th>
@@ -68,8 +62,12 @@
                 </tr>
                 <tr>
                   <th scope="row">Teklif İşlem Durumu:</th>
-                  <td>${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 1 ? 'Birim Müdürü Tarafından Reddedildi' : arr[i].status === 2 ? 'Birim Müdürü Tarafından Onaylandı' : arr[i].status === 3 ? 'Yönetimde Bekliyor'
-                : arr[i].status === 4 ? 'Yöneti Tarafından Onaylandı' : arr[i].status === 5 ? 'Yönetim Tarafından Reddedildi' : arr[i].status === 6 ? 'Ürün Bekleniyor' : 'Tamamlandı'}</td>
+                  <td>
+                     <span class="fw-bold"
+                         style="color: ${arr[i].status === 0 ? 'black' : arr[i].status === 1 ? 'red' : arr[i].status === 2 ? 'green' : arr[i].status === 3 ? 'black' : arr[i].status === 4 ? 'green' : arr[i].status === 5 ? 'black' : arr[i].status === 6 ? 'black' : 'blue'};">
+                         ${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 1 ? 'Reddedildi' : arr[i].status === 2 ? 'Onaylandı' : arr[i].status === 3 ? 'Yönetimde Bekliyor' : arr[i].status === 4 ? 'Yönetimde Onaylandı' : arr[i].status === 5 ? 'Yönetimde Reddedildi' : arr[i].status === 6 ? 'Ürün Bekleniyor' : 'Talep İşlemi Tamamlandı'}
+                     </span>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -91,9 +89,11 @@
     });
 }
 
-function Pdf(girisId) {
+function Pdf(sirketId,girisId) {
     var pdf = {
-        Id: girisId
+        CompanyId: sirketId,
+        SupplierId: girisId
+
     }
     Post(`PDF/GenerateReportToPDFBySupplier`, pdf, (data) => {
 
