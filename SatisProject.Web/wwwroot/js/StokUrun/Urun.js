@@ -5,7 +5,7 @@
         var arr = data;
 
         for (var i = 0; i < arr.length; i++) {
-            html += `<div class="col mb-2">
+            html += `<div class="col mb-2" id="arama">
     <div class="card">
     <div class="p-3">
     <button class="btn btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="YeniFoto(${arr[i].id})"><i class="bi bi-camera"></i></button>
@@ -52,7 +52,7 @@
         $(function () {
             $("#ara").keyup(function () {
                 var deger = $(this).val().toLowerCase();
-                $("#liste #arama").filter(function () {
+                $("#divUrunler #arama").filter(function () {
                     $(this).toggle($(this).text().toLowerCase().indexOf(deger) > -1);
                 });
             });

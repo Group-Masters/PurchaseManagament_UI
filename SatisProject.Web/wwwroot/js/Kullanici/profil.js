@@ -5,9 +5,9 @@
         /*var arr = data;*/
 
         html += `
-            <div class="row gutters-sm">
+            <div class="row gutters-sm justify-content-center align-items-center">
         <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" style="border:0;">
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center pb-3">
                         <img src="${data.gender === 0 ? 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/7-512.png' : 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/4-256.png'}" alt="Admin" class="rounded-circle" style="user-select:none;" width="150">
@@ -36,7 +36,7 @@
                      <hr>
                     <div class="row">
                         <div class="col-sm-3">
-                            <h6 class="mb-0">Email</h6>
+                            <h6 class="mb-0">Kullanıcı Adı</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
                             ${data.username}

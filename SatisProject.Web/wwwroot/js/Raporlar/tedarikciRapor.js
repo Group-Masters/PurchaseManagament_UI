@@ -50,7 +50,7 @@
                 </tr>
                 <tr>
                   <th scope="row">Ödenen Fiyat:</th>
-                 <td>${arr[i].prices} / ${arr[i].prices_Try}</td>
+                 <td>${arr[i].price}</td>
                 </tr>
                 <tr>
                   <th scope="row">Teklif Oluşma Tarihi:</th>
@@ -81,7 +81,7 @@
 
         $("#ara").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#divBirim .accordion").filter(function () {
+            $("#divTedarikci .accordion").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
             });
         });
