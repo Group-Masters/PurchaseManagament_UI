@@ -17,8 +17,24 @@ html {
   min-height: 100%;
 }
 
+#content-wrapper #content {
+    background-color: #edeaea !important;
+}
+
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color: #edeaea !important;
+}
+
+#modalNav {
+    background-color: white !important;
+    color: black !important;
+}
+
+.input-group-append button {
+    background-color: #edeaea !important;
+    color: black !important;
+    border: none;
 }
 
 .custom-alert {
@@ -46,3 +62,33 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-track {
     background-color: transparent !important;
 }
+
+.navbar-nav .no-arrow .toggle {
+    width: 44px;
+    height: 23px;
+    background-color: black !important;
+    border-radius: 30px;
+    position: relative;
+}
+
+    .navbar-nav .no-arrow .toggle i {
+        color: goldenrod;
+        margin: 3px;
+    }
+
+    .navbar-nav .no-arrow .toggle .toggle-ball {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        right: 1px;
+        cursor: pointer;
+        transition: all ease-in-out 0.5s;
+    }
+
+
+        .navbar-nav .no-arrow .toggle .toggle-ball.active {
+            background-color: white;
+            transform: translateX(-24px);
+        }

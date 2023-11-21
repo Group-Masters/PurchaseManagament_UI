@@ -6,9 +6,9 @@
 
         for (var i = 0; i < arr.length; i++) {
             html += `<div class="col mb-2" id="arama">
-    <div class="card">
+    <div class="card" id="cardDark">
     <div class="p-3">
-    <button class="btn btn-outline-secondary position-absolute top-0 end-0 m-2" onclick="YeniFoto(${arr[i].id})"><i class="bi bi-camera"></i></button>
+    <button class="btn btn-secondary position-absolute top-0 end-0 m-2" onclick="YeniFoto(${arr[i].id})"><i class="bi bi-camera"></i></button>
      <img src="${arr[i].imgProduct === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : '/img/urunfoto/' + arr[i].imgProduct}" class="card-img-top"/>
     </div>
      

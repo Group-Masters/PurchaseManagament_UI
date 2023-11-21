@@ -117,11 +117,11 @@ function ModalDetay(id) {
     Get(`Report/GetByRequestID/${id}`, (data) => {
         /*var arr = data;*/
         html += `
-            <table class="table bg-white text-black">
+            <table class="table bg-white">
             <thead class="position-relative">
             <nav class="navbar text-light mb-3 bg-white shadow" style="border-radius: 15px !important;">
                 <div class="container-fluid justify-content-center">
-                    <div class="text-center text-black fs-2">TALEP DETAYLARI VE SÜRECİ</div>
+                    <div class="text-center fs-2">TALEP DETAYLARI VE SÜRECİ</div>
                 </div>
             </nav>
                  
@@ -192,7 +192,7 @@ function ModalDetay(id) {
     
     <nav class="navbar text-light mb-3 bg-white shadow" style="border-radius: 15px !important;">
         <div class="container-fluid justify-content-center">
-            <div class="text-center text-black fs-2">TALEP TEKLİFLERİ VE DETAYLARI (${data.offerCount})</div>
+            <div class="text-center  fs-2">TALEP TEKLİFLERİ VE DETAYLARI (${data.offerCount})</div>
         </div>
     </nav>
 
@@ -221,7 +221,7 @@ function ModalDetay(id) {
         >
           <div class="accordion-body">
 
-            <table class="table text-black">
+            <table class="table">
               <tbody>
               <tr>
                   <th scope="row">Teklif Edilen Fiyat :</th>

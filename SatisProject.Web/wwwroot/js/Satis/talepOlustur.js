@@ -28,8 +28,8 @@
                             <small class="d-block">${arr[i].details}</small>
                         </td>
                         <td> <span class="fw-bold"
-            style="color: ${arr[i].state === 0 ? 'black' : arr[i].state === 1 ? 'red' : arr[i].state === 2 ? 'green' : arr[i].state === 3 ? 'black' : arr[i].state === 4 ? 'green' : arr[i].state === 5 ? 'black' : arr[i].state === 6 ? 'black' : 'blue'};">
-                         ${arr[i].state === 0 ? 'Beklemede' : arr[i].state === 1 ? 'Reddedildi' : arr[i].state === 2 ? 'Onaylandı' : arr[i].state === 3 ? 'Yönetimde Bekliyor' : arr[i].state === 4 ? 'Yönetimde Onaylandı' : arr[i].state === 5 ? 'Yönetimde Reddedildi' : arr[i].state === 6 ? 'Ürün Bekleniyor' : 'Talebiniz Tamamlandı'}
+            style="color: ${arr[i].state === 0 ? 'gray' : arr[i].state === 1 ? 'red' : arr[i].state === 2 ? 'green' : arr[i].state === 3 ? 'gray' : arr[i].state === 4 ? 'green' : arr[i].state === 5 ? 'gray' : arr[i].state === 6 ? 'gray' : 'blue'};">
+                         ${arr[i].state === 0 ? 'Beklemede' : arr[i].state === 1 ? 'Reddedildi' : arr[i].state === 2 ? 'Onaylandı' : arr[i].state === 3 ? 'Yönetimde Bekliyor' : arr[i].state === 4 ? 'Yönetimde Onaylandı' : arr[i].state === 5 ? 'Yönetimde Reddedildi' : arr[i].state === 6 ? 'Ürün Bekleniyor' : 'Talep Tamamlandı'}
                      </span></td>`
 
             if (arr[i].state === 0) {

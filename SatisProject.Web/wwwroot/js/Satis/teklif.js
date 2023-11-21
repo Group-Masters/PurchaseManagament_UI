@@ -17,7 +17,7 @@
             aria-controls="flush-collapseOne"
             
           >
-            ${arr[i].id} ${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}
+            ${i+1} ${arr[i].requestEmployeeName} ${arr[i].requestEmployeeSurname}
           </button>
         </h2>
         <div
@@ -33,13 +33,13 @@
                 <tr style="background-color:#9e9494; color:#9e9494;">
                   <th scope="col">·</th>
                   <th scope="col">
-                  <span class="position-absolute top-0 end-0">
-                  <button class="btn btn-link"  onclick='IdVer(
+                  <span class="position-absolute top-0 end-0 mt-2 mr-2">
+                  <button class="btn btn-light"  onclick='IdVer(
                         ${arr[i].id}
-                   )'><a class="btn btn-light"> Teklif Gir</a></button>
-                   <button class="btn btn-link"  onclick='TalepTeklifleriniGetir(
+                   )'> Teklif Gir</button>
+                   <button class="btn btn-light"  onclick='TalepTeklifleriniGetir(
                         ${arr[i].id}
-                   )'><a class="btn btn-light"> Teklifleri Gör</a></button>
+                   )'>Teklifleri Gör</button>
                   </span>
                   </th>
                 </tr>
@@ -129,7 +129,7 @@ function TalepTeklifleriniGetir(gizliId) {
                         <td>
                             ${arr[i].details == null ? 'Açıklama Yok' : arr[i].details}
                         </td>
-                        <td> <span style="color: ${arr[i].status === 0 ? 'black' : arr[i].status === 3 ? 'green' : arr[i].status === 1 ? 'red' : 'blue'};">
+                        <td> <span style="color: ${arr[i].status === 0 ? 'gray' : arr[i].status === 3 ? 'green' : arr[i].status === 1 ? 'red' : 'blue'};">
                          ${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 3 ? 'Onaya Gönderildi' : arr[i].status === 1 ? 'Reddedildi' : 'Tamamlandı'}
                         </span></td>`
 
