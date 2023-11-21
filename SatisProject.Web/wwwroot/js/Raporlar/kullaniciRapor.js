@@ -4,7 +4,7 @@
     Get(`Report/GetByEmployee/${giriskullaniciId}`, (data) => {
         /*var arr = data;*/
 
-        var arr = data.sort((a, b) => b.id - a.id);
+        var arr = data.sort((a, b) => b.requestId - a.requestId);
 
         html += `            <nav class="navbar bg-white mb-2">
               <button type="submit" class="btn btn-warning mr-3" title="PDF Oluştur" id="pdfOlustur" onclick="Pdf(${giriskullaniciId})">

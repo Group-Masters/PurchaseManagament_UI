@@ -26,7 +26,7 @@ function Get(action, item) {
                     title: "İşlem Başarısız",
                     text: errorString,
                     showConfirmButton: false,
-                    timer: 1300
+                    timer: 2000
                 });
             } else {
                 alert("An unknown error occurred.");
@@ -79,7 +79,7 @@ function Post(action, data, success, ask = true) {
                             icon: 'error',
                             title: "İşlem Başarısız",
                             showConfirmButton: false,
-                            timer: 1300
+                            timer: 2000
                         });
                     }
                 },
@@ -93,7 +93,7 @@ function Post(action, data, success, ask = true) {
                             title: "İşlem Başarısız",
                             text: errorString,
                             showConfirmButton: false,
-                            timer: 1300
+                            timer: 2000
                         });
                     } else {
                         alert("An unknown error occurred.");
@@ -150,7 +150,7 @@ function Delete(action, success, ask = true) {
                                 icon: 'error',
                                 title: "İşlem Başarısız",
                                 showConfirmButton: false,
-                                timer: 1300
+                                timer: 2000
                             });
                         }
 
@@ -165,7 +165,7 @@ function Delete(action, success, ask = true) {
                                 title: "İşlem Başarısız",
                                 text: errorString,
                                 showConfirmButton: false,
-                                timer: 1300
+                                timer: 2000
                             });
                         } else {
                             alert("An unknown error occurred.");
@@ -222,7 +222,7 @@ function Put(action, data, success, ask = true) {
                             icon: 'error',
                             title: "İşlem Başarısız",
                             showConfirmButton: false,
-                            timer: 1300
+                            timer: 2000
                         });
                     }
                     
@@ -237,7 +237,7 @@ function Put(action, data, success, ask = true) {
                             title: "İşlem Başarısız",
                             text: errorString,
                             showConfirmButton: false,
-                            timer: 1300
+                            timer: 2000
                         });
                     } else {
                         alert("An unknown error occurred.");
