@@ -86,7 +86,6 @@ function YeniKullanici() {
     $("#ad").val("");
     $("#soyad").val("");
     $("#mailAdress").val("");
-    $("#parola").val("");
     $("#telNo").val("");
     $("#tcNo").val("");
     $("#acikAdres").val("");
@@ -102,7 +101,6 @@ function KullaniciKaydet() {
         Address: $("#acikAdres").val(),
         Name: $("#ad").val(),
         Surname: $("#soyad").val(),
-        Password: $("#parola").val(),
         Phone: $("#telNo").val(),
         IdNumber: $("#tcNo").val(),
         CompanyId: $("#sirketAd").val(),
