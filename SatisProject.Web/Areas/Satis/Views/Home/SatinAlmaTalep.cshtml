@@ -66,15 +66,17 @@
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
 
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Vazgeç
-                    </button>
-                    <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+                    
                 </div>
             </div>
-            <div class="modal-footer"></div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Vazgeç
+                </button>
+                <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+            </div>
         </div>
     </div>
 </div>
@@ -125,39 +127,19 @@
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
 
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Vazgeç
-                    </button>
-                    <button class="btn btn-primary" type="submit" onclick="Guncelle()">Kaydet</button>
+                    
                 </div>
             </div>
-            <div class="modal-footer"></div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Vazgeç
+                </button>
+                <button class="btn btn-primary" type="submit" onclick="Guncelle()">Kaydet</button>
+            </div>
         </div>
     </div>
 </div>
 
-
-<script>
-    (() => {
-        "use strict";
-
-        const forms = document.querySelectorAll(".needs-validation");
-        Array.from(forms).forEach((form) => {
-            form.addEventListener(
-                "submit",
-                (event) => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-
-                    form.classList.add("was-validated");
-                },
-                false
-            );
-        });
-    })();
-</script>
 <script src="~/js/satis/talepolustur.js" asp-append-version="true"></script>

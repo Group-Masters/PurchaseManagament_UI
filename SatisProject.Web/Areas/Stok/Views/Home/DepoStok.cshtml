@@ -60,9 +60,9 @@
                         <input type="text"
                                class="form-control"
                                id="gizliSirketId"
-                               value="@Repo.Session.CompanyId"/>
+                               value="@Repo.Session.CompanyId" />
                     </div>
-                    
+
                     <div class="form-group col-md-6">
                         <label class="form-label" for="urunAd">Ürün Seçiniz :</label>
                         <select class="form-select" id="urunAd">
@@ -77,16 +77,18 @@
                                required />
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
-                    
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Vazgeç
-                    </button>
-                    <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+
+
                 </div>
             </div>
-            <div class="modal-footer"></div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Vazgeç
+                </button>
+                <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+            </div>
         </div>
     </div>
 </div>
@@ -111,9 +113,9 @@
 
                 <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
 
-                        <input type="text"
-                               class="form-control d-none"
-                               id="idArtir"/>
+                    <input type="text"
+                           class="form-control d-none"
+                           id="idArtir" />
 
                     <div class="col-md-12">
                         <label for="adetG" class="form-label">Adet Giriniz  :</label>
@@ -124,15 +126,17 @@
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
 
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Vazgeç
-                    </button>
-                    <button class="btn btn-primary" type="submit" onclick="GuncelleArtir()">Güncelle</button>
+
                 </div>
             </div>
-            <div class="modal-footer"></div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Vazgeç
+                </button>
+                <button class="btn btn-primary" type="submit" onclick="GuncelleArtir()">Güncelle</button>
+            </div>
         </div>
     </div>
 </div>
@@ -157,9 +161,9 @@
 
                 <div class="row g-3 needs-validation" id="kullaniciEkleForm" novalidate>
 
-                        <input type="text"
-                               class="form-control d-none"
-                               id="idAzalt" />
+                    <input type="text"
+                           class="form-control d-none"
+                           id="idAzalt" />
 
                     <div class="form-group col-md-6">
                         <label class="form-label" for="urunAdG">Verilen Departmanı Seçiniz :</label>
@@ -183,15 +187,17 @@
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
 
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Vazgeç
-                    </button>
-                    <button class="btn btn-primary" type="submit" onclick="GuncelleAzalt()">Güncelle</button>
+
                 </div>
             </div>
-            <div class="modal-footer"></div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Vazgeç
+                </button>
+                <button class="btn btn-primary" type="submit" onclick="GuncelleAzalt()">Güncelle</button>
+            </div>
         </div>
     </div>
 </div>

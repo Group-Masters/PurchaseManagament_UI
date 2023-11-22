@@ -7,8 +7,8 @@
             l(".sidebar .collapse").collapse("hide");
     }),
         l(window).resize(function () {
-            l(window).width() < 768 && l(".sidebar .collapse").collapse("hide"),
-                l(window).width() < 480 &&
+            l(window).width() < 1160 && l(".sidebar .collapse").collapse("hide"),
+                l(window).width() < 1160 &&
                 !l(".sidebar").hasClass("toggled") &&
                 (l("body").addClass("sidebar-toggled"),
                     l(".sidebar").addClass("toggled"),
@@ -18,7 +18,7 @@
             "mousewheel DOMMouseScroll wheel",
             function (e) {
                 var o;
-                768 < l(window).width() &&
+                1160 < l(window).width() &&
                     ((o = (o = e.originalEvent).wheelDelta || -o.detail),
                         (this.scrollTop += 30 * (o < 0 ? 1 : -1)),
                         e.preventDefault());

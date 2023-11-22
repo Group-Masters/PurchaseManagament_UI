@@ -57,6 +57,9 @@
                 <button class="btn btn-primary" onclick='KullaniciDuzenle(${arr[i].id},"${arr[i].username}","${arr[i].address}","${arr[i].phone}","${arr[i].email}","${arr[i].isActive}")'>
                     Düzenle
                 </button>
+                 <button class="btn btn-warning" onclick='SifreSifirla(${arr[i].id})'>
+                    Şifre Sıfırla
+                </button>
             </td>
         </tr>
     `;
@@ -140,6 +143,13 @@ function Guncelle() {
     });
 }
 
+function SifreSifirla(id) {
+    sifirla = {
+        Id: id
+    }
+    Put("Employee/SendPassword", sifirla, (data) => {
+    });
+}
 
 
 $(document).ready(function () {

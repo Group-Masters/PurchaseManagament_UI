@@ -15,7 +15,7 @@
      tabindex="-1"
      aria-labelledby="staticBackdropLabel"
      aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Kullanici Bilgileri</h1>
@@ -47,15 +47,17 @@
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
 
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Vazgeç
-                    </button>
-                    <button class="btn btn-primary" type="submit" onclick="Guncelle()">Güncelle</button>
+
                 </div>
             </div>
-            <div class="modal-footer"></div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Vazgeç
+                </button>
+                <button class="btn btn-primary" type="submit" onclick="Guncelle()">Güncelle</button>
+            </div>
         </div>
     </div>
 </div>

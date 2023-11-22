@@ -153,24 +153,26 @@
             position:sticky !important;
             top:25px !important;"
             id="accordionSidebar">
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center mt-5"
-               asp-area="Admin" asp-controller="Home" asp-action="Index">
-                @*                <div class="sidebar-brand-icon rotate-n-15">
-                <i class="bi bi-box-seam-fill"></i>
-                </div>*@
-                <div class="sidebar-brand-text mx-3">
-                    <img src="~/Img/v.gif" class="w-100 rounded-circle" />
-                </div>
-            </a>
-            <!-- Nav Item - Dashboard -->
-            <!-- Divider -->
-            <hr class="sidebar-divider mt-5" />
 
-            <!-- Heading -->
-            <div class="sidebar-heading"></div>
+            <div class="stickyDiv">
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center h-auto"
+                   asp-area="Admin" asp-controller="Home" asp-action="Index">
+                    @*                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="bi bi-box-seam-fill"></i>
+                    </div>*@
+                    <div class="sidebar-brand-text mx-3">
+                        <img src="~/Img/v.gif" class="w-100 rounded-circle" />
+                    </div>
+                </a>
+                <!-- Nav Item - Dashboard -->
+                <!-- Divider -->
+                <hr class="sidebar-divider " />
 
-            <!-- Nav Item - Pages Collapse Menu -->
+                <!-- Heading -->
+                <div class="sidebar-heading"></div>
+
+                <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed"
                    href="#"
@@ -187,27 +189,27 @@
                      data-parent="#accordionSidebar">
                     <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
                         <h6 class="collapse-header">Talep İşlemleri :</h6>
-                        @{
-                            if (talep || admin || genelMudur || baskan)
-                            {
+                            @{
+                                if (talep || admin || genelMudur || baskan)
+                                {
                                 <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="SatinAlmaTalep">Taleplerim</a>
+                                }
                             }
-                        }
-                        @{
-                            if (onay || admin)
-                            {
+                            @{
+                                if (onay || admin)
+                                {
                                 <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="SatinAlmaTalepOnay">Talep Onay</a>
+                                }
                             }
-                        }
                     </div>
                 </div>
             </li>
 
 
 
-            @{
-                if (admin || stokSorumlu)
-                {
+                @{
+                    if (admin || stokSorumlu)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed"
                            href="#"
@@ -230,15 +232,15 @@
                             </div>
                         </div>
                     </li>
+                    }
                 }
-            }
 
 
 
 
-            @{
-                if (admin || satinAlma || genelMudur || baskan)
-                {
+                @{
+                    if (admin || satinAlma || genelMudur || baskan)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed"
                            href="#"
@@ -255,33 +257,33 @@
                              data-parent="#accordionSidebar">
                             <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
                                 <h6 class="collapse-header">Teklif ve Onay İslemleri :</h6>
-                                @{
-                                    if (admin || satinAlma)
-                                    {
+                                    @{
+                                        if (admin || satinAlma)
+                                        {
                                         <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOlustur">Teklif Oluştur</a>
+                                        }
                                     }
-                                }
-                                @{
-                                    if (admin || genelMudur)
-                                    {
+                                    @{
+                                        if (admin || genelMudur)
+                                        {
                                         <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOnayYonetim">Teklif Onayla G.Müdür</a>
+                                        }
                                     }
-                                }
-                                @{
-                                    if (admin || baskan)
-                                    {
+                                    @{
+                                        if (admin || baskan)
+                                        {
                                         <a class="collapse-item" asp-area="Satis" asp-controller="Home" asp-action="TeklifOnayKurul">Teklif Onayla Y.K Baskan</a>
+                                        }
                                     }
-                                }
                             </div>
                         </div>
                     </li>
+                    }
                 }
-            }
 
-            @{
-                if (admin || baskan)
-                {
+                @{
+                    if (admin || baskan)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed"
                            href="#"
@@ -298,24 +300,24 @@
                              data-parent="#accordionSidebar">
                             <div class="py-2 collapse-inner rounded" style="background-color: #edeaea;">
                                 <h6 class="collapse-header">Rol İşlemleri</h6>
-                                @{
-                                    if (admin)
-                                    {
+                                    @{
+                                        if (admin)
+                                        {
                                         <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="Rol">Rol Oluştur</a>
+                                        }
                                     }
-                                }
 
                                 <a class="collapse-item" asp-area="Admin" asp-controller="Home" asp-action="KullaniciRol">Rol Ver & Al</a>
 
                             </div>
                         </div>
                     </li>
+                    }
                 }
-            }
 
-            @{
-                if (admin || baskan)
-                {
+                @{
+                    if (admin || baskan)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed"
                            href="#"
@@ -334,24 +336,24 @@
                                 <h6 class="collapse-header">Raporlar :</h6>
                                 <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="KullaniciRapor">Kullanıcı Raporları</a>
                                 <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="BirimRapor">Birim Raporları</a>
-                                @{
-                                    if (admin)
-                                    {
+                                    @{
+                                        if (admin)
+                                        {
                                         <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="SirketRapor">Sirket Raporları</a>
+                                        }
                                     }
-                                }
                                 <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="TedarikciRapor">Tedarikci Raporları</a>
                                 <a class="collapse-item" asp-area="Rapor" asp-controller="Home" asp-action="MalzemeRapor">Malzeme Raporları</a>
                             </div>
                         </div>
                     </li>
+                    }
+
                 }
 
-            }
-
-            @{
-                if (admin)
-                {
+                @{
+                    if (admin)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed"
                            href="#"
@@ -381,13 +383,13 @@
                             </div>
                         </div>
                     </li>
+                    }
+
                 }
 
-            }
-
-            @{
-                if (admin)
-                {
+                @{
+                    if (admin)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed"
                            href="#"
@@ -413,57 +415,57 @@
                             </div>
                         </div>
                     </li>
+                    }
                 }
-            }
 
-            @{
-                if (satinAlma)
-                {
+                @{
+                    if (satinAlma)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed" asp-area="Stok" asp-controller="Home" asp-action="StokSatinAlma">
                             <i class="bi bi-box-fill"></i>
                             <span>Stok Bilgisi</span>
                         </a>
                     </li>
+                    }
                 }
-            }
 
-            @{
-                if (admin || baskan)
-                {
+                @{
+                    if (admin || baskan)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Kullanici">
                             <i class="bi bi-person-circle"></i>
                             <span>Kullanıcılar</span>
                         </a>
                     </li>
+                    }
                 }
-            }
 
-            @{
-                if (admin || baskan || satinAlma || genelMudur)
-                {
+                @{
+                    if (admin || baskan || satinAlma || genelMudur)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed" asp-area="Admin" asp-controller="Home" asp-action="Tedarikciler">
                             <i class="fas fa-users"></i>
                             <span>Tedarikciler</span>
                         </a>
                     </li>
+                    }
                 }
-            }
 
             <!-- Nav Item - Tables -->
-            @{
-                if (admin || muhasebe || baskan || genelMudur)
-                {
+                @{
+                    if (admin || muhasebe || baskan || genelMudur)
+                    {
                     <li class="nav-item">
                         <a class="nav-link collapsed" asp-area="Muhasebe" asp-controller="Home" asp-action="Faturalandirma">
                             <i class="bi bi-coin"></i>
                             <span>Muhasebe</span>
                         </a>
                     </li>
+                    }
                 }
-            }
 
 
 
@@ -474,26 +476,27 @@
             <div class="text-center  d-none d-md-inline" style="align-items:center">
                 <button class="rounded-circle border-0 bg-black text-white" id="sidebarToggle"></button>
             </div>
-        </ul>
-        <!-- End of Sidebar -->
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-            <!-- Main Content -->
-            <div id="content">
-                <!-- Topbar -->
-                <!-- End of Topbar -->
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <main role="main" class="pb-3">
+    </div>
+    </ul>
+    <!-- End of Sidebar -->
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+            <!-- Topbar -->
+            <!-- End of Topbar -->
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <main role="main" class="pb-3">
                         @RenderBody()
-                    </main>
-                </div>
-                <!-- /.container-fluid -->
+                </main>
             </div>
-            <!-- End of Main Content -->
-            <!-- End of Footer -->
+            <!-- /.container-fluid -->
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+        <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
     <!-- Scroll to Top Button-->

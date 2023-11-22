@@ -15,7 +15,7 @@
            class="form-control"
            id="girisSirketId"
            value="@{
-        @Repo.Session.CompanyId
+                @Repo.Session.CompanyId
 }" />
 </div>
 
@@ -49,12 +49,12 @@
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
                     <div class="col-md-12">
-                        <label for="fiyat" class="form-label"> <span class="text-danger">*</span>Fiyat Teklifini ve Para Birimini Giriniz  :</label>
-                        <div class="d-flex">
+                        <label for="fiyat" class="form-label"> <span class="text-danger">*</span>Para Birimini ve Fiyat Teklifini  Giriniz  :</label>
+                        <div class="d-flex gap-2">
                             <select class="form-select col-3" id="paraBirim" required>
                             </select>
                             <input type="number"
-                                   class="form-control col-9"
+                                   class="form-control"
                                    id="fiyat"
                                    required />
                         </div>
@@ -65,15 +65,17 @@
                         <textarea class="form-control" id="aciklama"></textarea>
                     </div>
 
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Vazgeç
-                    </button>
-                    <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+
                 </div>
             </div>
-            <div class="modal-footer"></div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Vazgeç
+                </button>
+                <button class="btn btn-primary" type="submit" onclick="Kaydet()">Kaydet</button>
+            </div>
         </div>
     </div>
 </div>
@@ -97,7 +99,6 @@
             <div class="modal-body">
                 <div id="divTalepTeklif" style="overflow: auto; max-height: 400px;"></div>
             </div>
-            <div class="modal-footer"></div>
         </div>
     </div>
 </div>
@@ -133,12 +134,12 @@
                         <div class="invalid-feedback">Bu alan boş geçilemez.</div>
                     </div>
                     <div class="col-md-12">
-                        <label for="fiyat" class="form-label">Fiyat Teklifini ve Para Birimini Giriniz  :</label>
-                        <div class="d-flex">
+                        <label for="fiyat" class="form-label">Para Birimini ve Fiyat Teklifini Giriniz  :</label>
+                        <div class="d-flex gap-2">
                             <select class="form-select col-3" id="paraBirimG" required>
                             </select>
                             <input type="number"
-                                   class="form-control col-9"
+                                   class="form-control"
                                    id="fiyatG"
                                    required />
                         </div>
@@ -149,40 +150,20 @@
                         <textarea class="form-control" id="aciklamaG"></textarea>
                     </div>
 
-                    <button type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal">
-                        Vazgeç
-                    </button>
-                    <button class="btn btn-primary" type="submit" onclick="Guncelle()">Güncelle</button>
+
                 </div>
             </div>
-            <div class="modal-footer"></div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Vazgeç
+                </button>
+                <button class="btn btn-primary" type="submit" onclick="Guncelle()">Güncelle</button>
+            </div>
         </div>
     </div>
 </div>
-
-<script>
-    (() => {
-        "use strict";
-
-        const forms = document.querySelectorAll(".needs-validation");
-        Array.from(forms).forEach((form) => {
-            form.addEventListener(
-                "submit",
-                (event) => {
-                    if (!form.checkValidity()) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-
-                    form.classList.add("was-validated");
-                },
-                false
-            );
-        });
-    })();
-</script>
 
 
 <script src="~/js/satis/teklif.js" asp-append-version="true"></script>

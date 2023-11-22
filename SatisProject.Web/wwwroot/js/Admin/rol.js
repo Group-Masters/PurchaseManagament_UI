@@ -9,7 +9,7 @@
             </tr>
         </thead><tbody>`;
 
-        var arr = data.sort((a, b) => b.id - a.id);
+        var arr = data;
 
         for (var i = 0; i < arr.length; i++) {
             html += `<tr scope="row" class="arama">
