@@ -51,9 +51,13 @@ nav button {
         color: white !important;
     }
 
+    #wrapper ul li .collapse-item:hover {
+        color: black !important;
+    }
+
     #wrapper ul li .collapse-inner {
         color: white !important;
-        background-color: black !important;
+        background-color: #333333 !important;
     }
 
 #content-wrapper #content {

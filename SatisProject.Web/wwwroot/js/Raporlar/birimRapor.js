@@ -86,7 +86,7 @@
                   <th scope="row">Talep Onay Durumu :</th>
                      <td>
                         <span class="fw-bold"
-                         style="color: ${arr[i].status === 0 ? 'black' : arr[i].status === 1 ? 'red' : arr[i].status === 2 ? 'green' : arr[i].status === 3 ? 'black' : arr[i].status === 4 ? 'green' : arr[i].status === 5 ? 'black' : arr[i].status === 6 ? 'black' : 'blue'};">
+                         style="color: ${arr[i].status === 0 ? 'gray' : arr[i].status === 1 ? 'red' : arr[i].status === 2 ? 'green' : arr[i].status === 3 ? 'gray' : arr[i].status === 4 ? 'green' : arr[i].status === 5 ? 'black' : arr[i].status === 6 ? 'gray' : 'blue'};">
                          ${arr[i].status === 0 ? 'Beklemede' : arr[i].status === 1 ? 'Reddedildi' : arr[i].status === 2 ? 'Onaylandı' : arr[i].status === 3 ? 'Yönetimde Bekliyor' : arr[i].status === 4 ? 'Yönetimde Onaylandı' : arr[i].status === 5 ? 'Yönetimde Reddedildi' : arr[i].status === 6 ? 'Ürün Bekleniyor' : 'Talep İşlemi Tamamlandı'}
                      </span>
                     </td>
@@ -158,7 +158,7 @@ function ModalDetay(id) {
                   <th scope="row">Talep Onay Durumu :</th>
                      <td>
                         <span class="fw-bold"
-                         style="color: ${data.status === 0 ? 'black' : data.status === 1 ? 'red' : data.status === 2 ? 'green' : data.status === 3 ? 'black' : data.status === 4 ? 'green' : data.status === 5 ? 'black' : data.status === 6 ? 'black' : 'blue'};">
+                         style="color: ${data.status === 0 ? 'gray' : data.status === 1 ? 'red' : data.status === 2 ? 'green' : data.status === 3 ? 'gray' : data.status === 4 ? 'green' : data.status === 5 ? 'gray' : data.status === 6 ? 'gray' : 'blue'};">
                          ${data.status === 0 ? 'Beklemede' : data.status === 1 ? 'Reddedildi' : data.status === 2 ? 'Onaylandı' : data.status === 3 ? 'Yönetimde Bekliyor' : data.status === 4 ? 'Yönetimde Onaylandı' : data.status === 5 ? 'Yönetimde Reddedildi' : data.status === 6 ? 'Ürün Bekleniyor' : 'Talep İşlemi Tamamlandı'}
                      </span>
                     </td>
