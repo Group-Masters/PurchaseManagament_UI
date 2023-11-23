@@ -11,6 +11,15 @@ html {
     align-items: center;
 }
 
+.error-div {
+    background-color: #BABABA4A;
+    opacity: 0.6;
+    border-radius: 30px;
+    position: relative !important;
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+}
+
 #loginImg {
     position: absolute !important;
     border-radius: 100% !important;
