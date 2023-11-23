@@ -192,6 +192,11 @@ html::-webkit-scrollbar-track {
     color:black !important;
 }
 
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 @media (max-width: 770px) {
     body #accordionSidebar {
         display: none !important;
@@ -204,3 +209,5 @@ html::-webkit-scrollbar-track {
         font-size: 16px;
     }
 }
+
+
