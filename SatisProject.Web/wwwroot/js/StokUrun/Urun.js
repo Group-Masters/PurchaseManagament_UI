@@ -9,7 +9,10 @@
     <div class="card" id="cardDark">
     <div class="p-3">
     <button class="btn btn-secondary position-absolute top-0 end-0 m-2" onclick="YeniFoto(${arr[i].id})"><i class="bi bi-camera"></i></button>
-     <img src="${arr[i].imgProduct === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : '/img/urunfoto/' + arr[i].imgProduct}" class="card-img-top"/>
+<img src="${arr[i].imgProduct === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : BASE_API_URI + '/' + arr[i].imgProduct}" class="card-img-top"/>
+
+
+
     </div>
      
       <div class="card-body ">
@@ -146,21 +149,74 @@ function YeniFoto(id) {
 //    }
 //}
 
-$("#urunFoto").change(function () {
-    ReadData(this);
-});
+//$("#urunFoto").change(function () {
+//    ReadData(this);
+//});
+
+//function KaydetFoto() {
+//    var kaydet = {
+//        ProductId: $("#productId").val(),
+//        ImageSrc: GetFileNameFromPath($("#urunFoto").val()),
+//    };
+//    Post("ImgProduct/createProduct", kaydet, (data) => {
+//        Getir();
+//        $("#modalFoto").modal("hide");
+//    });
+//}
+
+//function KaydetFoto() {
+//    var fileInput = document.getElementById('urunFoto');
+//    var file = fileInput.files[0];
+
+//    var reader = new FileReader();
+//    reader.onload = function (e) {
+//        var base64String = e.target.result;
+
+//        var kaydet = {
+//            ProductId: $("#productId").val(),
+//            ImageSrc: base64String
+//        };
+
+//        Post("ImgProduct/createProduct", kaydet, (data) => {
+//            Getir();
+//            $("#modalFoto").modal("hide");
+//        });
+//    };
+//    reader.readAsDataURL(file);
+//}
+
 
 function KaydetFoto() {
-    var kaydet = {
-        ProductId: $("#productId").val(),
-        ImageSrc: GetFileNameFromPath($("#urunFoto").val()),
-/*        ImageData : asfasfa ? ""*/
+    var fileInput = document.getElementById('urunFoto');
+    var file = fileInput.files[0];
+
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var base64String = e.target.result;
+
+        // Veriyi temizlemeden önce başlık ve içerik ayrılmalı
+        var parts = base64String.split(";base64,");
+        var contentType = parts[0].split(":")[1]; // Verinin türünü al
+        var cleanBase64 = parts[1]; // Temiz base64 kodu
+
+        var kaydet = {
+            ProductId: $("#productId").val(),
+            ImageSrc: cleanBase64 // Temiz veriyi API'ye gönder
+        };
+
+        Post("ImgProduct/createProduct", kaydet, (data) => {
+            Getir();
+            $("#modalFoto").modal("hide");
+        });
     };
-    Post("ImgProduct/createProduct", kaydet, (data) => {
-        Getir();
-        $("#modalFoto").modal("hide");
-    });
+    reader.readAsDataURL(file);
 }
+
+
+
+
+//console.log(base64Image);
+
 
 $(document).ready(function () {
     Getir();
