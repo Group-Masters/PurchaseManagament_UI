@@ -14,7 +14,7 @@
                         <button class="btn btn-primary position-absolute bottom-0 end-0 mb-2 mr-4" title="Profil Fotoğrafı Yükle" onclick="YeniFoto(${data.id})"><i class="bi bi-camera"></i></button>`
 
         if (data.imageSrc !=null) {
-            html += `   <img src="${BASE_API_URI + '/' + data.imageSrc}" class="rounded-circle" style="user-select:none;" width="250">`
+            html += `   <img src="${BASE_API_URI + '/' + data.imageSrc}" class="rounded-circle" style="user-select:none;" width="250" height="250">`
         }
         else {
             html += `   <img src="${data.gender === 0 ? 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/7-512.png' : 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/4-256.png'}" class="rounded-circle" style="user-select:none;" width="250">`
