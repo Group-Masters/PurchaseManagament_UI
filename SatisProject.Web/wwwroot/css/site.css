@@ -136,6 +136,12 @@ html::-webkit-scrollbar-track {
             transform: translateX(-24px);
         }
 
+#divFatura .accordion-body span button {
+    background-color: #9e9494 !important;
+    color: white !important;
+    border:none !important;
+}
+
 @media (min-width: 768px) {
     html {
         font-size: 16px;

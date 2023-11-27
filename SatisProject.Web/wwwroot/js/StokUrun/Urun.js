@@ -5,13 +5,11 @@
         var arr = data;
 
         for (var i = 0; i < arr.length; i++) {
-            html += `<div class="col mb-2" id="arama">
-    <div class="card" id="cardDark">
-    <div class="p-3">
+            html += `<div class="col mb-3" id="arama">
+    <div class="card h-100" style="display:flex !important;flex-direction:column !important;" id="cardDark">
+    <div class="p-3 card-img-top">
     <button class="btn btn-secondary position-absolute top-0 end-0 m-2" onclick="YeniFoto(${arr[i].id})"><i class="bi bi-camera"></i></button>
-<img src="${arr[i].imgProduct === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : BASE_API_URI + '/' + arr[i].imgProduct}" class="card-img-top"/>
-
-
+    <img height="287" width="100%" src="${arr[i].imgProduct === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : BASE_API_URI + '/' + arr[i].imgProduct}"/>
 
     </div>
      
@@ -132,59 +130,6 @@ function YeniFoto(id) {
 /*    $("#imageData").val("");*/
     $("#modalFoto").modal("show");
 }
-
-//function ReadData(input) {
-//    if (input.files && input.files[0]) {
-//        let fs = new FileReader();
-//        fs.onload = function (e) {
-//            let arrayBuffer = e.target.result;
-//            let uintArray = new Uint8Array(arrayBuffer);
-//            let dataArray = Array.from(uintArray);
-
-//            let dataString = JSON.stringify(dataArray);
-
-//            $('#imageData').val(dataString);
-//        };
-//        fs.readAsArrayBuffer(input.files[0]);
-//    }
-//}
-
-//$("#urunFoto").change(function () {
-//    ReadData(this);
-//});
-
-//function KaydetFoto() {
-//    var kaydet = {
-//        ProductId: $("#productId").val(),
-//        ImageSrc: GetFileNameFromPath($("#urunFoto").val()),
-//    };
-//    Post("ImgProduct/createProduct", kaydet, (data) => {
-//        Getir();
-//        $("#modalFoto").modal("hide");
-//    });
-//}
-
-//function KaydetFoto() {
-//    var fileInput = document.getElementById('urunFoto');
-//    var file = fileInput.files[0];
-
-//    var reader = new FileReader();
-//    reader.onload = function (e) {
-//        var base64String = e.target.result;
-
-//        var kaydet = {
-//            ProductId: $("#productId").val(),
-//            ImageSrc: base64String
-//        };
-
-//        Post("ImgProduct/createProduct", kaydet, (data) => {
-//            Getir();
-//            $("#modalFoto").modal("hide");
-//        });
-//    };
-//    reader.readAsDataURL(file);
-//}
-
 
 function KaydetFoto() {
     var fileInput = document.getElementById('urunFoto');

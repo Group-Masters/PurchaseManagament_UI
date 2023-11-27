@@ -68,6 +68,7 @@ function Duzenle(id, productName, quantity, supplierName, offeredPrice, currency
 
 function TumFaturalariGetir() {
     var girisSirketId = $("#girisSirketId").val();
+    var butonIcerikId = $('#faturaGorsel').val();
     var html = ``;
     var modalHtml = `
             <div class="modal fade" id="faturaFotoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,6 +78,7 @@ function TumFaturalariGetir() {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
                   </div>
                   <div class="modal-body">
+                    
                     <img src="" class="card-img-top" id="modalImage" />
                   </div>
                 </div>
@@ -115,13 +117,26 @@ function TumFaturalariGetir() {
 
             <table class="table">
             <thead class="position-relative">
-                 <tr style="background-color:#9e9494; color:#9e9494;">
+                 <tr style="">
                   <th scope="col" style="border:none;">·</th>
-                  <th class="position-absolute top-0 end-0" scope="col" style="top:-7px !important;border:none;">
-                  <span class="">
-                   <button class="btn btn-light" onclick='modalIcerikAyarla(${JSON.stringify(arr[i])})' data-bs-toggle="modal" data-bs-target="#faturaFotoModal">Tedarikçi Faturasını Görüntüle</button>
-                  </span>
-                  </th>
+                  <th class="position-absolute top-0 end-0" scope="col" style="top:-16px !important;border:none;">
+                  `
+            if (arr[i].imageSrc == null) {
+                html += `
+                    <span>
+                        <button class="btn btn-warning" type="file" onclick="GorselEkle(${arr[i].id})">
+                            Görsel Ekle
+                        </button>
+                    </span>
+                    `
+            }
+            else {
+                html += ` <span class="">
+                        <button class="btn btn-light" onclick='modalIcerikAyarla(${JSON.stringify(arr[i])})' data-bs-toggle="modal" data-bs-target="#faturaFotoModal">Tedarikçi Faturasını Görüntüle</button>
+                    </span>`
+            }
+
+            html += `</th>
                 </tr>
               </thead>
               <tbody>
@@ -178,7 +193,7 @@ function TumFaturalariGetir() {
 }
 
 function modalIcerikAyarla(data) {
-    var imageUrl = data.imageSrc === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : '/img/faturaFoto/' + data.imageSrc;
+    var imageUrl = data.imageSrc === null ? 'https://www.birincifiltre.com.tr/image/cache/placeholder-250x250.webp' : BASE_API_URI + '/' + data.imageSrc;
     $('#modalImage').attr('src', imageUrl);
 }
 
@@ -188,29 +203,78 @@ function isValidGUID(guid) {
     return guidPattern.test(guid);
 }
 
-function Kaydet() {
-    var myGUID = $("#uUID").val();
-    if (isValidGUID(myGUID)) {
-        var fatura = {
-            OfferId: $("#id").val(),
-            ImageSrc: GetFileNameFromPath($("#imageSrc").val()), 
-            UUID: myGUID
+function GorselEkle(id) {
+    $("#faturaId").val(id);
+    $("#foto").val("");
+    $("#gorselModal").modal("show");
+}
+
+function KaydetGorsel() {
+    var fileInput = document.getElementById('foto');
+    var file = fileInput.files[0];
+
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var base64String = e.target.result;
+
+        // Veriyi temizlemeden önce başlık ve içerik ayrılmalı
+        var parts = base64String.split(";base64,");
+        var contentType = parts[0].split(":")[1]; // Verinin türünü al
+        var cleanBase64 = parts[1]; // Temiz base64 kodu
+
+        var faturaGorsel = {
+            Id: $("#faturaId").val(),
+            ImageString: cleanBase64
         };
-        Post("Invoice/Create", fatura, (data) => {
+
+        Put("Invoice/UpdateImage", faturaGorsel, (data) => {
             TumFaturalariGetir();
             TeklifleriGetir();
-            $("#staticBackdrop").modal("hide");
+            $("#gorselModal").modal("hide");
         });
-    } else {
-        Swal.fire({
-            position: 'top-mid',
-            icon: 'error',
-            title: "Geçerli Bir Guid Giriniz",
-            showConfirmButton: false,
-            timer: 1300
-        });
-    }
+    };
+    reader.readAsDataURL(file);
 }
+
+function Kaydet() {
+    var fileInput = document.getElementById('imageSrc');
+    var file = fileInput.files[0];
+
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var base64String = e.target.result;
+
+        // Veriyi temizlemeden önce başlık ve içerik ayrılmalı
+        var parts = base64String.split(";base64,");
+        var contentType = parts[0].split(":")[1]; // Verinin türünü al
+        var cleanBase64 = parts[1]; // Temiz base64 kodu
+
+        var myGUID = $("#uUID").val();
+        if (isValidGUID(myGUID)) {
+            var fatura = {
+                OfferId: $("#id").val(),
+                ImageSrc: cleanBase64,
+                UUID: myGUID
+            };
+            Post("Invoice/Create", fatura, (data) => {
+                TumFaturalariGetir();
+                TeklifleriGetir();
+                $("#staticBackdrop").modal("hide");
+            });
+        } else {
+            Swal.fire({
+                position: 'top-mid',
+                icon: 'error',
+                title: "Geçerli Bir Guid Giriniz",
+                showConfirmButton: false,
+                timer: 1300
+            });
+        }
+    };
+    reader.readAsDataURL(file);
+}
+
+
 
 $(document).ready(function () {
     // Sayfa yüklendiğinde mevcut şirket verilerini getir

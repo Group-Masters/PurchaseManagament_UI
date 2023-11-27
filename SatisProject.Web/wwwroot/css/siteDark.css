@@ -142,6 +142,7 @@ input, textarea {
 #divFatura .accordion-body span button {
     background-color: white !important;
     color: black !important;
+    border: none !important;
 }
 
 html::-webkit-scrollbar {
