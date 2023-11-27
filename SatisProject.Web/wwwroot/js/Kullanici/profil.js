@@ -10,7 +10,16 @@
             <div class="card" style="border:0;">
                 <div class="card-body">
                     <div class="d-flex flex-column align-items-center text-center pb-3">
-                        <img src="${data.gender === 0 ? 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/7-512.png' : 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/4-256.png'}" alt="Admin" class="rounded-circle" style="user-select:none;" width="150">
+                        <div style="position:relative;">
+                        <button class="btn btn-primary position-absolute bottom-0 end-0 mb-2 mr-4" title="Profil Fotoğrafı Yükle" onclick="YeniFoto(${data.id})"><i class="bi bi-camera"></i></button>`
+
+        if (data.imageSrc !=null) {
+            html += `   <img src="${BASE_API_URI + '/' + data.imageSrc}" class="rounded-circle" style="user-select:none;" width="250">`
+        }
+        else {
+            html += `   <img src="${data.gender === 0 ? 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/7-512.png' : 'https://cdn2.iconfinder.com/data/icons/business-filled-outline-style-1-set-1/256/4-256.png'}" class="rounded-circle" style="user-select:none;" width="250">`
+        }
+                  html+= `</div>
                         <div class="mt-3">
                             <h4>${data.name} ${data.surname}</h4>
                             <p class="text-secondary mb-1">
@@ -159,6 +168,36 @@ function SifreGuncelle() {
         KullaniciGetir();
         $("#staticBackdrop1").modal("hide");
     });
+}
+
+function YeniFoto(id) {
+    $("#foto").val("");
+    $("#id").val(id);
+    $("#modalFoto").modal("show");
+}
+
+function KaydetFoto() {
+    var fileInput = document.getElementById('foto');
+    var file = fileInput.files[0];
+
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        var base64String = e.target.result;
+        var parts = base64String.split(";base64,");
+        var contentType = parts[0].split(":")[1]; 
+        var cleanBase64 = parts[1]; // Temiz base64 kodu
+
+        var kaydet = {
+            Id: $("#id").val(),
+            ImageString: cleanBase64
+        };
+
+        Put("Employee/CreateImage", kaydet, (data) => {
+            Getir();
+            $("#modalFoto").modal("hide");
+        });
+    };
+    reader.readAsDataURL(file);
 }
 
 $(document).ready(function () {

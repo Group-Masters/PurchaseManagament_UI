@@ -198,6 +198,15 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.navbar .form-group {
+    margin: 0px !important;
+}
+
+#divDetay nav {
+    color: white !important;
+    background-color: #333333 !important;
+}
+
 @media (max-width: 770px) {
     body #accordionSidebar {
         display: none !important;

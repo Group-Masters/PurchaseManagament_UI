@@ -158,4 +158,28 @@
     </div>
 </div>
 
+<div class="modal fade" id="modalFoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Profil Fotoğrafınızı Güncelleyin</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <input type="text" id="id" class="form-control d-none">
+
+                <label for="foto" class="form-label"> Fotoğraf Seçiniz :</label>
+                <input type="file"
+                       class="form-control"
+                       id="foto" accept="KullaniciFoto/*" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Vazgeç</button>
+                <button type="button" class="btn btn-primary" onclick="KaydetFoto()">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="~/js/kullanici/profil.js" asp-append-version="true"></script>
