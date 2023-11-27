@@ -192,10 +192,11 @@ function KaydetFoto() {
             ImageString: cleanBase64
         };
 
-        Put("Employee/CreateImage", kaydet, (data) => {
-            Getir();
+        Put("Employee/CreateImg", kaydet, (data) => {
+            KullaniciGetir();
             $("#modalFoto").modal("hide");
         });
+
     };
     reader.readAsDataURL(file);
 }
