@@ -1,4 +1,5 @@
 ﻿var BASE_API_URI = "https://localhost:7064";
+var WEB_URI = "https://localhost:7178";
 
 function Get(action, item) {
     $.ajax({
