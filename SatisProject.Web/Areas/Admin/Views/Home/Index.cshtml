@@ -1,11 +1,78 @@
 ﻿@using SatisProject.Web.Code;
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
 
 
-<div class="bg-white text-black text-center" id="index"
-style=" border-radius: 15px;
+@* <div class="bg-white text-black text-center" id="index"
+     style=" border-radius: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;">
-    <img src="~/img/v.gif" width="350" height="350" class="rounded-circle" />
+     <img src="~/img/v.gif" width="350" height="350" class="rounded-circle" />
+</div> *@
+
+<div class="bg-white text-black">
+    <div id="chartTop"></div>
+    <div class="d-flex bg-white text-black" id="index">
+        <div class="col-6">
+            <canvas id="default" height="550" width="550"></canvas>
+        </div>
+        <div class="col-6">
+            <canvas id="myChart" height="550" width="550"></canvas>
+        </div>  
+    </div>
 </div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const eren = document.getElementById('default');
+
+
+    new Chart(eren, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const ctx = document.getElementById('myChart');
+    const dataGrafik = {
+        labels: [
+            'Red',
+            'Blue',
+            'Yellow'
+        ],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [300, 50, 100],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    new Chart(ctx, {
+        type: 'doughnut',
+        data: dataGrafik,
+
+    });
+</script>
+<script src="~/js/admin/grafik.js" asp-append-version="true"></script>

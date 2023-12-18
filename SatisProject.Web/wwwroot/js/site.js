@@ -35,6 +35,63 @@ function Get(action, item) {
     });
 }
 
+function GetAndCreateChart(endpoint, chartType, successCallback) {
+    $.ajax({
+        type: "GET",
+        url: `${BASE_API_URI}/${endpoint}`,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', `Bearer ${TOKEN}`);
+        },
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            if (response.success) {
+                successCallback(response.data, chartType);
+            }
+        },
+        error: function (xhr, status, error) {
+            var errorMessage = JSON.parse(xhr.responseText);
+            if (errorMessage && errorMessage.errors) {
+                var errorString = errorMessage.errors.join(", ");
+                Swal.fire({
+                    position: 'top-mid',
+                    icon: 'error',
+                    title: "İşlem Başarısız",
+                    text: errorString,
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            } else {
+                alert("An unknown error occurred.");
+            }
+        }
+    });
+}
+
+function createChart(data, chartType) {
+    const ctx = document.getElementById('default');
+    new Chart(ctx, {
+        type: chartType,
+        data: {
+            labels: data.labels,
+            datasets: [{
+                label: data.datasetLabel,
+                data: data.datasetValues,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+
+
 function Post(action, data, success, ask = true) {
     var confirmed = true;
     // SweetAlert ile bir onay iletişim kutusu göster

@@ -207,6 +207,10 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     background-color: #333333 !important;
 }
 
+nav h2 a{
+    color:white !important;
+}
+
 @media (max-width: 770px) {
     body #accordionSidebar {
         display: none !important;

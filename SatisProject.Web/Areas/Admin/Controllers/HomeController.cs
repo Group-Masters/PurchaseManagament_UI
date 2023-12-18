@@ -61,6 +61,5 @@ namespace SatisProject.Web.Areas.Admin.Controllers
         {
             return View();
         }
-
     }
 }
